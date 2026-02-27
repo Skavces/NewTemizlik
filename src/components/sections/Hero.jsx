@@ -3,11 +3,12 @@ import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react
 import BlurText from '../reactbits/BlurText'
 import GradientText from '../reactbits/GradientText'
 import AnimatedContent from '../reactbits/AnimatedContent'
-import { useTheme } from '../../context/useTheme'
+
 
 const base = import.meta.env.BASE_URL
 
 const mediaItems = [
+  { type: 'video', src: `${base}media-7.mp4` },
   { type: 'image', src: `${base}media-1.jpeg` },
   { type: 'image', src: `${base}media-2.jpeg` },
   { type: 'video', src: `${base}media-3.mp4` },
@@ -48,8 +49,6 @@ function ParticleField() {
 export default function Hero() {
   const [current, setCurrent] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
 
   const goTo = useCallback((index) => {
     if (isTransitioning) return
@@ -67,44 +66,74 @@ export default function Hero() {
   }, [current, goTo])
 
   useEffect(() => {
+    if (mediaItems[current].type === 'video') return
     const timer = setInterval(next, 5000)
     return () => clearInterval(timer)
-  }, [next])
+  }, [current, next])
 
   return (
     <section
       className="relative min-h-screen flex flex-col justify-center overflow-hidden theme-transition"
-      style={{ backgroundColor: isDark ? '#0a0e1a' : '#f0f4f8' }}
     >
-      {/* Gradient blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-[120px] ${isDark ? 'bg-primary/10' : 'bg-primary/8'}`} />
-        <div className={`absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full blur-[100px] ${isDark ? 'bg-accent/8' : 'bg-accent/6'}`} />
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] ${isDark ? 'bg-primary/5' : 'bg-primary/3'}`} />
+      {/* Full-screen background media */}
+      <div className="absolute inset-0 z-0">
+        {mediaItems.map((item, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-all duration-600 ease-in-out
+              ${index === current
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-105'
+              }`}
+          >
+            {item.type === 'image' ? (
+              <img
+                src={item.src}
+                alt={`Proje ${index + 1}`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            ) : (
+              <video
+                src={item.src}
+                className="w-full h-full object-cover"
+                muted
+                playsInline
+                autoPlay={index === current}
+                onEnded={() => {
+                  if (index === current) next()
+                }}
+                ref={(el) => {
+                  if (el) {
+                    if (index === current) {
+                      el.currentTime = 0
+                      el.play().catch(() => {})
+                    } else {
+                      el.pause()
+                    }
+                  }
+                }}
+              />
+            )}
+          </div>
+        ))}
       </div>
 
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 z-1 bg-black/55" />
+
       {/* Particles */}
-      <ParticleField />
+      <div className="relative z-2">
+        <ParticleField />
+      </div>
 
-      {/* Grid overlay */}
-      {isDark && (
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
-      )}
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
+      <div className="relative z-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
         {/* Text – centered */}
         <div className="text-center max-w-3xl mx-auto mb-12">
 
           <BlurText
             text="Profesyonel Temizlik Çözümleri"
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4"
-            style={{ color: 'var(--text-primary)' }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 text-white drop-shadow-lg"
             delay={120}
             animateBy="words"
           />
@@ -122,7 +151,7 @@ export default function Hero() {
           </AnimatedContent>
 
           <AnimatedContent distance={20} duration={0.6} delay={0.8}>
-            <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+            <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto text-white/80 drop-shadow">
               Güneş paneli temizliğinden robotik çözümlere, endüstriyel bakım hizmetlerinden izleme sistemlerine kadar
               kapsamlı ve güvenilir temizlik hizmetleri sunuyoruz.
             </p>
@@ -143,11 +172,8 @@ export default function Hero() {
               <a
                 href="#hizmetler"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg
-                  hover:-translate-y-1 transition-all duration-300"
-                style={{
-                  border: `1px solid var(--border-subtle)`,
-                  color: 'var(--text-muted)',
-                }}
+                  hover:-translate-y-1 transition-all duration-300
+                  border border-white/30 text-white/90 hover:bg-white/10"
               >
                 Hizmetleri İncele
               </a>
@@ -155,7 +181,7 @@ export default function Hero() {
           </AnimatedContent>
 
           <AnimatedContent distance={15} duration={0.5} delay={1.2}>
-            <div className="flex flex-wrap items-center justify-center gap-8 text-sm" style={{ color: 'var(--text-faint)' }}>
+            <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/60">
               {[
                 { label: '500+ Proje', color: 'bg-accent' },
                 { label: '10+ Yıl Deneyim', color: 'bg-primary' },
@@ -169,97 +195,42 @@ export default function Hero() {
             </div>
           </AnimatedContent>
         </div>
+      </div>
 
-        {/* Large centered carousel */}
-        <AnimatedContent distance={60} duration={0.8} delay={0.5}>
-          <div className="relative max-w-5xl mx-auto">
-            <div
-              className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video"
-              style={{ backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-subtle)', boxShadow: `0 25px 50px -12px var(--shadow-color)` }}
-            >
-              {mediaItems.map((item, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-all duration-600 ease-in-out
-                    ${index === current
-                      ? 'opacity-100 scale-100'
-                      : 'opacity-0 scale-105'
-                    }`}
-                >
-                  {item.type === 'image' ? (
-                    <img
-                      src={item.src}
-                      alt={`Proje ${index + 1}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <video
-                      src={item.src}
-                      className="w-full h-full object-cover"
-                      muted
-                      loop
-                      playsInline
-                      autoPlay={index === current}
-                      ref={(el) => {
-                        if (el) {
-                          if (index === current) el.play().catch(() => {})
-                          else el.pause()
-                        }
-                      }}
-                    />
-                  )}
-                </div>
-              ))}
+      {/* Prev/Next arrows – positioned on the section */}
+      <button
+        onClick={prev}
+        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/15"
+        aria-label="Önceki"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/15"
+        aria-label="Sonraki"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
 
-              {/* Bottom gradient */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-32"
-                style={{ background: `linear-gradient(to top, ${isDark ? 'rgba(10,14,26,0.8)' : 'rgba(240,244,248,0.8)'}, transparent)` }}
-              />
-
-              {/* Prev/Next */}
-              <button
-                onClick={prev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200 cursor-pointer border border-white/10"
-                aria-label="Önceki"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={next}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200 cursor-pointer border border-white/10"
-                aria-label="Sonraki"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-
-              {/* Dots */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5">
-                {mediaItems.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goTo(index)}
-                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer
-                      ${index === current
-                        ? 'w-10 bg-linear-to-r from-primary to-accent'
-                        : 'w-2.5 bg-white/30 hover:bg-white/50'
-                      }`}
-                    aria-label={`Medya ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Glow effects */}
-            <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl bg-linear-to-br from-primary/15 to-accent/10 blur-sm" />
-            <div className="absolute -z-10 -bottom-4 -left-4 w-28 h-28 rounded-2xl bg-accent/15 blur-lg" />
-          </div>
-        </AnimatedContent>
+      {/* Dots */}
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-4 flex gap-2.5">
+        {mediaItems.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goTo(index)}
+            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer
+              ${index === current
+                ? 'w-10 bg-linear-to-r from-primary to-accent'
+                : 'w-2.5 bg-white/30 hover:bg-white/50'
+              }`}
+            aria-label={`Medya ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Scroll hint */}
-      <a href="#hizmetler" className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 hover:text-accent transition-colors" style={{ color: 'var(--text-faint)' }} aria-label="Aşağı kaydır">
+      <a href="#hizmetler" className="absolute bottom-6 left-1/2 -translate-x-1/2 z-4 flex flex-col items-center gap-1 text-white/60 hover:text-accent transition-colors" aria-label="Aşağı kaydır">
         <span className="text-xs font-medium">Keşfet</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>

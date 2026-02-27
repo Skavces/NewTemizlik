@@ -8,9 +8,9 @@ export default function CTABand() {
   const isDark = theme === 'dark'
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Gradient background */}
-      <div className="relative py-20 md:py-28">
+      <div className="relative py-20 md:py-28 w-full">
         {/* Decorative blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3 ${isDark ? 'bg-primary/20' : 'bg-primary/10'}`} />

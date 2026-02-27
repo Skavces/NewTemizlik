@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1F6EC7;
+  --color-primary: #1f6ec7;
   --color-primary-dark: #1a5ba6;
   --color-primary-light: #e8f0fb;
-  --color-accent: #7FBF3A;
+  --color-accent: #7fbf3a;
   --color-accent-dark: #6aa82e;
   --color-accent-light: #f0f8e6;
   --color-dark: #0a0e1a;
@@ -21,7 +21,7 @@
   --color-gray-700: #334155;
   --color-gray-800: #1e293b;
   --color-gray-900: #0f172a;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 /* ——— Theme CSS Variables ——— */
@@ -47,7 +47,8 @@
   --badge-border: rgba(31, 110, 199, 0.2);
   --shadow-color: rgba(0, 0, 0, 0.2);
   --particle-color: rgba(127, 191, 58, 0.4);
-  --glow-shadow: 0 0 0 2px rgba(31, 110, 199, 0.3), 0 0 20px rgba(31, 110, 199, 0.1);
+  --glow-shadow:
+    0 0 0 2px rgba(31, 110, 199, 0.3), 0 0 20px rgba(31, 110, 199, 0.1);
 }
 
 [data-theme="light"] {
@@ -71,12 +72,14 @@
   --badge-border: rgba(31, 110, 199, 0.15);
   --shadow-color: rgba(0, 0, 0, 0.08);
   --particle-color: rgba(127, 191, 58, 0.25);
-  --glow-shadow: 0 0 0 2px rgba(31, 110, 199, 0.2), 0 0 15px rgba(31, 110, 199, 0.08);
+  --glow-shadow:
+    0 0 0 2px rgba(31, 110, 199, 0.2), 0 0 15px rgba(31, 110, 199, 0.08);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Optional: prevents scrollbar pop-in jumping by always reserving space, but standard scrollbar styling below is better */
   }
 
   body {
@@ -85,7 +88,28 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--bg-body);
     color: var(--text-secondary);
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease;
+  }
+
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-body);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-hover);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
   }
 }
 
@@ -136,7 +160,10 @@
 .theme-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .theme-card:hover {
@@ -169,5 +196,9 @@
 
 /* Smooth transition for themed elements */
 .theme-transition {
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }

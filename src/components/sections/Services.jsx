@@ -36,7 +36,7 @@ export default function Services() {
   const isDark = theme === 'dark'
 
   return (
-    <section id="hizmetler" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="hizmetler" className="relative min-h-screen flex flex-col justify-center py-24 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className={`absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full blur-[120px] ${isDark ? 'bg-accent/8' : 'bg-accent/5'}`} />

@@ -21,17 +21,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const isSolid = scrolled || open;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        isSolid
           ? 'backdrop-blur-xl shadow-2xl'
           : 'bg-transparent'
       }`}
-      style={scrolled ? { backgroundColor: 'var(--bg-nav)', boxShadow: `0 25px 50px -12px var(--shadow-color)` } : {}}
+      style={isSolid ? { backgroundColor: 'var(--bg-nav)', boxShadow: `0 25px 50px -12px var(--shadow-color)` } : {}}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 relative">
           {/* Logo */}
           <a href="#" className="flex items-center group">
             <img
@@ -41,8 +43,8 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Centered Desktop links */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -51,25 +53,31 @@ export default function Navbar() {
                   after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
                   after:bg-linear-to-r after:from-primary after:to-accent after:rounded-full
                   after:transition-all after:duration-300 hover:after:w-full"
-                style={{ color: 'var(--text-nav)' }}
-                onMouseEnter={(e) => e.target.style.color = 'var(--text-nav-hover)'}
-                onMouseLeave={(e) => e.target.style.color = 'var(--text-nav)'}
+                style={{ color: isSolid ? 'var(--text-nav)' : 'rgba(255, 255, 255, 0.9)' }}
+                onMouseEnter={(e) => e.target.style.color = isSolid ? 'var(--text-nav-hover)' : '#ffffff'}
+                onMouseLeave={(e) => e.target.style.color = isSolid ? 'var(--text-nav)' : 'rgba(255, 255, 255, 0.9)'}
               >
                 {link.label}
               </a>
             ))}
+          </div>
 
+          {/* Right side Actions (Desktop) */}
+          <div className="hidden md:flex items-center gap-4">
             {/* Theme toggle */}
             <button
               onClick={toggle}
               className="p-2.5 rounded-xl transition-all duration-300 cursor-pointer hover:-translate-y-0.5"
-              style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }}
+              style={{ 
+                background: isSolid ? 'var(--bg-card)' : 'rgba(255, 255, 255, 0.1)', 
+                border: isSolid ? '1px solid var(--border-subtle)' : '1px solid rgba(255, 255, 255, 0.2)' 
+              }}
               aria-label="Tema değiştir"
             >
               {theme === 'dark' ? (
-                <Sun className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
+                <Sun className="w-4 h-4" style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }} />
               ) : (
-                <Moon className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
+                <Moon className="w-4 h-4" style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }} />
               )}
             </button>
 
@@ -88,15 +96,15 @@ export default function Navbar() {
             <button
               onClick={toggle}
               className="p-2 rounded-lg transition-colors cursor-pointer"
-              style={{ color: 'var(--text-muted)' }}
+              style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }}
               aria-label="Tema değiştir"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <button
               onClick={() => setOpen(!open)}
-              className="p-2 transition-colors"
-              style={{ color: 'var(--text-muted)' }}
+              className="p-2 transition-colors cursor-pointer"
+              style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }}
               aria-label="Menüyü aç/kapat"
             >
               {open ? <X size={24} /> : <Menu size={24} />}

@@ -7,11 +7,12 @@ import Process from './components/sections/Process'
 import CTABand from './components/sections/CTABand'
 import Contact from './components/sections/Contact'
 import Footer from './components/sections/Footer'
+import WhatsAppButton from './components/ui/WhatsAppButton'
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen theme-transition" style={{ backgroundColor: 'var(--bg-body)' }}>
+      <div className="min-h-screen theme-transition overflow-x-hidden" style={{ backgroundColor: 'var(--bg-body)' }}>
         <Navbar />
         <Hero />
         <Services />
@@ -20,6 +21,7 @@ function App() {
         <CTABand />
         <Contact />
         <Footer />
+        <WhatsAppButton />
       </div>
     </ThemeProvider>
   )
