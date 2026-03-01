@@ -61,7 +61,7 @@ export default function Contact() {
               {/* Contact Form */}
               <div className="rounded-2xl p-8 theme-card flex flex-col justify-center" style={{ border: '1px solid var(--border-subtle)' }}>
                 <h3 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Mesaj Gönderin</h3>
-                <form action="https://formsubmit.co/skavces@gmail.com" method="POST" className="space-y-4">
+                <form action="https://formsubmit.co/bariskurnazoglu1@gmail.com" method="POST" className="space-y-4">
                   {/* formsubmit.co ayarları */}
                   <input type="hidden" name="_subject" value="Web Sitesinden Yeni İletişim Formu!" />
                   <input type="hidden" name="_captcha" value="false" />
@@ -108,8 +108,8 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-muted)' }}>E-posta Adresi (Opsiyonel)</label>
+                  <div className="mt-4">
+                    <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-muted)' }}>E-posta Adresi</label>
                     <input 
                       type="email" 
                       name="E_Posta" 
@@ -152,20 +152,20 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div>
+                  <div className="mt-4">
                     <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Sahada Su Ulaşımı Var Mı?</label>
                     <div className="flex gap-4 mt-2">
                       <label className="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="Su_Ulasimi_Var_Mi" value="Evet" className="w-4 h-4 text-primary bg-transparent border-gray-300 focus:ring-primary" required />
+                        <input type="radio" name="Su_Ulasimi_Var_Mi" value="Evet" className="w-5 h-5 text-primary bg-transparent border-gray-300 focus:ring-primary" required />
                         <span style={{ color: 'var(--text-primary)' }}>Evet</span>
                       </label>
                       <label className="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="Su_Ulasimi_Var_Mi" value="Hayır" className="w-4 h-4 text-primary bg-transparent border-gray-300 focus:ring-primary" required />
+                        <input type="radio" name="Su_Ulasimi_Var_Mi" value="Hayır" className="w-5 h-5 text-primary bg-transparent border-gray-300 focus:ring-primary" required />
                         <span style={{ color: 'var(--text-primary)' }}>Hayır</span>
                       </label>
                     </div>
                   </div>
-                  <button type="submit" className="w-full py-3.5 rounded-xl bg-linear-to-r from-primary to-primary-dark text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300">
+                  <button type="submit" className="w-full py-4 mt-6 rounded-xl bg-linear-to-r from-primary to-primary-dark text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 text-lg">
                     Gönder
                   </button>
                 </form>
