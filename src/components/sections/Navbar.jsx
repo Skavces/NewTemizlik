@@ -4,9 +4,12 @@ import ShinyText from '../reactbits/ShinyText'
 import { useTheme } from '../../context/useTheme'
 
 const navLinks = [
+  { label: 'Ana Sayfa', href: '#' },
   { label: 'Hizmetler', href: '#hizmetler' },
   { label: 'Hakkımızda', href: '#hakkimizda' },
   { label: 'Süreç', href: '#surec' },
+  { label: 'Referanslar', href: '#referanslar' },
+  { label: 'S.S.S', href: '#sss' },
   { label: 'İletişim', href: '#iletisim' },
 ]
 
@@ -49,7 +52,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-medium transition-colors duration-300 relative
+                className="font-medium whitespace-nowrap transition-colors duration-300 relative
                   after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
                   after:bg-linear-to-r after:from-primary after:to-accent after:rounded-full
                   after:transition-all after:duration-300 hover:after:w-full"
@@ -80,15 +83,6 @@ export default function Navbar() {
                 <Moon className="w-4 h-4" style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }} />
               )}
             </button>
-
-            <a
-              href="#iletisim"
-              className="px-5 py-2.5 rounded-xl bg-linear-to-r from-primary to-primary-dark text-white font-semibold
-                shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30
-                hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <ShinyText speed={3}>✨ Teklif Al</ShinyText>
-            </a>
           </div>
 
           {/* Mobile buttons */}

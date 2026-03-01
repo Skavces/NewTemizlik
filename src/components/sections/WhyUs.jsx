@@ -14,10 +14,10 @@ const highlights = [
 ]
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Tamamlanan Proje' },
-  { value: 10, suffix: '+', label: 'Yıl Deneyim' },
-  { value: 100, suffix: '%', label: 'Müşteri Memnuniyeti' },
-  { value: 50, suffix: '+', label: 'Uzman Personel' },
+  { value: 195, suffix: '+', label: 'Tamamlanan Proje' },
+  { value: 5, suffix: '+', label: 'Yıl Deneyim' },
+  { value: 95, suffix: '%', label: 'Müşteri Memnuniyeti' },
+  { value: 17, suffix: '+', label: 'Uzman Personel' },
 ]
 
 export default function WhyUs() {

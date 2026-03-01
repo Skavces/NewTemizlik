@@ -9,12 +9,8 @@ const base = import.meta.env.BASE_URL
 
 const mediaItems = [
   { type: 'video', src: `${base}media-7.mp4` },
-  { type: 'image', src: `${base}media-1.jpeg` },
-  { type: 'image', src: `${base}media-2.jpeg` },
-  { type: 'video', src: `${base}media-3.mp4` },
-  { type: 'video', src: `${base}media-4.mp4` },
-  { type: 'video', src: `${base}media-5.mp4` },
-  { type: 'video', src: `${base}media-6.mp4` },
+  { type: 'video', src: `${base}media-8.mp4` },
+  { type: 'video', src: `${base}media-5.mp4` }
 ]
 
 const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
@@ -131,29 +127,27 @@ export default function Hero() {
         {/* Text – centered */}
         <div className="text-center max-w-3xl mx-auto mb-12">
 
-          <BlurText
-            text="Profesyonel Temizlik Çözümleri"
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 text-white drop-shadow-lg"
-            delay={120}
-            animateBy="words"
-          />
-
-          <AnimatedContent distance={30} duration={0.8} delay={0.6}>
-            <p className="text-lg md:text-xl mb-4 leading-relaxed">
-              <GradientText
-                colors={['#1F6EC7', '#7FBF3A', '#1F6EC7', '#7FBF3A']}
-                animationSpeed={4}
-                className="text-lg md:text-xl font-semibold"
-              >
-                Güneş Paneli • Robotik Çözümler • Endüstriyel Bakım
-              </GradientText>
-            </p>
+          <AnimatedContent distance={40} duration={0.8} delay={0.2}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-black text-white leading-[1.1] mb-6 drop-shadow-2xl" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
+              Türkiye Geneline Profesyonel Güneş Paneli Hizmetleri
+            </h1>
           </AnimatedContent>
 
-          <AnimatedContent distance={20} duration={0.6} delay={0.8}>
-            <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto text-white/80 drop-shadow">
-              Güneş paneli temizliğinden robotik çözümlere, endüstriyel bakım hizmetlerinden izleme sistemlerine kadar
-              kapsamlı ve güvenilir temizlik hizmetleri sunuyoruz.
+          <AnimatedContent distance={30} duration={0.8} delay={0.6}>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+              <GradientText
+                colors={['#7FBF3A', '#4ADE80', '#1F6EC7', '#38BDF8', '#7FBF3A']}
+                animationSpeed={5}
+                className="inline-block py-2"
+              >
+                Enerji verimliliğinizi zirveye taşıyın.
+              </GradientText>
+            </div>
+          </AnimatedContent>
+
+          <AnimatedContent distance={30} duration={0.8} delay={0.8}>
+            <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-3xl mx-auto text-white/80 drop-shadow">
+              Güneş paneli temizliğinden robotik çözümlere, endüstriyel bakım hizmetlerinden izleme sistemlerine kadar kapsamlı ve güvenilir destek sunuyoruz.
             </p>
           </AnimatedContent>
 
@@ -173,7 +167,8 @@ export default function Hero() {
                 href="#hizmetler"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg
                   hover:-translate-y-1 transition-all duration-300
-                  border border-white/30 text-white/90 hover:bg-white/10"
+                  border-2 border-accent text-accent hover:bg-accent hover:text-white
+                  shadow-[0_0_15px_rgba(127,191,58,0.3)] hover:shadow-[0_0_25px_rgba(127,191,58,0.6)]"
               >
                 Hizmetleri İncele
               </a>
@@ -183,9 +178,9 @@ export default function Hero() {
           <AnimatedContent distance={15} duration={0.5} delay={1.2}>
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/60">
               {[
-                { label: '500+ Proje', color: 'bg-accent' },
-                { label: '10+ Yıl Deneyim', color: 'bg-primary' },
-                { label: '%100 Memnuniyet', color: 'bg-accent' },
+                { label: '195+ Proje', color: 'bg-accent' },
+                { label: '5+ Yıl Deneyim', color: 'bg-primary' },
+                { label: '%95 Memnuniyet', color: 'bg-accent' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className={`w-2 h-2 rounded-full ${item.color}`} />
@@ -200,17 +195,17 @@ export default function Hero() {
       {/* Prev/Next arrows – positioned on the section */}
       <button
         onClick={prev}
-        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/15"
+        className="absolute left-2 sm:left-8 bottom-32 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 sm:bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/40 sm:hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/10 sm:border-white/15"
         aria-label="Önceki"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/15"
+        className="absolute right-2 sm:right-8 bottom-32 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 sm:bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/40 sm:hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/10 sm:border-white/15"
         aria-label="Sonraki"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Dots */}

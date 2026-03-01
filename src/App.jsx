@@ -4,7 +4,8 @@ import Hero from './components/sections/Hero'
 import Services from './components/sections/Services'
 import WhyUs from './components/sections/WhyUs'
 import Process from './components/sections/Process'
-import CTABand from './components/sections/CTABand'
+import Referanslar from './components/sections/Referanslar'
+import SSS from './components/sections/SSS'
 import Contact from './components/sections/Contact'
 import Footer from './components/sections/Footer'
 import WhatsAppButton from './components/ui/WhatsAppButton'
@@ -18,7 +19,8 @@ function App() {
         <Services />
         <WhyUs />
         <Process />
-        <CTABand />
+        <Referanslar />
+        <SSS />
         <Contact />
         <Footer />
         <WhatsAppButton />

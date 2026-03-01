@@ -1,4 +1,4 @@
-import { SunMedium, MonitorCog, Bot, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import SpotlightCard from '../reactbits/SpotlightCard'
 import AnimatedContent from '../reactbits/AnimatedContent'
 import GradientText from '../reactbits/GradientText'
@@ -6,28 +6,28 @@ import { useTheme } from '../../context/useTheme'
 
 const services = [
   {
-    icon: SunMedium,
     title: 'Panel Temizlik Hizmeti',
     description:
       'Güneş panellerinizin verimliliğini en üst düzeyde tutmak için profesyonel ve çevre dostu temizlik çözümleri sunuyoruz. Enerji kaybınızı minimize edin.',
     gradient: 'from-yellow-400 to-orange-500',
     spotlightColor: 'rgba(250, 204, 21, 0.15)',
+    img: 'WhatsApp Image 2026-03-01 at 05.11.52.jpeg',
   },
   {
-    icon: MonitorCog,
     title: 'Bakım & Onarım İzleme',
     description:
       'Gelişmiş izleme teknolojileri ile sistemlerinizin performansını sürekli takip ediyor, bakım ve onarım süreçlerini optimize ediyoruz.',
     gradient: 'from-primary to-blue-400',
     spotlightColor: 'rgba(31, 110, 199, 0.2)',
+    img: 'man-with-white-helmet-near-solar-panel.jpg',
   },
   {
-    icon: Bot,
-    title: 'Temizlik Robot Makina Satış',
+    title: 'Temizlik Robot Makina Satışı',
     description:
       'Son teknoloji robotik temizlik makinelerimiz ile otonom, hızlı ve etkili temizlik çözümlerini işletmenize kazandırın.',
     gradient: 'from-accent to-emerald-400',
     spotlightColor: 'rgba(127, 191, 58, 0.2)',
+    img: 'WhatsApp Image 2026-03-01 at 05.11.52 (1).jpeg',
   },
 ]
 
@@ -71,24 +71,31 @@ export default function Services() {
               delay={index * 0.15}
             >
               <SpotlightCard
-                className="h-full flex flex-col"
+                className="h-full flex flex-col pt-0 px-0 pb-6 overflow-hidden"
                 spotlightColor={service.spotlightColor}
               >
-                <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${service.gradient} flex items-center justify-center mb-5 shadow-lg`}>
-                  <service.icon className="w-7 h-7 text-white" />
+                {/* Service Image */}
+                <div className="w-full h-48 sm:h-56 bg-gray-900/10 dark:bg-gray-100/5 mb-6 overflow-hidden rounded-t-2xl">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}${service.img}`} 
+                    alt={service.title}
+                    className="w-full h-full text-[0px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
-                <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{service.title}</h3>
-                <p className="leading-relaxed grow" style={{ color: 'var(--text-muted)' }}>{service.description}</p>
+                <div className="px-6 flex flex-col grow">
+                  <h3 className="text-xl font-bold mb-3 mt-2" style={{ color: 'var(--text-primary)' }}>{service.title}</h3>
+                  <p className="leading-relaxed grow" style={{ color: 'var(--text-muted)' }}>{service.description}</p>
 
-                <a
-                  href="#iletisim"
-                  className="inline-flex items-center gap-2 text-primary font-semibold mt-6
-                    group hover:gap-3 transition-all duration-300"
-                >
-                  Detay
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <a
+                    href="#iletisim"
+                    className="inline-flex items-center gap-2 text-primary font-semibold mt-6
+                      group/link hover:gap-3 transition-all duration-300"
+                  >
+                    Detay
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </SpotlightCard>
             </AnimatedContent>
           ))}
