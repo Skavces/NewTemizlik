@@ -4,7 +4,6 @@ import BlurText from '../reactbits/BlurText'
 import GradientText from '../reactbits/GradientText'
 import AnimatedContent from '../reactbits/AnimatedContent'
 
-
 const base = import.meta.env.BASE_URL
 
 const mediaItems = [
@@ -127,11 +126,16 @@ export default function Hero() {
 
       <div className="relative z-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
         {/* Text – centered */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-5xl mx-auto mb-12 w-full flex flex-col items-center">
 
-          <AnimatedContent distance={40} duration={0.8} delay={0.2}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-black text-white leading-[1.1] mb-6 drop-shadow-2xl" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
-              Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri
+          <AnimatedContent distance={40} duration={0.8} delay={0.2} className="w-full flex flex-col items-center justify-center">
+            {/* SEO Odaklı Yeni H1 Başlığı */}
+            <h1 className="flex flex-col items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] md:leading-[1.2] mb-6 drop-shadow-2xl max-w-[100vw]" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
+              <span>New Temizlik</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent whitespace-nowrap my-1 md:my-2">
+                Soma Güneş Enerji Santrali
+              </span>
+              <span className="whitespace-nowrap">Temizliği ve Çözümleri</span>
             </h1>
           </AnimatedContent>
 
@@ -148,8 +152,9 @@ export default function Hero() {
           </AnimatedContent>
 
           <AnimatedContent distance={30} duration={0.8} delay={0.8}>
+            {/* Destekleyici ve B2B Odaklı H2 Alt Başlığı */}
             <h2 className="text-lg md:text-xl mb-8 leading-relaxed max-w-3xl mx-auto text-white/80 drop-shadow">
-              Soma ve Çevresinde Minimum Verim Kaybı, Maksimum Enerji Üretimi İçin Mühendislik Çözümleri
+              Otonom temizlik robotları, profesyonel yıkama makineleri ve termal analiz destekli GES bakım hizmetleriyle verimlilik kayıplarını sıfırlayın.
             </h2>
           </AnimatedContent>
 
