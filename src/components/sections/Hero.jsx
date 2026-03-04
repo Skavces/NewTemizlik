@@ -98,7 +98,7 @@ export default function Hero() {
                 className="w-full h-full object-cover"
                 muted
                 playsInline
-                preload={index === current ? 'auto' : 'none'}
+                preload={index === current ? 'auto' : 'metadata'}
                 autoPlay={index === current}
                 onEnded={() => {
                   if (index === current) next()
