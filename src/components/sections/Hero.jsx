@@ -124,55 +124,56 @@ export default function Hero() {
         <ParticleField />
       </div>
 
-      <div className="relative z-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
+      <div className="relative z-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-16 w-full">
         {/* Text – centered */}
-        <div className="text-center max-w-5xl mx-auto mb-12 w-full flex flex-col items-center">
+        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-12 w-full flex flex-col items-center">
 
           <AnimatedContent distance={40} duration={0.8} delay={0.2} className="w-full flex flex-col items-center justify-center">
             {/* SEO Odaklı Yeni H1 Başlığı */}
-            <h1 className="flex flex-col items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] md:leading-[1.2] mb-6 drop-shadow-2xl max-w-[100vw]" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
+            <h1 className="flex flex-col items-center justify-center text-[1.9rem] sm:text-4xl md:text-5xl lg:text-[4.5rem] font-black text-white leading-[1.15] md:leading-[1.2] mb-4 sm:mb-6 drop-shadow-2xl max-w-[100vw]" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
               <span>New Temizlik</span>
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent whitespace-nowrap my-1 md:my-2">
+              <span className="text-white my-1 md:my-2 text-center">
                 Soma Güneş Enerji Santrali
               </span>
-              <span className="whitespace-nowrap">Temizliği ve Çözümleri</span>
+              <span className="text-center">Temizliği ve Çözümleri</span>
             </h1>
           </AnimatedContent>
 
           <AnimatedContent distance={30} duration={0.8} delay={0.6}>
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-6 leading-snug" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
               <GradientText
                 colors={['#7FBF3A', '#4ADE80', '#1F6EC7', '#38BDF8', '#7FBF3A']}
                 animationSpeed={5}
-                className="inline-block py-2"
+                className="inline-block py-1"
               >
-                Enerji verimliliğinizi zirveye taşıyın.
+                Kirli paneller üretim kaybına neden olur.{' '}
+                Profesyonel temizlik ve bakım ile GES veriminizi koruyun.
               </GradientText>
             </div>
           </AnimatedContent>
 
           <AnimatedContent distance={30} duration={0.8} delay={0.8}>
             {/* Destekleyici ve B2B Odaklı H2 Alt Başlığı */}
-            <h2 className="text-lg md:text-xl mb-8 leading-relaxed max-w-3xl mx-auto text-white/80 drop-shadow">
-              Otonom temizlik robotları, profesyonel yıkama makineleri ve termal analiz destekli GES bakım hizmetleriyle verimlilik kayıplarını sıfırlayın.
+            <h2 className="text-[0.9rem] sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed max-w-3xl mx-auto text-white/80 drop-shadow px-4">
+              Otonom temizlik robotları, profesyonel yıkama ekipmanları ve termal analiz destekli bakım hizmetleri ile GES sahalarında düzenli temizlik ve performans takibi sağlıyoruz.
             </h2>
           </AnimatedContent>
 
           <AnimatedContent distance={20} duration={0.6} delay={1}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-10 w-full sm:w-auto px-4 sm:px-0">
               <a
                 href="#iletisim"
-                className="group inline-flex items-center justify-center px-8 py-4 rounded-xl
-                  bg-linear-to-r from-primary to-primary-dark text-white font-semibold text-lg
+                className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl
+                  bg-linear-to-r from-primary to-primary-dark text-white font-semibold text-base sm:text-lg
                   shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40
                   hover:-translate-y-1 transition-all duration-300"
               >
-                Ücretsiz Verimlilik Kaybı Analizi Talep Et
+                Ücretsiz Keşif Talep Et
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#hizmetler"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg
                   hover:-translate-y-1 transition-all duration-300
                   border-2 border-accent text-accent hover:bg-accent hover:text-white
                   shadow-[0_0_15px_rgba(127,191,58,0.3)] hover:shadow-[0_0_25px_rgba(127,191,58,0.6)]"
@@ -183,11 +184,11 @@ export default function Hero() {
           </AnimatedContent>
 
           <AnimatedContent distance={15} duration={0.5} delay={1.2}>
-            <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/60">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-white/60">
               {[
-                { label: '195+ Proje', color: 'bg-accent' },
-                { label: '5+ Yıl Deneyim', color: 'bg-primary' },
-                { label: '%95 Memnuniyet', color: 'bg-accent' },
+                { label: '195+ Tamamlanan Proje', color: 'bg-accent' },
+                { label: '5+ Yıllık Saha Deneyimi', color: 'bg-primary' },
+                { label: '%95 Müşteri Memnuniyeti', color: 'bg-accent' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className={`w-2 h-2 rounded-full ${item.color}`} />

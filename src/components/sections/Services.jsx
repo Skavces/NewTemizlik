@@ -6,31 +6,31 @@ import { useTheme } from '../../context/useTheme'
 
 const services = [
   {
-    title: 'Profesyonel Güneş Paneli Yıkama',
+    title: 'Panel Temizlik Hizmeti',
     description:
-      'Saf su sistemleri ve termal kamera destekli mikrokırık analizleriyle %15\'e varan verim artışı sağlıyor, GES santralinizin ROI süresini kısaltıyoruz.',
+      'Özel ekipmanlar ve uygun temizlik yöntemleri kullanarak güneş panellerinin yüzey temizliğini gerçekleştiriyoruz. Düzenli temizlik, panel veriminin korunmasına ve üretim kayıplarının azaltılmasına yardımcı olur.',
     gradient: 'from-yellow-400 to-orange-500',
     spotlightColor: 'rgba(250, 204, 21, 0.15)',
     img: 'endustriyel-gunes-paneli-yikama.jpeg',
-    alt: 'Soma GES santralinde termal analizli ve saf su destekli endüstriyel güneş paneli profesyonel yıkama'
+    alt: 'GES sahasında profesyonel güneş paneli temizlik çalışması'
   },
   {
-    title: 'Santral Bakım & Performans İzleme',
+    title: 'Panel Bakım & Onarım İzleme',
     description:
-      'Anlık performans verilerini analiz ederek potansiyel arızaları önceden tespit ediyor, üretim kaybını tamamen ortadan kaldırıyoruz.',
+      'Santral üretim verilerini inceleyerek performans düşüşlerini tespit ediyoruz. Planlı bakım ve kontroller ile sistemin düzenli ve verimli çalışmasına destek oluyoruz.',
     gradient: 'from-primary to-blue-400',
     spotlightColor: 'rgba(31, 110, 199, 0.2)',
     img: 'soma-gunes-enerjisi-santrali-uzman-bakim.jpg',
-    alt: 'Güneş enerjisi santrali uzman bakım, onarım ve anlık performans izleme mühendisliği'
+    alt: 'Güneş enerjisi santralinde bakım ve performans kontrol çalışması'
   },
   {
-    title: 'Otonom Panel Temizlik Robotu Satışı',
+    title: 'Temizlik Robot Makina Satışı',
     description:
-      'İnsan gücüne bağımlılığı bitiren, sensör destekli endüstriyel yıkama makineleri ile büyük ölçekli ve otonom temizlik yatırımları.',
+      'Büyük ölçekli güneş enerji santralleri için panel temizlik robotları sunuyoruz. Otomatik temizlik sistemleri ile bakım süreçleri hızlanır ve iş gücü ihtiyacı azalır.',
     gradient: 'from-accent to-emerald-400',
     spotlightColor: 'rgba(127, 191, 58, 0.2)',
     img: 'soma-ges-otonom-temizlik-robotu.jpeg',
-    alt: 'Manisa Soma GES santrali otonom temizlik robotu ve üretim verimlilik analizi'
+    alt: 'GES sahasında kullanılan panel temizlik robotu'
   },
 ]
 
@@ -39,7 +39,7 @@ export default function Services() {
   const isDark = theme === 'dark'
 
   return (
-    <section id="hizmetler" aria-labelledby="services-title" className="relative min-h-screen flex flex-col justify-center py-24 md:py-32 overflow-hidden">
+    <section id="hizmetler" aria-labelledby="services-title" className="relative w-full py-8 md:py-10 scroll-mt-16 md:scroll-mt-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className={`absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full blur-[120px] ${isDark ? 'bg-accent/8' : 'bg-accent/5'}`} />
@@ -48,18 +48,18 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4"
               style={{ background: 'var(--badge-bg)', border: '1px solid var(--badge-border)' }}>
               <span className="text-primary text-sm font-medium">Hizmetlerimiz</span>
             </div>
             <h2 id="services-title" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               <GradientText colors={isDark ? ['#fff', '#94a3b8', '#fff'] : ['#0f172a', '#1F6EC7', '#0f172a']} animationSpeed={6}>
-                GES Yatırımcıları İçin Uçtan Uca Bakım Hizmetleri
+                GES Bakım ve Panel Temizlik Hizmetleri
               </GradientText>
             </h2>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Endüstriyel temizlik ve bakım alanında uçtan uca otonom ve profesyonel mühendislik çözümleri sunuyoruz.
+              Güneş enerji santrallerinde panel temizliği, bakım ve performans takibi hizmetleri sunuyoruz. Düzenli bakım ile üretim kayıplarını azaltıyoruz.
             </p>
             <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-primary to-accent mx-auto" />
           </div>
@@ -78,7 +78,7 @@ export default function Services() {
                 spotlightColor={service.spotlightColor}
               >
                 {/* Service Image */}
-                <div className="w-full h-48 sm:h-56 bg-gray-900/10 dark:bg-gray-100/5 mb-6 overflow-hidden rounded-t-2xl">
+                <div className="w-full h-36 sm:h-44 bg-gray-900/10 dark:bg-gray-100/5 mb-4 overflow-hidden rounded-t-2xl">
                   <img 
                     src={`${import.meta.env.BASE_URL}${service.img}`} 
                     alt={service.alt || service.title}
