@@ -144,20 +144,7 @@ export default function KirProblemleri() {
             </div>
           </AnimatedContent>
         </div>
-
-
-        {/* CTA */}
-        <AnimatedContent distance={30} duration={0.6} delay={0.3}>
-          <div className="mt-14 text-center">
-            <a
-              href="#iletisim"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
-                bg-linear-to-r from-primary to-accent hover:opacity-90 transition-opacity duration-300 shadow-lg"
-            >
-              Ücretsiz Keşif Talep Et
-            </a>
-          </div>
-        </AnimatedContent>
+        
       </div>
     </section>
   )
