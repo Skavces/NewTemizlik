@@ -25,7 +25,7 @@ export default function WhyUs() {
   const isDark = theme === 'dark'
 
   return (
-    <section id="hakkimizda" className="relative min-h-screen flex flex-col justify-center py-24 md:py-32">
+    <section id="hakkimizda" className="relative w-full pt-4 md:pt-8 pb-20 md:pb-28 scroll-mt-16 md:scroll-mt-20">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className={`absolute top-20 right-0 w-[400px] h-[400px] rounded-full blur-[100px] ${isDark ? 'bg-accent/5' : 'bg-accent/4'}`} />

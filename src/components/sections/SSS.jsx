@@ -37,7 +37,7 @@ export default function SSS() {
   }
 
   return (
-    <section id="sss" className="relative min-h-screen flex flex-col justify-center py-24 md:py-32">
+    <section id="sss" className="relative w-full pt-6 md:pt-10 pb-20 md:pb-28 scroll-mt-16 md:scroll-mt-20">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className={`absolute top-40 right-10 w-[400px] h-[400px] rounded-full blur-[120px] ${isDark ? 'bg-primary/5' : 'bg-primary/5'}`} />

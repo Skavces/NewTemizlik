@@ -16,7 +16,7 @@ export default function KirProblemleri() {
   return (
     <section
       id="kir-problemleri"
-      className="relative min-h-screen flex flex-col justify-center py-24 md:py-32 scroll-mt-16 md:scroll-mt-20"
+      className="relative w-full scroll-mt-16 md:scroll-mt-20"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -24,19 +24,19 @@ export default function KirProblemleri() {
         <div className={`absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[120px] ${isDark ? 'bg-accent/5' : 'bg-accent/3'}`} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-10 md:pt-12 pb-10 md:pb-14 w-full">
         {/* Header */}
         <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3"
               style={{ background: 'var(--badge-bg)', border: '1px solid var(--badge-border)' }}
             >
               <span className="text-primary text-sm font-medium">Panel Kirliliği</span>
             </div>
             <h2
               id="kir-problemleri-title"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3"
               style={{ color: 'var(--text-primary)' }}
             >
               <GradientText
@@ -49,20 +49,20 @@ export default function KirProblemleri() {
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Panel kirlenmenin nedenleri, sonuçları ve profesyonel temizlik yöntemleri.
             </p>
-            <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-primary to-accent mx-auto" />
+            <div className="mt-3 h-1 w-16 rounded-full bg-linear-to-r from-primary to-accent mx-auto" />
           </div>
         </AnimatedContent>
 
         {/* Stats */}
         <AnimatedContent distance={40} duration={0.7} delay={0.1}>
-          <div className="grid grid-cols-3 gap-4 md:gap-6 mb-14">
+          <div className="grid grid-cols-3 gap-4 md:gap-6 mb-8">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center p-5 md:p-6 rounded-2xl backdrop-blur-sm theme-card flex flex-col justify-center gap-2">
-                <p className="text-sm md:text-base font-semibold" style={{ color: 'var(--text-primary)' }}>{stat.sub}</p>
+              <div key={i} className="text-center p-4 md:p-5 rounded-2xl backdrop-blur-sm theme-card flex flex-col justify-center gap-1">
+                <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{stat.sub}</p>
                 <div className="text-3xl md:text-4xl font-extrabold text-primary">
                   <CountUp to={stat.value} duration={2.5} delay={0.3} suffix={stat.suffix} prefix={stat.prefix} className="tabular-nums" />
                 </div>
-                <p className="text-sm md:text-base font-semibold" style={{ color: 'var(--text-primary)' }}>{stat.label}</p>
+                <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{stat.label}</p>
               </div>
             ))}
           </div>
@@ -72,7 +72,7 @@ export default function KirProblemleri() {
         <div className="grid md:grid-cols-3 gap-5 md:gap-6">
 
           {/* Kir Problemleri */}
-          <AnimatedContent distance={30} duration={0.6} delay={0}>
+          <AnimatedContent distance={30} duration={0.6} delay={0} className="h-full">
             <div
               className="rounded-2xl p-6 md:p-7 h-full transition-all duration-300 theme-card"
               style={{ borderTop: '3px solid var(--color-primary)' }}
@@ -98,7 +98,7 @@ export default function KirProblemleri() {
           </AnimatedContent>
 
           {/* Neden Yıkanmalı */}
-          <AnimatedContent distance={30} duration={0.6} delay={0.1}>
+          <AnimatedContent distance={30} duration={0.6} delay={0.1} className="h-full">
             <div
               className="rounded-2xl p-6 md:p-7 h-full transition-all duration-300 theme-card"
               style={{ borderTop: '3px solid var(--color-accent)' }}
@@ -121,7 +121,7 @@ export default function KirProblemleri() {
           </AnimatedContent>
 
           {/* Nasıl Temizlenmeli */}
-          <AnimatedContent distance={30} duration={0.6} delay={0.2}>
+          <AnimatedContent distance={30} duration={0.6} delay={0.2} className="h-full">
             <div
               className="rounded-2xl p-6 md:p-7 h-full transition-all duration-300 theme-card"
               style={{ borderTop: '3px solid var(--color-primary)' }}
@@ -143,7 +143,7 @@ export default function KirProblemleri() {
             </div>
           </AnimatedContent>
         </div>
-        
+
       </div>
     </section>
   )

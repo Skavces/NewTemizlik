@@ -15,7 +15,7 @@ export default function Contact() {
   const isDark = theme === 'dark'
 
   return (
-    <section id="iletisim" className="relative min-h-screen flex flex-col justify-center py-24 md:py-32">
+    <section id="iletisim" className="relative w-full pt-4 md:pt-8 pb-20 md:pb-28 scroll-mt-16 md:scroll-mt-20">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className={`absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] ${isDark ? 'bg-primary/5' : 'bg-primary/3'}`} />

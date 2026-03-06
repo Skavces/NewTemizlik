@@ -36,7 +36,7 @@ export default function Process() {
   const isDark = theme === 'dark'
 
   return (
-    <section id="surec" className="relative min-h-screen flex flex-col justify-center py-24 md:py-32">
+    <section id="surec" className="relative w-full min-h-dvh flex flex-col justify-center pb-24 sm:pb-32 scroll-mt-16 md:scroll-mt-20">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] ${isDark ? 'bg-primary/3' : 'bg-primary/2'}`} />

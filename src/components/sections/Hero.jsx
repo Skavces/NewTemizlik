@@ -70,7 +70,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden theme-transition"
+      className="relative w-full min-h-dvh flex flex-col justify-center overflow-hidden scroll-mt-16 md:scroll-mt-20"
     >
       {/* Full-screen background media */}
       <div className="absolute inset-0 z-0">
@@ -127,9 +127,9 @@ export default function Hero() {
         <ParticleField />
       </div>
 
-      <div className="relative z-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-16 w-full">
+      <div className="relative z-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 w-full">
         {/* Text – centered */}
-        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-12 w-full flex flex-col items-center">
+        <div className="text-center max-w-5xl mx-auto mb-4 sm:mb-6 w-full flex flex-col items-center">
 
           <AnimatedContent distance={40} duration={0.8} delay={0.2} className="w-full flex flex-col items-center justify-center">
             {/* SEO Odaklı Yeni H1 Başlığı */}
@@ -206,21 +206,21 @@ export default function Hero() {
       {/* Prev/Next arrows – positioned on the section */}
       <button
         onClick={prev}
-        className="absolute left-2 sm:left-8 bottom-32 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 sm:bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/40 sm:hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/10 sm:border-white/15"
+        className="absolute left-2 sm:left-8 bottom-20 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 sm:bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/40 sm:hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/10 sm:border-white/15"
         aria-label="Önceki"
       >
         <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={next}
-        className="absolute right-2 sm:right-8 bottom-32 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 sm:bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/40 sm:hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/10 sm:border-white/15"
+        className="absolute right-2 sm:right-8 bottom-20 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 sm:bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/40 sm:hover:bg-white/25 transition-all duration-200 cursor-pointer border border-white/10 sm:border-white/15"
         aria-label="Sonraki"
       >
         <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-4 flex gap-2.5">
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-4 flex gap-2.5">
         {mediaItems.map((_, index) => (
           <button
             key={index}
@@ -236,7 +236,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <a href="#hizmetler" className="absolute bottom-6 left-1/2 -translate-x-1/2 z-4 flex flex-col items-center gap-1 text-white/60 hover:text-accent transition-colors" aria-label="Aşağı kaydır">
+      <a href="#hizmetler" className="absolute bottom-10 left-1/2 -translate-x-1/2 z-4 flex flex-col items-center gap-1 text-white/60 hover:text-accent transition-colors" aria-label="Aşağı kaydır">
         <span className="text-xs font-medium">Keşfet</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
