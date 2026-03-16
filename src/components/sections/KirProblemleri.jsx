@@ -96,9 +96,10 @@ export default function KirProblemleri() {
             {stats.map((s, i) => (
               <div
                 key={i}
+                className={i < 2 ? 'border-b md:border-b-0 md:border-r' : ''}
                 style={{
-                  padding: '44px 32px',
-                  borderRight: i < 2 ? '1px solid var(--border-subtle)' : 'none',
+                  padding: '36px 28px',
+                  borderColor: 'var(--border-subtle)',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
@@ -136,7 +137,7 @@ export default function KirProblemleri() {
       </div>
 
       {/* ── Content: alternating image + text ── */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12" style={{ padding: '80px 20px 96px' }}>
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12" style={{ paddingTop: '80px', paddingBottom: '96px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
           {cards.map((card, i) => {
             const isReverse = i % 2 === 1
@@ -159,7 +160,7 @@ export default function KirProblemleri() {
                   </div>
                   {/* Number badge */}
                   <div style={{
-                    position: 'absolute', top: '-20px', right: '-20px',
+                    position: 'absolute', top: '-20px', right: '8px',
                     width: '56px', height: '56px', borderRadius: '50%',
                     background: '#F4C430',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',

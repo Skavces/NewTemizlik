@@ -119,7 +119,7 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "'Rajdhani', sans-serif",
-                fontSize: 'clamp(46px, 7vw, 88px)',
+                fontSize: 'clamp(36px, 7vw, 88px)',
                 fontWeight: 700,
                 lineHeight: 1.05,
                 letterSpacing: '0.03em',
@@ -200,7 +200,7 @@ export default function Hero() {
       <button
         onClick={prev}
         aria-label="Önceki"
-        className="absolute z-[3] flex items-center justify-center transition-all duration-200 cursor-pointer"
+        className="hidden md:flex absolute z-[3] items-center justify-center transition-all duration-200 cursor-pointer"
         style={{ left: '16px', top: '50%', transform: 'translateY(-50%)', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', background: 'rgba(0,0,0,0.35)', color: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(4px)' }}
         onMouseEnter={(e) => { e.currentTarget.style.background = '#7FBF3A'; e.currentTarget.style.borderColor = '#7FBF3A'; e.currentTarget.style.color = '#fff' }}
         onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.35)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
@@ -212,7 +212,7 @@ export default function Hero() {
       <button
         onClick={next}
         aria-label="Sonraki"
-        className="absolute z-[3] flex items-center justify-center transition-all duration-200 cursor-pointer"
+        className="hidden md:flex absolute z-[3] items-center justify-center transition-all duration-200 cursor-pointer"
         style={{ right: '16px', top: '50%', transform: 'translateY(-50%)', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', background: 'rgba(0,0,0,0.35)', color: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(4px)' }}
         onMouseEnter={(e) => { e.currentTarget.style.background = '#7FBF3A'; e.currentTarget.style.borderColor = '#7FBF3A'; e.currentTarget.style.color = '#fff' }}
         onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.35)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
@@ -222,8 +222,8 @@ export default function Hero() {
 
       {/* Dot indicators — bottom center */}
       <div
-        className="absolute z-[3] flex items-center gap-2"
-        style={{ bottom: '120px', left: '50%', transform: 'translateX(-50%)' }}
+        className="absolute z-[3] flex items-center gap-2 bottom-[300px] md:bottom-[120px]"
+        style={{ left: '50%', transform: 'translateX(-50%)' }}
       >
         {mediaItems.map((_, i) => (
           <button

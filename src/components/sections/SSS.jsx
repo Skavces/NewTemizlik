@@ -61,7 +61,7 @@ export default function SSS() {
                 style={{ borderBottom: isOpen ? '4px solid #7FBF3A' : '4px solid transparent', cursor: 'pointer' }}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
-                <div className="flex items-center justify-between p-6 select-none">
+                <div className="flex items-center justify-between p-4 sm:p-6 select-none">
                   <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', paddingRight: '20px', lineHeight: 1.45, fontFamily: "'Poppins', sans-serif" }}>
                     {faq.question}
                   </h3>
@@ -79,9 +79,9 @@ export default function SSS() {
 
                 <div
                   className="overflow-hidden transition-all duration-300"
-                  style={{ maxHeight: isOpen ? '400px' : '0' }}
+                  style={{ maxHeight: isOpen ? '600px' : '0' }}
                 >
-                  <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', padding: '0 24px 24px', borderTop: '1px solid var(--border-subtle)', paddingTop: '16px' }}>
+                  <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', padding: '16px 16px 20px', borderTop: '1px solid var(--border-subtle)' }}>
                     {faq.answer}
                   </p>
                 </div>

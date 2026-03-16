@@ -69,7 +69,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="section-card p-8">
+          <div className="section-card p-5 sm:p-8">
             <h3 className="section-heading" style={{ fontSize: '26px', marginBottom: '24px' }}>
               Mesaj Gönderin
             </h3>
@@ -83,7 +83,7 @@ export default function Contact() {
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                     Ad Soyad *
@@ -137,7 +137,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                     Panel Adeti *
@@ -196,8 +196,8 @@ export default function Contact() {
 
         {/* Map */}
         <div
-          className="overflow-hidden"
-          style={{ height: '380px', borderRadius: '10px', boxShadow: 'var(--shadow-md)' }}
+          className="overflow-hidden h-56 sm:h-72 md:h-96"
+          style={{ borderRadius: '10px', boxShadow: 'var(--shadow-md)' }}
         >
           <iframe
             title="Soma, Manisa Harita"

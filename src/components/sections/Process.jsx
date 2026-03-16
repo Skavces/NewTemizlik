@@ -241,18 +241,6 @@ export default function Process() {
                       style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' }}
                     />
                   </div>
-                  <div style={{
-                    position: 'absolute', top: '-18px', left: '-18px',
-                    width: '52px', height: '52px', borderRadius: '50%',
-                    background: '#F4C430',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '18px',
-                    color: '#1a1a1a',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.22)',
-                    zIndex: 1,
-                  }}>
-                    {step.num}
-                  </div>
                 </div>
                 <div style={{ paddingTop: '14px' }}>
                   <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: step.color, display: 'block', marginBottom: '5px' }}>
