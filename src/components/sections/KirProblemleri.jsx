@@ -1,150 +1,224 @@
-import AnimatedContent from '../reactbits/AnimatedContent'
-import GradientText from '../reactbits/GradientText'
-import CountUp from '../reactbits/CountUp'
-import { useTheme } from '../../context/useTheme'
+import { TrendingDown, Flame, RefreshCw, AlertTriangle, Droplets, Wrench } from 'lucide-react'
+
+const base = import.meta.env.BASE_URL
 
 const stats = [
-  { value: 30, prefix: '%', label: 'Verim Kaybı', sub: 'Temizlenmeyen panellerde' },
-  { value: 40, prefix: '%', label: 'Daha Hızlı Kirlenme', sub: 'Tarım & sanayi bölgelerinde' },
-  { value: 2, suffix: 'x', label: 'Yıllık Temizlik', sub: 'Önerilen minimum sıklık' },
+  {
+    icon: TrendingDown,
+    value: '%30',
+    label: 'Verim Kaybı',
+    sub: 'Temizlenmeyen panellerde ortalama kayıp',
+    color: '#e74c3c',
+  },
+  {
+    icon: Flame,
+    value: '%40',
+    label: 'Daha Hızlı Kirlenme',
+    sub: 'Tarım & sanayi bölgelerindeki santrallerde',
+    color: '#f39c12',
+  },
+  {
+    icon: RefreshCw,
+    value: '2x',
+    label: 'Yıllık Temizlik',
+    sub: 'Maksimum verim için önerilen minimum sıklık',
+    color: '#7FBF3A',
+  },
+]
+
+const cards = [
+  {
+    icon: AlertTriangle,
+    num: '01',
+    title: 'Kir Problemleri',
+    color: '#7FBF3A',
+    paragraphs: [
+      'GES panellerinde oluşan kirlenme, enerji üretimini doğrudan etkileyen önemli bir problemdir. Özellikle tozlu bölgelerde ve tarım arazilerine yakın santrallerde kirlenme daha hızlı gerçekleşir.',
+      'Yağmurla birleşen kir tabakası zamanla panel yüzeyine yapışarak ışık geçirgenliğini ciddi şekilde azaltır.',
+      'Uzun süre temizlenmeyen panellerde düzensiz ısınma (hot-spot) ve hücre hasarları oluşabilir.',
+    ],
+    img: `${base}ges-kir-problemleri.jpg`,
+  },
+  {
+    icon: Droplets,
+    num: '02',
+    title: 'Neden Yıkanmalı?',
+    color: '#1F6EC7',
+    paragraphs: [
+      'GES panel temizliği, güneş enerji santrallerinde maksimum enerji verimliliği sağlamak için kritik bir bakım sürecidir.',
+      '%30\'a varan verim kayıplarının önüne geçilir. Temiz paneller, santralinizin tam kapasite çalışmasını sağlar ve yatırım geri dönüş süresini kısaltır.',
+      'Düzenli bakım, ekipman ömrünü uzatarak uzun vadede işletme maliyetlerini azaltır.',
+    ],
+    img: `${base}ges-neden-yikanmali.jpg`,
+  },
+  {
+    icon: Wrench,
+    num: '03',
+    title: 'Nasıl Temizlenmeli?',
+    color: '#7FBF3A',
+    paragraphs: [
+      'Profesyonel panel temizliği, panellere zarar vermeden yapılan özel uygulamalarla gerçekleştirilmelidir. Saf su kullanılarak yapılan temizlik, panel yüzeyinde kireç ve leke oluşumunu önler.',
+      'Yumuşak fırçalar ve otomatik temizlik sistemleri sayesinde panellerin cam yüzeyi ve hücre yapısı korunur.',
+      'Temizlik işlemi genellikle sabah erken saatlerde veya akşam serinliğinde yapılır.',
+    ],
+    img: `${base}ges-temizligi.jpg`,
+  },
 ]
 
 export default function KirProblemleri() {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
   return (
     <section
       id="kir-problemleri"
-      className="relative w-full scroll-mt-16 md:scroll-mt-20"
+      className="scroll-mt-16 md:scroll-mt-20"
+      style={{ background: 'var(--bg-body)', position: 'relative', zIndex: 1 }}
     >
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className={`absolute -top-40 right-0 w-[500px] h-[500px] rounded-full blur-[120px] ${isDark ? 'bg-primary/5' : 'bg-primary/3'}`} />
-        <div className={`absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[120px] ${isDark ? 'bg-accent/5' : 'bg-accent/3'}`} />
+
+      {/* ── Header ── */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12" style={{ paddingTop: '120px', paddingBottom: '56px' }}>
+        <div className="text-center">
+          <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+            Panel Kirliliği
+          </span>
+          <h2 className="section-heading" style={{ fontSize: 'clamp(26px, 4vw, 38px)' }}>
+            GES Panel Kirlilik Rehberi
+          </h2>
+          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginTop: '14px', lineHeight: 1.7 }}>
+            Kirli panel = kayıp para. Verilerle anlıyoruz, çözümle gidiyoruz.
+          </p>
+          <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-10 md:pt-12 pb-10 md:pb-14 w-full">
-        {/* Header */}
-        <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-8">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3"
-              style={{ background: 'var(--badge-bg)', border: '1px solid var(--badge-border)' }}
-            >
-              <span className="text-primary text-sm font-medium">Panel Kirliliği</span>
-            </div>
-            <h2
-              id="kir-problemleri-title"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              <GradientText
-                colors={isDark ? ['#fff', '#94a3b8', '#fff'] : ['#0f172a', '#1F6EC7', '#0f172a']}
-                animationSpeed={6}
+      {/* ── Stats dark band ── */}
+      <div style={{ background: 'var(--bg-alt)', padding: '0' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="grid md:grid-cols-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+            {stats.map((s, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: '44px 32px',
+                  borderRight: i < 2 ? '1px solid var(--border-subtle)' : 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
               >
-                GES Panel Kirlilik Rehberi
-              </GradientText>
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Panel kirlenmenin nedenleri, sonuçları ve profesyonel temizlik yöntemleri.
-            </p>
-            <div className="mt-3 h-1 w-16 rounded-full bg-linear-to-r from-primary to-accent mx-auto" />
-          </div>
-        </AnimatedContent>
+                {/* Ghost icon bg */}
+                <s.icon
+                  style={{
+                    position: 'absolute', right: '20px', bottom: '20px',
+                    width: '80px', height: '80px',
+                    color: s.color, opacity: 0.07,
+                  }}
+                />
 
-        {/* Stats */}
-        <AnimatedContent distance={40} duration={0.7} delay={0.1}>
-          <div className="grid grid-cols-3 gap-4 md:gap-6 mb-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center p-4 md:p-5 rounded-2xl backdrop-blur-sm theme-card flex flex-col justify-center gap-1">
-                <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{stat.sub}</p>
-                <div className="text-3xl md:text-4xl font-extrabold text-primary">
-                  <CountUp to={stat.value} duration={2.5} delay={0.3} suffix={stat.suffix} prefix={stat.prefix} className="tabular-nums" />
+                {/* Color dot */}
+                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: s.color, marginBottom: '20px' }} />
+
+                {/* Big number */}
+                <div
+                  className="section-heading"
+                  style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: s.color, lineHeight: 1, marginBottom: '10px' }}
+                >
+                  {s.value}
                 </div>
-                <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{stat.label}</p>
+
+                <p style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '6px', fontFamily: "'Rajdhani', sans-serif", letterSpacing: '0.04em' }}>
+                  {s.label}
+                </p>
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  {s.sub}
+                </p>
               </div>
             ))}
           </div>
-        </AnimatedContent>
-
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-
-          {/* Kir Problemleri */}
-          <AnimatedContent distance={30} duration={0.6} delay={0} className="h-full">
-            <div
-              className="rounded-2xl p-6 md:p-7 h-full transition-all duration-300 theme-card"
-              style={{ borderTop: '3px solid var(--color-primary)' }}
-            >
-              <h3 className="text-lg md:text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-                Kir Problemleri
-              </h3>
-              <div className="space-y-3 text-[15px] leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                <p>
-                  GES panellerinde oluşan kirlenme, enerji üretimini doğrudan etkileyen önemli bir problemdir. Özellikle <strong style={{ color: 'var(--text-secondary)' }}>tozlu bölgelerde ve tarım arazilerine yakın santrallerde</strong> kirlenme daha hızlı gerçekleşir.
-                </p>
-                <p>
-                  Yağmurla birleşen kir tabakası zamanla panel yüzeyine yapışarak ışık geçirgenliğini ciddi şekilde azaltır.
-                </p>
-                <p>
-                  Uzun süre temizlenmeyen panellerde <strong style={{ color: 'var(--text-secondary)' }}>düzensiz ısınma (hot-spot)</strong> ve hücre hasarları oluşabilir. Bu durum hem enerji kaybına hem de panel ömrünün kısalmasına neden olur.
-                </p>
-                <p>
-                  Düzenli GES panel temizliği, bu riskleri ortadan kaldırarak santralinizin güvenli ve verimli çalışmasını sağlar.
-                </p>
-              </div>
-            </div>
-          </AnimatedContent>
-
-          {/* Neden Yıkanmalı */}
-          <AnimatedContent distance={30} duration={0.6} delay={0.1} className="h-full">
-            <div
-              className="rounded-2xl p-6 md:p-7 h-full transition-all duration-300 theme-card"
-              style={{ borderTop: '3px solid var(--color-accent)' }}
-            >
-              <h3 className="text-lg md:text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-                Neden Yıkanmalı?
-              </h3>
-              <div className="space-y-3 text-[15px] leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                <p>
-                  GES panel temizliği, güneş enerji santrallerinde <strong style={{ color: 'var(--text-secondary)' }}>maksimum enerji verimliliği</strong> sağlamak için kritik bir bakım sürecidir. Panellerde biriken toz, kir, polen ve kuş pisliği, güneş ışığının panele ulaşmasını engeller.
-                </p>
-                <p>
-                  Düzenli temizlik sayesinde <strong style={{ color: 'var(--text-secondary)' }}>%30&apos;a varan verim kayıplarının önüne geçilir.</strong> Temiz paneller, santralinizin tam kapasite çalışmasını sağlar ve yatırım geri dönüş süresini kısaltır.
-                </p>
-                <p>
-                  Ayrıca düzenli bakım, ekipman ömrünü uzatarak uzun vadede işletme maliyetlerini azaltır.
-                </p>
-              </div>
-            </div>
-          </AnimatedContent>
-
-          {/* Nasıl Temizlenmeli */}
-          <AnimatedContent distance={30} duration={0.6} delay={0.2} className="h-full">
-            <div
-              className="rounded-2xl p-6 md:p-7 h-full transition-all duration-300 theme-card"
-              style={{ borderTop: '3px solid var(--color-primary)' }}
-            >
-              <h3 className="text-lg md:text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-                Nasıl Temizlenmeli?
-              </h3>
-              <div className="space-y-3 text-[15px] leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                <p>
-                  Profesyonel panel temizliği, panellere zarar vermeden yapılan özel uygulamalarla gerçekleştirilmelidir. <strong style={{ color: 'var(--text-secondary)' }}>Saf su</strong> kullanılarak yapılan temizlik, panel yüzeyinde kireç ve leke oluşumunu önler.
-                </p>
-                <p>
-                  <strong style={{ color: 'var(--text-secondary)' }}>Yumuşak fırçalar ve otomatik temizlik sistemleri</strong> sayesinde panellerin cam yüzeyi ve hücre yapısı korunur.
-                </p>
-                <p>
-                  Temizlik işlemi genellikle sabah erken saatlerde veya akşam serinliğinde yapılır. Bu sayede hem güvenli hem de etkili bir temizlik sağlanır.
-                </p>
-              </div>
-            </div>
-          </AnimatedContent>
         </div>
-
       </div>
+
+      {/* ── Content: alternating image + text ── */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12" style={{ padding: '80px 20px 96px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+          {cards.map((card, i) => {
+            const isReverse = i % 2 === 1
+            return (
+              <div
+                key={i}
+                className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+              >
+                {/* Image */}
+                <div className={isReverse ? 'md:order-2' : ''} style={{ position: 'relative' }}>
+                  <div style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 12px 48px rgba(0,0,0,0.14)' }}>
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full object-cover"
+                      style={{ aspectRatio: '4/3', display: 'block' }}
+                    />
+                  </div>
+                  {/* Number badge */}
+                  <div style={{
+                    position: 'absolute', top: '-20px', right: '-20px',
+                    width: '56px', height: '56px', borderRadius: '50%',
+                    background: '#F4C430',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '20px',
+                    color: '#1a1a1a',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+                    zIndex: 1,
+                  }}>
+                    {card.num}
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className={isReverse ? 'md:order-1' : ''}>
+                  {/* Ghost number */}
+                  <span style={{
+                    fontFamily: "'Rajdhani', sans-serif",
+                    fontSize: '96px', fontWeight: 700,
+                    color: `${card.color}0d`,
+                    lineHeight: 1, display: 'block',
+                    marginBottom: '-16px',
+                    letterSpacing: '0.02em',
+                    userSelect: 'none',
+                  }}>
+                    {card.num}
+                  </span>
+
+                  {/* Icon + title */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '12px' }}>
+                    <div style={{
+                      width: '48px', height: '48px', borderRadius: '12px',
+                      background: `${card.color}15`, border: `1.5px solid ${card.color}30`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                    }}>
+                      <card.icon style={{ width: '22px', height: '22px', color: card.color }} />
+                    </div>
+                    <h3 className="section-heading" style={{ fontSize: 'clamp(22px, 3vw, 32px)', color: 'var(--text-primary)', margin: 0 }}>
+                      {card.title}
+                    </h3>
+                  </div>
+
+                  {/* Accent bar */}
+                  <div style={{ width: '44px', height: '3px', background: card.color, borderRadius: '2px', marginBottom: '20px' }} />
+
+                  {/* Paragraphs */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {card.paragraphs.map((p, j) => (
+                      <p key={j} style={{ fontSize: '15px', lineHeight: 1.8, color: 'var(--text-secondary)', margin: 0 }}>
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
     </section>
   )
 }

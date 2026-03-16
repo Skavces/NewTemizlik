@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Sun, Moon } from 'lucide-react'
-import ShinyText from '../reactbits/ShinyText'
 import { useTheme } from '../../context/useTheme'
 
 const navLinks = [
@@ -20,89 +19,104 @@ export default function Navbar() {
   const { theme, toggle } = useTheme()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const isSolid = scrolled || open;
+  const isSolid = scrolled || open
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isSolid
-          ? 'backdrop-blur-xl shadow-2xl'
-          : 'bg-transparent'
-      }`}
-      style={isSolid ? { backgroundColor: 'var(--bg-nav)', boxShadow: `0 25px 50px -12px var(--shadow-color)` } : {}}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
+      style={{
+        backgroundColor: isSolid ? 'var(--bg-nav)' : 'transparent',
+        boxShadow: isSolid ? '0 2px 20px rgba(0,0,0,0.08)' : 'none',
+        borderBottom: isSolid ? '1px solid var(--border-subtle)' : 'none',
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20 relative">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-20 md:h-28">
+
           {/* Logo */}
-          <a href="#" className="flex items-center group">
+          <a href="#" className="shrink-0">
             <img
               src={`${import.meta.env.BASE_URL}logo.png`}
               alt="New Temizlik Hizmetleri"
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-20 md:h-24 w-auto object-contain"
             />
           </a>
 
-          {/* Centered Desktop links */}
-          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          {/* Desktop links */}
+          <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-medium whitespace-nowrap transition-colors duration-300 relative
-                  after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
-                  after:bg-linear-to-r after:from-primary after:to-accent after:rounded-full
-                  after:transition-all after:duration-300 hover:after:w-full"
-                style={{ color: isSolid ? 'var(--text-nav)' : 'rgba(255, 255, 255, 0.9)' }}
-                onMouseEnter={(e) => e.target.style.color = isSolid ? 'var(--text-nav-hover)' : '#ffffff'}
-                onMouseLeave={(e) => e.target.style.color = isSolid ? 'var(--text-nav)' : 'rgba(255, 255, 255, 0.9)'}
+                className="text-sm font-medium whitespace-nowrap transition-colors duration-200"
+                style={{ color: isSolid ? 'var(--text-nav)' : 'rgba(255,255,255,0.9)', fontFamily: "'Poppins', sans-serif" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = isSolid ? 'var(--text-nav)' : 'rgba(255,255,255,0.9)')}
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Right side Actions (Desktop) */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Theme toggle */}
+          {/* Right: CTA + theme */}
+          <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={toggle}
-              className="p-2.5 rounded-xl transition-all duration-300 cursor-pointer hover:-translate-y-0.5"
-              style={{ 
-                background: isSolid ? 'var(--bg-card)' : 'rgba(255, 255, 255, 0.1)', 
-                border: isSolid ? '1px solid var(--border-subtle)' : '1px solid rgba(255, 255, 255, 0.2)' 
+              className="w-9 h-9 flex items-center justify-center transition-colors duration-200 cursor-pointer"
+              style={{
+                borderRadius: '50%',
+                border: '1px solid',
+                borderColor: isSolid ? 'var(--border-subtle)' : 'rgba(255,255,255,0.3)',
+                background: 'transparent',
+                color: isSolid ? 'var(--text-muted)' : 'rgba(255,255,255,0.8)',
               }}
               aria-label="Tema değiştir"
             >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4" style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }} />
-              ) : (
-                <Moon className="w-4 h-4" style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }} />
-              )}
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
+            <a
+              href="#iletisim"
+              className="transition-all duration-200"
+              style={{
+                padding: '10px 22px',
+                background: '#7FBF3A',
+                color: '#fff',
+                fontSize: '13px',
+                fontWeight: 600,
+                borderRadius: '9999px',
+                textDecoration: 'none',
+                letterSpacing: '0.04em',
+                boxShadow: '0 4px 15px rgba(127,191,58,0.3)',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = '#6aaa2e')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = '#7FBF3A')}
+            >
+              Ücretsiz Keşif
+            </a>
           </div>
 
-          {/* Mobile buttons */}
-          <div className="md:hidden flex items-center gap-2">
+          {/* Mobile */}
+          <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={toggle}
-              className="p-2 rounded-lg transition-colors cursor-pointer"
-              style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }}
+              className="p-2 cursor-pointer"
+              style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff', background: 'none', border: 'none' }}
               aria-label="Tema değiştir"
             >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
               onClick={() => setOpen(!open)}
-              className="p-2 transition-colors cursor-pointer"
-              style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff' }}
-              aria-label="Menüyü aç/kapat"
+              className="p-2 cursor-pointer"
+              style={{ color: isSolid ? 'var(--text-muted)' : '#ffffff', background: 'none', border: 'none' }}
+              aria-label="Menü"
             >
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -110,18 +124,17 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-xl
-          transition-all duration-300 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${open ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
         style={{ backgroundColor: 'var(--bg-nav-mobile)', borderTop: '1px solid var(--border-subtle)' }}
       >
-        <div className="px-6 py-6 flex flex-col gap-4">
+        <div className="px-5 py-5 flex flex-col gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="font-medium text-lg py-2 transition-colors"
-              style={{ color: 'var(--text-muted)', borderBottom: '1px solid var(--border-subtle)' }}
+              className="py-3 text-sm font-medium border-b transition-colors"
+              style={{ color: 'var(--text-muted)', borderColor: 'var(--border-subtle)' }}
             >
               {link.label}
             </a>
@@ -129,10 +142,10 @@ export default function Navbar() {
           <a
             href="#iletisim"
             onClick={() => setOpen(false)}
-            className="mt-2 w-full px-6 py-3 rounded-xl bg-linear-to-r from-primary to-primary-dark text-white font-semibold text-center
-              shadow-lg shadow-primary/20 transition-all duration-300"
+            className="mt-4 py-3 text-white font-semibold text-center text-sm"
+            style={{ background: '#7FBF3A', borderRadius: '9999px', textDecoration: 'none', letterSpacing: '0.04em' }}
           >
-            Teklif Al
+            Ücretsiz Keşif Talep Et
           </a>
         </div>
       </div>

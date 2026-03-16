@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
-import AnimatedContent from '../reactbits/AnimatedContent'
-import GradientText from '../reactbits/GradientText'
-import { useTheme } from '../../context/useTheme'
+import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
   {
@@ -24,92 +21,75 @@ const faqs = [
   {
     question: 'Fiyatlandırma nasıl yapılıyor?',
     answer: 'Fiyatlandırmamız panel sayısı, çatı veya arazinin durumu, kirlilik derecesi ve periyodik anlaşma gibi faktörlere bağlı olarak değişiklik göstermektedir. Detaylı ve adil bir fiyat teklifi için ücretsiz keşif talep edebilirsiniz.',
-  }
+  },
 ]
 
 export default function SSS() {
   const [openIndex, setOpenIndex] = useState(null)
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
-  const toggleQuestion = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
 
   return (
-    <section id="sss" className="relative w-full pt-6 md:pt-10 pb-20 md:pb-28 scroll-mt-16 md:scroll-mt-20">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className={`absolute top-40 right-10 w-[400px] h-[400px] rounded-full blur-[120px] ${isDark ? 'bg-primary/5' : 'bg-primary/5'}`} />
-        <div className={`absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full blur-[120px] ${isDark ? 'bg-accent/5' : 'bg-accent/5'}`} />
-      </div>
+    <section
+      id="sss"
+      className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-28"
+      style={{ background: 'var(--bg-alt)' }}
+    >
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4"
-              style={{ background: 'var(--badge-bg)', border: '1px solid var(--badge-border)' }}>
-              <span className="text-primary text-sm font-medium">S.S.S</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              <GradientText colors={isDark ? ['#fff', '#94a3b8', '#fff'] : ['#0f172a', '#1F6EC7', '#0f172a']} animationSpeed={6}>
-                Sıkça Sorulan Sorular
-              </GradientText>
-            </h2>
-            <p className="text-lg" style={{ color: 'var(--text-muted)' }}>
-              Aklınıza takılan soruların cevaplarını burada bulabilirsiniz.
-            </p>
-            <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-primary to-accent mx-auto" />
-          </div>
-        </AnimatedContent>
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
 
-        <div className="space-y-4">
+        {/* Section header */}
+        <div className="text-center mb-14">
+          <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+            S.S.S
+          </span>
+          <h2 className="section-heading" style={{ fontSize: 'clamp(26px, 4vw, 38px)' }}>
+            Sıkça Sorulan Sorular
+          </h2>
+          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginTop: '14px', lineHeight: 1.7 }}>
+            Aklınıza takılan soruların cevaplarını burada bulabilirsiniz.
+          </p>
+          <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+        </div>
+
+        {/* Accordion */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
+            const isOpen = openIndex === index
             return (
-              <AnimatedContent
+              <div
                 key={index}
-                distance={30}
-                duration={0.5}
-                delay={index * 0.1}
+                className="section-card overflow-hidden"
+                style={{ borderBottom: isOpen ? '4px solid #7FBF3A' : '4px solid transparent', cursor: 'pointer' }}
+                onClick={() => setOpenIndex(isOpen ? null : index)}
               >
-                <div 
-                  className={`rounded-2xl transition-all duration-300 overflow-hidden cursor-pointer ${isOpen ? 'ring-2 ring-primary/30' : ''}`}
-                  style={{ 
-                    background: 'var(--bg-card)',
-                    border: '1px solid var(--border-subtle)',
-                    boxShadow: isOpen ? '0 10px 30px -10px var(--shadow-color)' : '0 4px 15px -10px var(--shadow-color)'
-                  }}
-                  onClick={() => toggleQuestion(index)}
-                >
+                <div className="flex items-center justify-between p-6 select-none">
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', paddingRight: '20px', lineHeight: 1.45, fontFamily: "'Poppins', sans-serif" }}>
+                    {faq.question}
+                  </h3>
                   <div
-                    className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-hidden select-none"
+                    className="shrink-0 w-8 h-8 flex items-center justify-center transition-colors duration-200"
+                    style={{
+                      borderRadius: '50%',
+                      background: isOpen ? '#7FBF3A' : 'rgba(127,191,58,0.1)',
+                      color: isOpen ? '#fff' : '#7FBF3A',
+                    }}
                   >
-                    <h3 className="text-lg md:text-xl font-semibold pr-8" style={{ color: 'var(--text-primary)' }}>
-                      {faq.question}
-                    </h3>
-                    <div 
-                      className={`shrink-0 transition-transform duration-300 flex items-center justify-center rounded-full p-2
-                        ${isOpen ? 'bg-primary text-white rotate-180' : ''}`}
-                      style={!isOpen ? { background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)', color: 'var(--text-muted)' } : {}}
-                    >
-                      <ChevronDown className="w-5 h-5" />
-                    </div>
-                  </div>
-                  
-                  <div 
-                    className={`transition-all duration-300 ease-in-out px-5 md:px-6
-                      ${isOpen ? 'max-h-[500px] pb-6 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
-                  >
-                    <p className="leading-relaxed border-t border-gray-500/20 pt-4 mt-2" style={{ color: 'var(--text-muted)' }}>
-                      {faq.answer}
-                    </p>
+                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                   </div>
                 </div>
-              </AnimatedContent>
-            );
+
+                <div
+                  className="overflow-hidden transition-all duration-300"
+                  style={{ maxHeight: isOpen ? '400px' : '0' }}
+                >
+                  <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', padding: '0 24px 24px', borderTop: '1px solid var(--border-subtle)', paddingTop: '16px' }}>
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            )
           })}
         </div>
+
       </div>
     </section>
   )

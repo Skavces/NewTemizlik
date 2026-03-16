@@ -1,90 +1,159 @@
-import { Zap, ShieldCheck, Wrench, CalendarCheck, Award, HeadphonesIcon } from 'lucide-react'
-import CountUp from '../reactbits/CountUp'
-import AnimatedContent from '../reactbits/AnimatedContent'
-import GradientText from '../reactbits/GradientText'
-import { useTheme } from '../../context/useTheme'
+import { Zap, ShieldCheck, Wrench, CalendarCheck, Award, HeadphonesIcon, ArrowRight } from 'lucide-react'
 
-const highlights = [
-  { icon: Zap, title: 'Veri Odaklı ROI Analizi', description: 'Temizlik öncesi ve sonrası üretim artışını termal dronlar ve inverter verileriyle raporluyoruz.' },
-  { icon: ShieldCheck, title: 'ISG ve Otonom Teknoloji', description: 'Sahada riskleri sıfıra indiren otonom temizlik robotlarımızla uluslararası İş Güvenliği (ISG) standartlarındayız.' },
-  { icon: Wrench, title: 'Saf Su ve Hassas Bakım', description: 'Panellerin anti-reflektif yüzeyine zarar vermeyen ultra saf su sistemleri kullanıyoruz.' },
-  { icon: CalendarCheck, title: 'Düzenli Periyodik Bakım', description: 'Mevsimsel tozlanma ve kirlenme verilerine göre optimize edilmiş yıllık bakım sözleşmeleri.' },
-  { icon: Award, title: 'Sertifikalı Mühendis Kadrosu', description: 'Sadece temizlik değil, aynı zamanda GES performans mühendisliği hizmeti sunuyoruz.' },
-  { icon: HeadphonesIcon, title: '7/24 Kesintisiz İzleme', description: 'Olası bir arıza veya verim düşüklüğünde anında müdahale için sistemlerinizi izliyoruz.' },
+const features = [
+  { icon: Zap,             title: 'Veri Odaklı ROI Analizi',     desc: 'GES yıllık temizlik öncesi ve sonrası üretim artışını termal dronlar ve inverter verileriyle raporluyoruz.' },
+  { icon: ShieldCheck,     title: 'ISG & Otonom Teknoloji',       desc: 'Sahada riskleri sıfıra indiren otonom temizlik robotlarımızla uluslararası İş Güvenliği standartlarındayız.' },
+  { icon: Wrench,          title: 'Saf Su & Hassas Bakım',        desc: 'Panellerin anti-reflektif yüzeyine zarar vermeyen ultra saf su sistemleri kullanıyoruz.' },
+  { icon: CalendarCheck,   title: 'Periyodik Bakım Planı',        desc: 'Mevsimsel tozlanma verilerine göre optimize edilmiş yıllık bakım sözleşmeleri sunuyoruz.' },
+  { icon: Award,           title: 'Sertifikalı Mühendis Kadrosu', desc: 'Sadece temizlik değil, GES performans mühendisliği. Her projede detaylı verim raporu teslim edilir.' },
+  { icon: HeadphonesIcon,  title: '7/24 Kesintisiz İzleme',       desc: 'Olası arıza veya verim düşüklüğünde anında müdahale için sistemlerinizi sürekli izliyoruz.' },
 ]
 
-const stats = [
-  { value: 195, suffix: '+', label: 'Tamamlanan Proje' },
-  { value: 5, suffix: '+', label: 'Yıl Deneyim' },
-  { value: 95, suffix: '%', label: 'Müşteri Memnuniyeti' },
-  { value: 17, suffix: '+', label: 'Uzman Personel' },
-]
-
-export default function WhyUs() {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
+function ServiceCard({ f }) {
   return (
-    <section id="hakkimizda" className="relative w-full pt-4 md:pt-8 pb-20 md:pb-28 scroll-mt-16 md:scroll-mt-20">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className={`absolute top-20 right-0 w-[400px] h-[400px] rounded-full blur-[100px] ${isDark ? 'bg-accent/5' : 'bg-accent/4'}`} />
-        <div className={`absolute bottom-20 left-0 w-[400px] h-[400px] rounded-full blur-[100px] ${isDark ? 'bg-primary/5' : 'bg-primary/3'}`} />
+    <div
+      style={{
+        background: 'var(--bg-card)',
+        borderRadius: '10px',
+        padding: '24px 22px 20px',
+        boxShadow: 'var(--shadow-sm)',
+        borderBottom: '4px solid transparent',
+        transition: 'box-shadow 0.3s ease, margin-top 0.3s ease, margin-bottom 0.3s ease, border-bottom-color 0.3s ease',
+        cursor: 'default',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.boxShadow = '0 15px 50px var(--shadow-color)'
+        e.currentTarget.style.marginTop = '-12px'
+        e.currentTarget.style.marginBottom = '12px'
+        e.currentTarget.style.borderBottomColor = '#7FBF3A'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.boxShadow = 'var(--shadow-sm)'
+        e.currentTarget.style.marginTop = '0'
+        e.currentTarget.style.marginBottom = '0'
+        e.currentTarget.style.borderBottomColor = 'transparent'
+      }}
+    >
+      {/* Icon */}
+      <div style={{
+        width: '60px', height: '60px', borderRadius: '8px',
+        background: '#edf7db',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        marginBottom: '16px', flexShrink: 0,
+      }}>
+        <f.icon style={{ width: '28px', height: '28px', color: '#7FBF3A' }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 mb-4">
-              <span className="text-accent text-sm font-medium">Neden Biz?</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              <GradientText colors={isDark ? ['#fff', '#7FBF3A', '#fff'] : ['#0f172a', '#7FBF3A', '#0f172a']} animationSpeed={6}>
-                Neden Sıradan Bir Temizlik Firması Değiliz?
-              </GradientText>
+      <h3 style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '19px', fontWeight: 700, letterSpacing: '0.03em', color: 'var(--text-primary)', marginBottom: '8px' }}>
+        {f.title}
+      </h3>
+
+      <p style={{ fontSize: '13.5px', lineHeight: 1.7, color: 'var(--text-secondary)', margin: '0 0 16px', flex: 1 }}>
+        {f.desc}
+      </p>
+
+      <a
+        href="#iletisim"
+        style={{ fontSize: '13.5px', fontWeight: 600, color: '#7FBF3A', textDecoration: 'none' }}
+        onMouseEnter={e => (e.currentTarget.style.color = 'var(--text-primary)')}
+        onMouseLeave={e => (e.currentTarget.style.color = '#7FBF3A')}
+      >
+        Detaylı Bilgi »
+      </a>
+    </div>
+  )
+}
+
+export default function WhyUs() {
+  return (
+    <section id="hakkimizda" className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-28" style={{ background: 'var(--bg-body)' }}>
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+
+        {/* ── Desktop: 4-col grid ── */}
+        <div
+          className="hidden md:grid"
+          style={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}
+        >
+          {/* Intro cell — row 1 col 1 */}
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingRight: '16px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '8px' }}>
+              New Temizlik
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(22px, 2.5vw, 32px)', lineHeight: 1.2, marginBottom: '16px' }}>
+              Neden Sıradan Bir Temizlik Firması Değiliz?
             </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Kaliteli hizmeti uygun fiyatla, güvenle sunuyoruz.
+            <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '0' }}>
+              GES santrallerinde enerji verimliliğini artırmak ve sürdürülebilirliği sağlamak adına profesyonel mühendislik çözümleri üretiyoruz.
             </p>
-            <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-accent to-primary mx-auto" />
           </div>
-        </AnimatedContent>
 
-        {/* Stats Bar */}
-        <AnimatedContent distance={50} duration={0.7} delay={0.1}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl backdrop-blur-sm theme-card">
-                <div className="text-3xl md:text-4xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
-                  <CountUp to={stat.value} duration={2.5} delay={0.3} suffix={stat.suffix} className="tabular-nums" />
-                </div>
-                <p className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </AnimatedContent>
+          {/* Cards 1–3 */}
+          <ServiceCard f={features[0]} />
+          <ServiceCard f={features[1]} />
+          <ServiceCard f={features[2]} />
 
-        {/* Feature Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {highlights.map((item, index) => (
-            <AnimatedContent
-              key={index}
-              distance={40}
-              duration={0.6}
-              delay={index * 0.1}
+          {/* Cards 4–6 */}
+          <ServiceCard f={features[3]} />
+          <ServiceCard f={features[4]} />
+          <ServiceCard f={features[5]} />
+
+          {/* Dark CTA cell */}
+          <div
+            style={{
+              background: '#1a2332',
+              borderRadius: '10px',
+              padding: '32px 28px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              gap: '20px',
+            }}
+          >
+            <h3 className="section-heading" style={{ fontSize: 'clamp(20px, 2vw, 28px)', color: '#fff', lineHeight: 1.2 }}>
+              Veriminizin Olduğu Her Yerdeyiz
+            </h3>
+            <a
+              href="#iletisim"
+              className="inline-flex items-center gap-2"
+              style={{
+                background: '#7FBF3A',
+                color: '#fff',
+                fontSize: '13px',
+                fontWeight: 600,
+                padding: '11px 20px',
+                borderRadius: '9999px',
+                textDecoration: 'none',
+                alignSelf: 'flex-start',
+                letterSpacing: '0.04em',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#6aaa2e')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#7FBF3A')}
             >
-              <div className="group flex items-start gap-4 p-5 rounded-xl h-full theme-card transition-all duration-300">
-                <div className="w-11 h-11 rounded-lg bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center shrink-0 border border-primary/10">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold mb-1 group-hover:text-primary transition-colors" style={{ color: 'var(--text-primary)' }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
-                </div>
-              </div>
-            </AnimatedContent>
-          ))}
+              <ArrowRight size={14} /> Hizmetlerimiz
+            </a>
+          </div>
         </div>
+
+        {/* ── Mobile ── */}
+        <div className="md:hidden">
+          <div style={{ marginBottom: '32px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '8px' }}>
+              New Temizlik
+            </span>
+            <h2 className="section-heading" style={{ fontSize: '28px', lineHeight: 1.2, marginBottom: '12px' }}>
+              Neden Sıradan Bir Temizlik Firması Değiliz?
+            </h2>
+            <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)' }}>
+              GES santrallerinde enerji verimliliğini artırmak adına profesyonel mühendislik çözümleri üretiyoruz.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {features.map((f, i) => <ServiceCard key={i} f={f} />)}
+          </div>
+        </div>
+
       </div>
     </section>
   )

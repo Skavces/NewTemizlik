@@ -1,74 +1,63 @@
-import AnimatedContent from '../reactbits/AnimatedContent'
-import GradientText from '../reactbits/GradientText'
-import { useTheme } from '../../context/useTheme'
-
 const references = [
   { name: 'Albayrak', logo: 'albayrak.png' },
-  { name: 'Bizim Yem', logo: 'bizimyem.png' },
-  { name: 'Gezgin Enerji', logo: 'gezginenerji.png' },
+  { name: 'Bizim Yem', logo: 'bizimyem.png', scale: 1.4 },
+  { name: 'Gezgin Enerji', logo: 'gezginenerji.png', scale: 1.4 },
   { name: 'Halkbank', logo: 'halkbank.png' },
   { name: 'La Bella', logo: 'labella.png' },
   { name: 'Mert Civata', logo: 'mert-civata-logo.png' },
   { name: 'Saloni', logo: 'saloni.png' },
   { name: 'Sun Tekstil', logo: 'suntekstil.png' },
   { name: 'Wolfex', logo: 'wolfex.png' },
-  { name: 'Hasan Atak', logo: 'hasanatak.webp'}
+  { name: 'Hasan Atak', logo: 'hasanatak.webp' },
 ]
 
 export default function Referanslar() {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
   return (
-    <section id="referanslar" className="relative w-full pt-4 md:pt-8 pb-20 md:pb-28 scroll-mt-16 md:scroll-mt-20">
-      {/* Background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className={`absolute top-0 right-1/4 w-[300px] h-[300px] rounded-full blur-[100px] ${isDark ? 'bg-primary/5' : 'bg-primary/3'}`} />
-        <div className={`absolute bottom-0 left-1/4 w-[300px] h-[300px] rounded-full blur-[100px] ${isDark ? 'bg-accent/5' : 'bg-accent/4'}`} />
-      </div>
+    <section
+      id="referanslar"
+      className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-28"
+      style={{ background: 'var(--bg-body)' }}
+    >
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
-        <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 mb-4">
-              <span className="text-accent text-sm font-medium">Referanslar</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              <GradientText colors={isDark ? ['#fff', '#7FBF3A', '#fff'] : ['#0f172a', '#7FBF3A', '#0f172a']} animationSpeed={6}>
-                Referanslarımız
-              </GradientText>
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Bize güvenen ve birlikte çalıştığımız sektörün öncü markaları.
-            </p>
-            <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-accent to-primary mx-auto" />
-          </div>
-        </AnimatedContent>
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 lg:gap-8 justify-items-center items-center">
-          {references.map((ref, index) => (
-            <AnimatedContent
+        {/* Section header */}
+        <div className="text-center mb-14">
+          <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+            Referanslar
+          </span>
+          <h2 className="section-heading" style={{ fontSize: 'clamp(26px, 4vw, 38px)' }}>
+            Bize Güvenen Markalar
+          </h2>
+          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginTop: '14px', maxWidth: '480px', margin: '14px auto 0', lineHeight: 1.7 }}>
+            Sektörün öncü firmalarıyla birlikte çalışarak güvenilir hizmet anlayışımızı kanıtlıyoruz.
+          </p>
+          <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+        </div>
+
+        {/* Logo grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+          {references.map((ref) => (
+            <div
               key={ref.name}
-              distance={30}
-              duration={0.5}
-              delay={index * 0.1}
+              className="section-card flex items-center justify-center p-6"
+              style={{ aspectRatio: '3/2' }}
+              title={ref.name}
             >
-              <div
-                className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl backdrop-blur-sm theme-card transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
-                style={{ backgroundColor: isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(255, 255, 255, 0.5)' }}
-                title={ref.name}
-              >
-                <img
-                  src={`${import.meta.env.BASE_URL}${ref.logo}`}
-                  alt={`${ref.name} Logosu`}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-contain transition-all duration-300 group-hover:scale-110"
-                />
-              </div>
-            </AnimatedContent>
+              <img
+                src={`${import.meta.env.BASE_URL}${ref.logo}`}
+                alt={`${ref.name} Logosu`}
+                loading="lazy"
+                decoding="async"
+                className="max-w-full max-h-full object-contain transition-all duration-300"
+                style={{ width: '95%', height: '95%', filter: 'grayscale(1) opacity(0.55)', transform: ref.scale ? `scale(${ref.scale})` : undefined }}
+                onMouseEnter={(e) => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
+                onMouseLeave={(e) => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
+              />
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   )

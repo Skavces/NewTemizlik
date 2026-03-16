@@ -1,5 +1,4 @@
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
-import GradientText from '../reactbits/GradientText'
+import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react'
 
 const footerLinks = [
   {
@@ -16,17 +15,15 @@ const footerLinks = [
       { label: 'Hakkımızda', href: '#hakkimizda' },
       { label: 'Panel Kirliliği', href: '#kir-problemleri' },
       { label: 'Çalışma Sürecimiz', href: '#surec' },
-      { label: 'İletişim', href: '#iletisim' },
+      { label: 'Referanslar', href: '#referanslar' },
     ],
   },
-  {
-    title: 'İletişim',
-    links: [
-      { label: '+90 530 473 87 93', href: 'tel:+905304738793' },
-      { label: 'info@newgruptemizlik.com.tr', href: 'mailto:info@newgruptemizlik.com.tr' },
-      { label: 'Atatürk Mah. İzgin Sk. No:4 Soma/Manisa', href: '#iletisim' },
-    ],
-  },
+]
+
+const contactItems = [
+  { icon: MapPin, text: 'Atatürk Mah. İzgin Sk. No:4 Soma/Manisa' },
+  { icon: Phone, text: '+90 530 473 87 93', href: 'tel:+905304738793' },
+  { icon: Mail, text: 'info@newgruptemizlik.com.tr', href: 'mailto:info@newgruptemizlik.com.tr' },
 ]
 
 const socials = [
@@ -38,55 +35,56 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative" style={{ borderTop: '1px solid var(--border-subtle)' }}>
-      {/* Top gradient line */}
-      <div className="h-px bg-linear-to-r from-transparent via-primary/40 to-transparent" />
+    <footer style={{ background: '#12141a' }}>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+      {/* Top green bar */}
+      <div style={{ height: '4px', background: 'linear-gradient(90deg, #7FBF3A, #5a9e1e)' }} />
+
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="mb-4">
-              <img
-                src={`${import.meta.env.BASE_URL}logo.png`}
-                alt="New Temizlik Hizmetleri"
-                className="h-20 w-auto object-contain"
-              />
-            </div>
-            <p className="text-sm leading-relaxed max-w-xs mb-6" style={{ color: 'var(--text-faint)' }}>
+          <div className="lg:col-span-1">
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="New Temizlik Hizmetleri"
+              className="h-16 w-auto object-contain mb-5"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+            <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'rgba(255,255,255,0.45)', marginBottom: '20px' }}>
               Profesyonel temizlik ve bakım çözümleri ile endüstriyel alanda güvenilir iş ortağınız.
             </p>
-            <div className="flex items-center gap-3">
-              {socials.map((social, index) => (
+            <div className="flex items-center gap-2">
+              {socials.map((s) => (
                 <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-lg flex items-center justify-center
-                    hover:bg-primary/10 hover:border-primary/20 hover:text-primary transition-all duration-300"
-                  style={{
-                    background: 'var(--bg-card)',
-                    border: '1px solid var(--border-subtle)',
-                    color: 'var(--text-faint)',
-                  }}
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="w-9 h-9 flex items-center justify-center transition-all duration-200"
+                  style={{ borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.04)' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = '#7FBF3A'; e.currentTarget.style.borderColor = '#7FBF3A'; e.currentTarget.style.color = '#fff' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)' }}
                 >
-                  <social.icon className="w-4 h-4" />
+                  <s.icon className="w-3.5 h-3.5" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Link columns */}
-          {footerLinks.map((group, index) => (
-            <div key={index}>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>{group.title}</h4>
-              <ul className="space-y-3">
-                {group.links.map((link, i) => (
-                  <li key={i}>
+          {footerLinks.map((group) => (
+            <div key={group.title}>
+              <h4 style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '16px', fontWeight: 700, letterSpacing: '0.08em', color: '#ffffff', marginBottom: '18px', textTransform: 'uppercase' }}>
+                {group.title}
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {group.links.map((link) => (
+                  <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm transition-colors duration-200 hover:text-primary"
-                      style={{ color: 'var(--text-faint)' }}
+                      style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
                     >
                       {link.label}
                     </a>
@@ -95,32 +93,52 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-        </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: '1px solid var(--border-subtle)' }}>
-          <p className="text-sm" style={{ color: 'var(--text-faint)' }}>
+          {/* Contact */}
+          <div>
+            <h4 style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '16px', fontWeight: 700, letterSpacing: '0.08em', color: '#ffffff', marginBottom: '18px', textTransform: 'uppercase' }}>
+              İletişim
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {contactItems.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <item.icon className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#7FBF3A' }} />
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>{item.text}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '16px 0' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
             © 2026 New Grup Temizlik Hizmetleri. Tüm hakları saklıdır.
           </p>
-          <div className="flex items-center gap-2">
-            <a
-              href="https://selimkavaklicesme.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm transition-colors duration-200 hover:text-white group flex items-center gap-1"
-              style={{ color: 'var(--text-faint)' }}
-            >
-              Tasarım & Kodlama: 
-              <GradientText 
-                colors={['#60A5FA', '#34D399', '#60A5FA', '#34D399']} 
-                animationSpeed={4}
-                className="font-bold text-base"
-              >
-                Selim Kavaklıçeşme
-              </GradientText>
-            </a>
-          </div>
+          <a
+            href="https://selimkavaklicesme.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}
+          >
+            Tasarım & Kodlama: Selim Kavaklıçeşme
+          </a>
         </div>
       </div>
     </footer>

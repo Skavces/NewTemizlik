@@ -19,8 +19,11 @@ function App() {
         <title>Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik</title>
         <meta name="description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel mühendislik çözümleri." />
         <meta name="robots" content="index, follow" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" />
       </Helmet>
-      <div className="min-h-screen theme-transition overflow-x-hidden" style={{ backgroundColor: 'var(--bg-body)' }}>
+      <div>
         <Navbar />
         <Hero />
         <KirProblemleri />

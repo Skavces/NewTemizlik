@@ -1,102 +1,274 @@
 import { Search, ClipboardList, Play, CheckCircle2 } from 'lucide-react'
-import StarBorder from '../reactbits/StarBorder'
-import AnimatedContent from '../reactbits/AnimatedContent'
-import GradientText from '../reactbits/GradientText'
-import { useTheme } from '../../context/useTheme'
+
+const base = import.meta.env.BASE_URL
+
+const CARD_H = 400   // fixed card height (px)
+const STAGGER = 90   // vertical offset for low cards (px)
+const ARROW_W = 60   // arrow connector width (px)
+const ROW_H = CARD_H + STAGGER  // total flex row height = 490
+
+// Card centers relative to flex-row top:
+const CENTER_TOP = CARD_H / 2              // = 200 (cards 01, 03)
+const CENTER_LOW = STAGGER + CARD_H / 2   // = 290 (cards 02, 04)
 
 const steps = [
   {
     icon: Search,
+    num: '01',
     title: 'Keşif',
-    description: 'Sahada detaylı analiz ve ihtiyaç tespiti yapıyoruz.',
-    color: '#1F6EC7',
+    description: 'Sahaya giderek detaylı analiz ve ihtiyaç tespiti yapıyoruz. Termal kamera ile sorunlu paneller ve gölgelenme noktaları belirlenir.',
+    color: '#7FBF3A',
+    img: `${base}alankesif.jpg`,
+    alt: 'GES sahasında termal analiz ve keşif çalışması',
   },
   {
     icon: ClipboardList,
+    num: '02',
     title: 'Planlama',
-    description: 'Size özel temizlik ve bakım planı oluşturuyoruz.',
-    color: '#7FBF3A',
+    description: 'Keşif verilerine dayanarak size özel temizlik ve bakım planı hazırlıyoruz. Ekip büyüklüğü, ekipman ve maliyet analizi net biçimde ortaya konur.',
+    color: '#1F6EC7',
+    img: `${base}planlama.jpg`,
+    alt: 'Güneş enerjisi santralinde uzman bakım planlaması',
   },
   {
     icon: Play,
+    num: '03',
     title: 'Uygulama',
-    description: 'Profesyonel ekibimizle planı hayata geçiriyoruz.',
-    color: '#1F6EC7',
+    description: 'Sertifikalı ekibimiz ve otonom robotlarımızla planı sahada hayata geçiriyoruz. Ultra saf su ile paneller hasar vermeden temizlenir.',
+    color: '#7FBF3A',
+    img: `${base}uygulama.jpg`,
+    alt: 'Otonom panel temizlik robotu uygulaması',
   },
   {
     icon: CheckCircle2,
+    num: '04',
     title: 'Kontrol',
-    description: 'Kalite kontrolü ile mükemmel sonuç garantisi.',
-    color: '#7FBF3A',
+    description: 'Temizlik öncesi/sonrası veriler karşılaştırılır, termal analiz ile kalite doğrulanır. Detaylı rapor ve garanti belgesi teslim edilir.',
+    color: '#1F6EC7',
+    img: `${base}kontrol.jpg`,
+    alt: 'Güneş paneli temizlik kalite kontrol çalışması',
   },
 ]
 
-export default function Process() {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
+/**
+ * S-curve arrow connecting two staggered cards.
+ * startY / endY are relative to the flex-row top (y=0).
+ * The bezier's last control point shares X with the endpoint → horizontal tangent at end.
+ * This guarantees the arrowhead is always a clean rightward >.
+ */
+function StepArrow({ color, startY, endY }) {
+  const mid = ARROW_W / 2
+  const tipX = ARROW_W
+  const curveEndX = tipX - 14
+  const armLen = 9
+  const curvePath = `M0,${startY} C${mid},${startY} ${mid},${endY} ${curveEndX},${endY}`
   return (
-    <section id="surec" className="relative w-full min-h-dvh flex flex-col justify-center pb-24 sm:pb-32 scroll-mt-16 md:scroll-mt-20">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] ${isDark ? 'bg-primary/3' : 'bg-primary/2'}`} />
+    <svg
+      width={ARROW_W}
+      height={ROW_H}
+      viewBox={`0 0 ${ARROW_W} ${ROW_H}`}
+      fill="none"
+      aria-hidden="true"
+      style={{ flexShrink: 0, display: 'block' }}
+    >
+      {/* Dashed S-curve body */}
+      <path
+        d={curvePath}
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeDasharray="6 5"
+        opacity="0.6"
+      />
+      {/* > chevron tip */}
+      <polyline
+        points={`${tipX - 12},${endY - armLen} ${tipX},${endY} ${tipX - 12},${endY + armLen}`}
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="miter"
+        fill="none"
+        opacity="0.9"
+      />
+    </svg>
+  )
+}
+
+function StepCard({ step }) {
+  return (
+    <div style={{ height: `${CARD_H}px`, display: 'flex', flexDirection: 'column' }}>
+      {/* Image */}
+      <div style={{ position: 'relative', flexShrink: 0, height: '195px' }}>
+        <div style={{ borderRadius: '10px', overflow: 'hidden', height: '100%' }}>
+          <img
+            src={step.img}
+            alt={step.alt}
+            loading="lazy"
+            decoding="async"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        </div>
+        {/* Step number badge — overflows image corner */}
+        <div style={{
+          position: 'absolute', top: '-18px', left: '-18px',
+          width: '52px', height: '52px', borderRadius: '50%',
+          background: '#F4C430',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '18px',
+          color: '#1a1a1a',
+          boxShadow: '0 4px 14px rgba(0,0,0,0.22)',
+          zIndex: 1,
+        }}>
+          {step.num}
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <AnimatedContent distance={40} duration={0.7}>
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4"
-              style={{ background: 'var(--badge-bg)', border: '1px solid var(--badge-border)' }}>
-              <span className="text-primary text-sm font-medium">Süreç</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              <GradientText colors={isDark ? ['#fff', '#1F6EC7', '#7FBF3A', '#fff'] : ['#0f172a', '#1F6EC7', '#7FBF3A', '#0f172a']} animationSpeed={6}>
-                Çalışma Sürecimiz
-              </GradientText>
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              4 adımda profesyonel hizmet deneyimi.
-            </p>
-            <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-primary to-accent mx-auto" />
-          </div>
-        </AnimatedContent>
+      {/* Content — no card bg, just bare text */}
+      <div style={{ paddingTop: '18px', flex: 1 }}>
+        {/* Step label */}
+        <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: step.color, display: 'block', marginBottom: '6px' }}>
+          Adım {step.num}
+        </span>
 
-        <div className="relative">
-          {/* Connector line (desktop) */}
-          <div className="hidden md:block absolute top-20 left-[12%] right-[12%] h-px bg-linear-to-r from-primary/30 via-accent/30 to-primary/30" />
+        {/* Title */}
+        <h3
+          className="section-heading"
+          style={{ fontSize: 'clamp(18px, 1.6vw, 22px)', color: 'var(--text-primary)', marginBottom: '8px' }}
+        >
+          {step.title}
+        </h3>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {steps.map((step, index) => (
-              <AnimatedContent
-                key={index}
-                distance={50}
-                duration={0.7}
-                delay={index * 0.15}
-              >
-                <div className="relative flex flex-col items-center text-center">
-                  <StarBorder color={step.color} speed="8s" className="mb-5 w-full">
-                    <div className="flex flex-col items-center py-4">
-                      <div className="relative mb-4">
-                        <step.icon className="w-10 h-10" style={{ color: step.color }} />
-                        <div className="absolute -top-2 -right-6 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold"
-                          style={{ background: step.color, color: '#fff' }}>
-                          {index + 1}
-                        </div>
-                      </div>
-                      <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{step.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{step.description}</p>
-                    </div>
-                  </StarBorder>
+        {/* Accent bar */}
+        <div style={{ width: '32px', height: '3px', background: step.color, borderRadius: '2px', marginBottom: '10px' }} />
 
-                  {/* Arrow between steps (mobile) */}
-                  {index < steps.length - 1 && (
-                    <div className="sm:hidden w-px h-6 bg-linear-to-b from-white/10 to-transparent mt-2" />
-                  )}
-                </div>
-              </AnimatedContent>
-            ))}
-          </div>
+        {/* Description */}
+        <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', margin: 0 }}>
+          {step.description}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export default function Process() {
+  return (
+    <section
+      id="surec"
+      className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-28"
+      style={{ background: 'var(--bg-alt)' }}
+    >
+
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+
+        {/* Section header */}
+        <div className="text-center mb-16 md:mb-20">
+          <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+            Süreç
+          </span>
+          <h2 className="section-heading" style={{ fontSize: 'clamp(26px, 4vw, 38px)' }}>
+            Çalışma Sürecimiz
+          </h2>
+          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginTop: '14px', lineHeight: 1.7 }}>
+            Sahadan rapora 4 adımda profesyonel hizmet.
+          </p>
+          <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
         </div>
+
+        {/* ── Desktop: staggered horizontal flow ── */}
+        <div
+          className="hidden md:flex"
+          style={{ alignItems: 'flex-start', height: `${ROW_H}px` }}
+        >
+          {steps.map((step, i) => {
+            const isLow = i % 2 === 1
+            const isLast = i === steps.length - 1
+
+            // For this step's arrow: start = center of this card, end = center of next card
+            const thisCenter = isLow ? CENTER_LOW : CENTER_TOP
+            const nextIsLow = (i + 1) % 2 === 1
+            const nextCenter = nextIsLow ? CENTER_LOW : CENTER_TOP
+
+            return (
+              <div key={step.num} style={{ flex: 1, display: 'flex', alignItems: 'flex-start', minWidth: 0 }}>
+                {/* Card with vertical stagger */}
+                <div style={{ flex: 1, marginTop: isLow ? `${STAGGER}px` : '0', minWidth: 0 }}>
+                  <StepCard step={step} />
+                </div>
+
+                {/* Arrow connector */}
+                {!isLast && (
+                  <StepArrow
+                    color={step.color}
+                    startY={thisCenter}
+                    endY={nextCenter}
+                  />
+                )}
+              </div>
+            )
+          })}
+        </div>
+
+        {/* ── Mobile: vertical list with left spine ── */}
+        <div className="md:hidden relative" style={{ paddingLeft: '52px' }}>
+          <div
+            style={{
+              position: 'absolute', left: '18px', top: '24px', bottom: '24px',
+              width: '2px',
+              background: 'linear-gradient(to bottom, #7FBF3A, #1F6EC7, #7FBF3A, #1F6EC7)',
+              opacity: 0.3,
+            }}
+          />
+          {steps.map((step, i) => (
+            <div key={step.num} style={{ position: 'relative', marginBottom: i < steps.length - 1 ? '24px' : '0' }}>
+              <div
+                style={{
+                  position: 'absolute', left: '-42px', top: '20px',
+                  width: '44px', height: '44px', borderRadius: '50%',
+                  background: step.color, color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '16px',
+                  boxShadow: `0 4px 14px ${step.color}45`,
+                  border: '2px solid var(--bg-alt)', zIndex: 2,
+                }}
+              >
+                {step.num}
+              </div>
+              <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
+                    <img
+                      src={step.img} alt={step.alt} loading="lazy" decoding="async"
+                      style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+                  <div style={{
+                    position: 'absolute', top: '-18px', left: '-18px',
+                    width: '52px', height: '52px', borderRadius: '50%',
+                    background: '#F4C430',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '18px',
+                    color: '#1a1a1a',
+                    boxShadow: '0 4px 14px rgba(0,0,0,0.22)',
+                    zIndex: 1,
+                  }}>
+                    {step.num}
+                  </div>
+                </div>
+                <div style={{ paddingTop: '14px' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: step.color, display: 'block', marginBottom: '5px' }}>
+                    Adım {step.num}
+                  </span>
+                  <h3 className="section-heading" style={{ fontSize: '20px', color: 'var(--text-primary)', margin: '0 0 8px' }}>
+                    {step.title}
+                  </h3>
+                  <div style={{ width: '32px', height: '3px', background: step.color, borderRadius: '2px', marginBottom: '10px' }} />
+                  <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', margin: 0 }}>{step.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   )
