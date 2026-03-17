@@ -4,7 +4,7 @@ const base = import.meta.env.BASE_URL
 
 const CARD_H = 400   // fixed card height (px)
 const STAGGER = 90   // vertical offset for low cards (px)
-const ARROW_W = 60   // arrow connector width (px)
+const ARROW_W = 150   // arrow connector width (px)
 const ROW_H = CARD_H + STAGGER  // total flex row height = 490
 
 // Card centers relative to flex-row top:
@@ -34,7 +34,7 @@ const steps = [
     icon: Play,
     num: '03',
     title: 'Uygulama',
-    description: 'Sertifikalı ekibimiz ve otonom robotlarımızla planı sahada hayata geçiriyoruz. Ultra saf su ile paneller hasar vermeden temizlenir.',
+    description: 'Sertifikalı ekibimiz ve otonom robotlarımızla planı sahada hayata geçiriyoruz. Su israfı yapmadan, panellere zarar vermeden profesyonel temizlik gerçekleştirilir.',
     color: '#7FBF3A',
     img: `${base}uygulama.jpg`,
     alt: 'Otonom panel temizlik robotu uygulaması',
@@ -176,34 +176,34 @@ export default function Process() {
 
         {/* ── Desktop: staggered horizontal flow ── */}
         <div
-          className="hidden md:flex"
-          style={{ alignItems: 'flex-start', height: `${ROW_H}px` }}
+          className="hidden md:grid"
+          style={{
+            gridTemplateColumns: `1fr ${ARROW_W}px 1fr ${ARROW_W}px 1fr ${ARROW_W}px 1fr`,
+            alignItems: 'flex-start',
+            height: `${ROW_H}px`,
+          }}
         >
           {steps.map((step, i) => {
             const isLow = i % 2 === 1
             const isLast = i === steps.length - 1
-
-            // For this step's arrow: start = center of this card, end = center of next card
             const thisCenter = isLow ? CENTER_LOW : CENTER_TOP
             const nextIsLow = (i + 1) % 2 === 1
             const nextCenter = nextIsLow ? CENTER_LOW : CENTER_TOP
 
             return (
-              <div key={step.num} style={{ flex: 1, display: 'flex', alignItems: 'flex-start', minWidth: 0 }}>
-                {/* Card with vertical stagger */}
-                <div style={{ flex: 1, marginTop: isLow ? `${STAGGER}px` : '0', minWidth: 0 }}>
+              <>
+                <div key={step.num} style={{ marginTop: isLow ? `${STAGGER}px` : '0', minWidth: 0 }}>
                   <StepCard step={step} />
                 </div>
-
-                {/* Arrow connector */}
                 {!isLast && (
                   <StepArrow
+                    key={`arrow-${i}`}
                     color={step.color}
                     startY={thisCenter}
                     endY={nextCenter}
                   />
                 )}
-              </div>
+              </>
             )
           })}
         </div>

@@ -3,7 +3,7 @@ import { Zap, ShieldCheck, Wrench, CalendarCheck, Award, HeadphonesIcon, ArrowRi
 const features = [
   { icon: Zap,             title: 'Veri Odaklı ROI Analizi',     desc: 'GES yıllık temizlik öncesi ve sonrası üretim artışını termal dronlar ve inverter verileriyle raporluyoruz.' },
   { icon: ShieldCheck,     title: 'ISG & Otonom Teknoloji',       desc: 'Sahada riskleri sıfıra indiren otonom temizlik robotlarımızla uluslararası İş Güvenliği standartlarındayız.' },
-  { icon: Wrench,          title: 'Saf Su & Hassas Bakım',        desc: 'Panellerin anti-reflektif yüzeyine zarar vermeyen ultra saf su sistemleri kullanıyoruz.' },
+  { icon: Wrench,          title: 'Su İsrafı Yapmıyoruz',         desc: 'Minimum su tüketimiyle maksimum temizlik sağlayan yöntemlerimizle çevreye duyarlı hizmet veriyoruz.' },
   { icon: CalendarCheck,   title: 'Periyodik Bakım Planı',        desc: 'Mevsimsel tozlanma verilerine göre optimize edilmiş yıllık bakım sözleşmeleri sunuyoruz.' },
   { icon: Award,           title: 'Sertifikalı Mühendis Kadrosu', desc: 'Sadece temizlik değil, GES performans mühendisliği. Her projede detaylı verim raporu teslim edilir.' },
   { icon: HeadphonesIcon,  title: '7/24 Kesintisiz İzleme',       desc: 'Olası arıza veya verim düşüklüğünde anında müdahale için sistemlerinizi sürekli izliyoruz.' },

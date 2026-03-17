@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: 'Temizlikte kullandığınız ürünler ve ekipmanlar nelerdir?',
-    answer: 'Tüm temizlik süreçlerimizde yüzeye zarar vermeyen, doğa dostu özel solüsyonlar ve son teknoloji robotik sistemler ile deiyonize (saf su) üreten makineler kullanıyoruz. Bu sayede panellerde kireç veya leke kalmaz.',
+    answer: 'Tüm temizlik süreçlerimizde yüzeye zarar vermeyen, doğa dostu özel solüsyonlar ve son teknoloji ekipmanlar kullanıyoruz. Su israfı yapmadan, minimum su tüketimiyle maksimum temizlik sağlıyoruz.',
   },
   {
     question: 'Hizmetleriniz garantili mi?',

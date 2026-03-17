@@ -1,41 +1,37 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 import { Helmet } from 'react-helmet-async'
-import Navbar from './components/sections/Navbar'
-import Hero from './components/sections/Hero'
-import Services from './components/sections/Services'
-import KirProblemleri from './components/sections/KirProblemleri'
-import WhyUs from './components/sections/WhyUs'
-import Process from './components/sections/Process'
-import Referanslar from './components/sections/Referanslar'
-import SSS from './components/sections/SSS'
-import Contact from './components/sections/Contact'
-import Footer from './components/sections/Footer'
-import WhatsAppButton from './components/ui/WhatsAppButton'
+import HomePage from './pages/HomePage'
+import KurumsalPage from './pages/KurumsalPage'
+import HizmetlerimizPage from './pages/HizmetlerimizPage'
+import PanelTemizlikPage from './pages/PanelTemizlikPage'
+import PanelBakimPage from './pages/PanelBakimPage'
+import RobotSatisPage from './pages/RobotSatisPage'
+import ReferanslarPage from './pages/ReferanslarPage'
+import SSSPage from './pages/SSSPage'
+import IletisimPage from './pages/IletisimPage'
 
 function App() {
   return (
     <ThemeProvider>
       <Helmet>
-        <title>Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik</title>
-        <meta name="description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel mühendislik çözümleri." />
-        <meta name="robots" content="index, follow" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" />
       </Helmet>
-      <div>
-        <Navbar />
-        <Hero />
-        <KirProblemleri />
-        <Services />
-        <WhyUs />
-        <Process />
-        <Referanslar />
-        <SSS />
-        <Contact />
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/kurumsal" element={<KurumsalPage />} />
+          <Route path="/hizmetlerimiz" element={<HizmetlerimizPage />} />
+          <Route path="/hizmetlerimiz/panel-temizlik" element={<PanelTemizlikPage />} />
+          <Route path="/hizmetlerimiz/panel-bakim" element={<PanelBakimPage />} />
+          <Route path="/hizmetlerimiz/robot-satisi" element={<RobotSatisPage />} />
+          <Route path="/referanslarimiz" element={<ReferanslarPage />} />
+          <Route path="/sss" element={<SSSPage />} />
+          <Route path="/iletisim" element={<IletisimPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   )
 }

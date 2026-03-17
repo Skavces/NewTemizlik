@@ -1,3 +1,5 @@
+import { useRef, useEffect, useState } from 'react'
+
 const references = [
   { name: 'Albayrak', logo: 'albayrak.png' },
   { name: 'Bizim Yem', logo: 'bizimyem.png', scale: 1.4 },
@@ -11,53 +13,166 @@ const references = [
   { name: 'Hasan Atak', logo: 'hasanatak.webp' },
 ]
 
+// Sonsuz döngü için listeyi 3 kez tekrarla
+const looped = [...references, ...references, ...references]
+
 export default function Referanslar() {
+  const trackRef = useRef(null)
+  const animRef = useRef(null)
+  const posRef = useRef(0)
+  const isDragging = useRef(false)
+  const dragStartX = useRef(0)
+  const dragStartPos = useRef(0)
+  const isPaused = useRef(false)
+  const SPEED = 0.5 // px per frame
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+
+    const singleWidth = track.scrollWidth / 3
+
+    function animate() {
+      if (!isPaused.current) {
+        posRef.current += SPEED
+        if (posRef.current >= singleWidth) {
+          posRef.current -= singleWidth
+        }
+        track.style.transform = `translateX(-${posRef.current}px)`
+      }
+      animRef.current = requestAnimationFrame(animate)
+    }
+
+    animRef.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animRef.current)
+  }, [])
+
+  // Mouse drag
+  function onMouseDown(e) {
+    isDragging.current = true
+    isPaused.current = true
+    dragStartX.current = e.clientX
+    dragStartPos.current = posRef.current
+    e.preventDefault()
+  }
+
+  function onMouseMove(e) {
+    if (!isDragging.current) return
+    const delta = dragStartX.current - e.clientX
+    const track = trackRef.current
+    const singleWidth = track.scrollWidth / 3
+    let newPos = dragStartPos.current + delta
+    if (newPos < 0) newPos += singleWidth
+    if (newPos >= singleWidth) newPos -= singleWidth
+    posRef.current = newPos
+    track.style.transform = `translateX(-${posRef.current}px)`
+  }
+
+  function onMouseUp() {
+    isDragging.current = false
+    isPaused.current = false
+  }
+
+  // Touch drag
+  function onTouchStart(e) {
+    isPaused.current = true
+    dragStartX.current = e.touches[0].clientX
+    dragStartPos.current = posRef.current
+  }
+
+  function onTouchMove(e) {
+    const delta = dragStartX.current - e.touches[0].clientX
+    const track = trackRef.current
+    const singleWidth = track.scrollWidth / 3
+    let newPos = dragStartPos.current + delta
+    if (newPos < 0) newPos += singleWidth
+    if (newPos >= singleWidth) newPos -= singleWidth
+    posRef.current = newPos
+    track.style.transform = `translateX(-${posRef.current}px)`
+  }
+
+  function onTouchEnd() {
+    isPaused.current = false
+  }
+
   return (
     <section
       id="referanslar"
-      className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-28"
-      style={{ background: 'var(--bg-body)' }}
+      className="scroll-mt-16 md:scroll-mt-20"
+      style={{ background: 'var(--bg-body)', padding: '72px 0' }}
     >
-
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-
-        {/* Section header */}
-        <div className="text-center mb-14">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 mb-12">
+        {/* Header — referans görseldeki gibi sol hizalı */}
+        <div>
           <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
-            Referanslar
+            New Temizlik
           </span>
-          <h2 className="section-heading" style={{ fontSize: 'clamp(26px, 4vw, 38px)' }}>
-            Bize Güvenen Markalar
+          <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', marginBottom: '12px' }}>
+            Bizi Tercih Edenler
           </h2>
-          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginTop: '14px', maxWidth: '480px', margin: '14px auto 0', lineHeight: 1.7 }}>
-            Sektörün öncü firmalarıyla birlikte çalışarak güvenilir hizmet anlayışımızı kanıtlıyoruz.
+          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '560px' }}>
+            Güneşin olduğu her yerde enerjinin verimli üretimi için teknolojiler sunmaya güçlenerek devam ediyoruz.
           </p>
-          <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
         </div>
+      </div>
 
-        {/* Logo grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-          {references.map((ref) => (
+      {/* Scrolling logo track */}
+      <div
+        style={{ overflow: 'hidden', cursor: isDragging.current ? 'grabbing' : 'grab', userSelect: 'none' }}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <div
+          ref={trackRef}
+          style={{ display: 'flex', gap: '16px', width: 'max-content', willChange: 'transform' }}
+        >
+          {looped.map((ref, i) => (
             <div
-              key={ref.name}
-              className="section-card flex items-center justify-center p-6"
-              style={{ aspectRatio: '3/2' }}
-              title={ref.name}
+              key={i}
+              style={{
+                flexShrink: 0,
+                width: '160px',
+                height: '88px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                background: 'var(--bg-card)',
+                padding: '18px 20px',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = '#7FBF3A'
+                e.currentTarget.querySelector('img').style.filter = 'grayscale(0) opacity(1)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--border-subtle)'
+                e.currentTarget.querySelector('img').style.filter = 'grayscale(1) opacity(0.5)'
+              }}
             >
               <img
                 src={`${import.meta.env.BASE_URL}${ref.logo}`}
-                alt={`${ref.name} Logosu`}
-                loading="lazy"
-                decoding="async"
-                className="max-w-full max-h-full object-contain transition-all duration-300"
-                style={{ width: '95%', height: '95%', filter: 'grayscale(1) opacity(0.55)', transform: ref.scale ? `scale(${ref.scale})` : undefined }}
-                onMouseEnter={(e) => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
-                onMouseLeave={(e) => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
+                alt={`${ref.name} logosu`}
+                draggable={false}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  filter: 'grayscale(1) opacity(0.5)',
+                  transform: ref.scale ? `scale(${ref.scale})` : undefined,
+                  transition: 'filter 0.3s',
+                  pointerEvents: 'none',
+                }}
               />
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

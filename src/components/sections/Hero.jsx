@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, FolderCheck, CalendarDays, ThumbsUp, Users, Sun } from 'lucide-react'
+import { ArrowRight, ChevronDown, FolderCheck, CalendarDays, ThumbsUp, Users, Sun } from 'lucide-react'
 
 const infoStats = [
   { icon: FolderCheck,  num: '195+', label: 'Tamamlanan Proje',    desc: 'Türkiye genelinde başarıyla teslim edilen GES projeleri.' },
@@ -15,16 +15,6 @@ const mediaItems = [
     type: 'video',
     src: `${base}otonom-panel-yikama-robotu-test.mp4`,
     alt: 'Soma GES otonom panel yıkama robotu saha testi ve performans analizi',
-  },
-  {
-    type: 'video',
-    src: `${base}soma-endustriyel-temizlik-makinesi.mp4`,
-    alt: 'Endüstriyel güneş santralleri için yapay zeka destekli otonom temizlik makinesi',
-  },
-  {
-    type: 'video',
-    src: `${base}ges-temizlik-referans-uygulamasi-1.mp4`,
-    alt: 'Türkiye geneli güneş enerjisi santralleri verimlilik artırıcı profesyonel temizlik referansı',
   },
 ]
 
@@ -89,7 +79,7 @@ export default function Hero() {
                 className="w-full h-full object-cover"
                 muted playsInline
                 preload={i === current ? 'auto' : 'metadata'}
-                onEnded={() => { if (i === current) next() }}
+                loop
               />
             )}
           </div>
@@ -196,45 +186,6 @@ export default function Hero() {
       </div>
 
 
-      {/* Prev arrow — left edge, vertically centered */}
-      <button
-        onClick={prev}
-        aria-label="Önceki"
-        className="hidden md:flex absolute z-[3] items-center justify-center transition-all duration-200 cursor-pointer"
-        style={{ left: '16px', top: '50%', transform: 'translateY(-50%)', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', background: 'rgba(0,0,0,0.35)', color: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(4px)' }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = '#7FBF3A'; e.currentTarget.style.borderColor = '#7FBF3A'; e.currentTarget.style.color = '#fff' }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.35)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-
-      {/* Next arrow — right edge, vertically centered */}
-      <button
-        onClick={next}
-        aria-label="Sonraki"
-        className="hidden md:flex absolute z-[3] items-center justify-center transition-all duration-200 cursor-pointer"
-        style={{ right: '16px', top: '50%', transform: 'translateY(-50%)', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', background: 'rgba(0,0,0,0.35)', color: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(4px)' }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = '#7FBF3A'; e.currentTarget.style.borderColor = '#7FBF3A'; e.currentTarget.style.color = '#fff' }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.35)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
-
-      {/* Dot indicators — bottom center */}
-      <div
-        className="absolute z-[3] flex items-center gap-2 bottom-[300px] md:bottom-[120px]"
-        style={{ left: '50%', transform: 'translateX(-50%)' }}
-      >
-        {mediaItems.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            aria-label={`Medya ${i + 1}`}
-            className="h-1.5 cursor-pointer border-none p-0 transition-all duration-300"
-            style={{ borderRadius: '9999px', width: i === current ? '28px' : '7px', background: i === current ? '#7FBF3A' : 'rgba(255,255,255,0.4)' }}
-          />
-        ))}
-      </div>
 
       {/* Floating info card — straddles hero & next section */}
       <div className="relative z-[5]" style={{ marginBottom: '-56px' }}>

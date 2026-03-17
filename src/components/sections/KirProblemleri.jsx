@@ -57,7 +57,7 @@ const cards = [
     title: 'Nasıl Temizlenmeli?',
     color: '#7FBF3A',
     paragraphs: [
-      'Profesyonel panel temizliği, panellere zarar vermeden yapılan özel uygulamalarla gerçekleştirilmelidir. Saf su kullanılarak yapılan temizlik, panel yüzeyinde kireç ve leke oluşumunu önler.',
+      'Profesyonel panel temizliği, panellere zarar vermeden yapılan özel uygulamalarla gerçekleştirilmelidir. Su israfı yapmadan, kontrollü ve verimli yöntemlerle panel yüzeyi temizlenir.',
       'Yumuşak fırçalar ve otomatik temizlik sistemleri sayesinde panellerin cam yüzeyi ve hücre yapısı korunur.',
       'Temizlik işlemi genellikle sabah erken saatlerde veya akşam serinliğinde yapılır.',
     ],
@@ -160,7 +160,7 @@ export default function KirProblemleri() {
                   </div>
                   {/* Number badge */}
                   <div style={{
-                    position: 'absolute', top: '-20px', right: '8px',
+                    position: 'absolute', top: '-20px', right: '-20px',
                     width: '56px', height: '56px', borderRadius: '50%',
                     background: '#F4C430',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
