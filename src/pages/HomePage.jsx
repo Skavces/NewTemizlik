@@ -13,8 +13,19 @@ export default function HomePage() {
     <>
       <Helmet>
         <title>Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik</title>
-        <meta name="description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel mühendislik çözümleri." />
+        <meta name="description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel temizlik çözümleri." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newtemizlik.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newtemizlik.com/" />
+        <meta property="og:title" content="Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik" />
+        <meta property="og:description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel temizlik çözümleri." />
+        <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:locale" content="tr_TR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik" />
+        <meta name="twitter:description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel temizlik çözümleri." />
+        <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
       </Helmet>
       <Navbar />
       <Hero />

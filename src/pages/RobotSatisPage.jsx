@@ -5,6 +5,22 @@ import Footer from '../components/sections/Footer'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
 import PageHero from '../components/ui/PageHero'
 
+const productPhotos = [
+  { src: 'ges-panel-temizlik-robotu-saha-uygulamasi.jpeg',         alt: 'GES panel temizlik robotu saha uygulaması' },
+  { src: 'ges-panel-temizlik-robotu-saha-calismasi.jpeg',          alt: 'GES panel temizlik robotu saha çalışması' },
+  { src: 'ges-otonom-temizlik-robotu-ray-sistemi.jpeg',            alt: 'GES otonom temizlik robotu ray sistemi' },
+  { src: 'leopardust-ges-panel-temizlik-robotu-saha.jpeg',         alt: 'LeopardDust GES panel temizlik robotu sahada' },
+  { src: 'gunes-enerjisi-santrali-otomatik-ray-temizlik-sistemi.jpeg', alt: 'Güneş enerjisi santrali otomatik ray temizlik sistemi' },
+  { src: 'gunes-paneli-manuel-temizlik-fircasi-makinasi.jpeg',     alt: 'Güneş paneli manuel temizlik fırçası makinası' },
+  { src: 'gunes-paneli-cift-diskli-elektrikli-temizlik-fircasi.jpeg', alt: 'Güneş paneli çift diskli elektrikli temizlik fırçası' },
+  { src: 'gunes-paneli-uzatmali-cift-fircali-temizlik-makinasi.jpeg', alt: 'Güneş paneli uzatmalı çift fırçalı temizlik makinası' },
+  { src: 'gunes-paneli-elektrikli-temizlik-fircasi-seri-uretim.jpeg', alt: 'Güneş paneli elektrikli temizlik fırçası seri üretim' },
+  { src: 'ges-panel-temizlik-makinasi-cesitleri.jpeg',             alt: 'GES panel temizlik makinası çeşitleri' },
+  { src: 'gunes-paneli-sulama-temizlik-boru-sistemi.jpeg',         alt: 'Güneş paneli sulama temizlik boru sistemi' },
+  { src: 'ges-temizlik-robotu-urun-aksesuarlari.jpeg',             alt: 'GES temizlik robotu ürün aksesuarları' },
+  { src: 'ges-temizlik-robotu-uzaktan-kumandali-ozellikler.jpeg',  alt: 'GES temizlik robotu uzaktan kumandalı özellikler' },
+]
+
 const features = [
   'Su israfı yapmadan minimum su tüketimiyle etkili temizlik',
   'Uzaktan izleme ve kontrol paneli (IoT entegrasyonu)',
@@ -18,9 +34,20 @@ export default function RobotSatisPage() {
   return (
     <>
       <Helmet>
-        <title>Temizlik Robot & Makina Satışı | New Temizlik</title>
-        <meta name="description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları. Su tüketimini minimize eden, uzaktan yönetilebilen sistemler." />
+        <title>GES Panel Temizlik Robotu ve Makina Satışı | New Temizlik</title>
+        <meta name="description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları ve makinaları. Su tüketimini minimize eden, IoT destekli, uzaktan yönetilebilen sistemler." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/robot-satisi" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/robot-satisi" />
+        <meta property="og:title" content="GES Panel Temizlik Robotu ve Makina Satışı | New Temizlik" />
+        <meta property="og:description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları ve makinaları. Su tüketimini minimize eden, IoT destekli, uzaktan yönetilebilen sistemler." />
+        <meta property="og:image" content="https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg" />
+        <meta property="og:locale" content="tr_TR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="GES Panel Temizlik Robotu ve Makina Satışı | New Temizlik" />
+        <meta name="twitter:description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları ve makinaları. Su tüketimini minimize eden, IoT destekli, uzaktan yönetilebilen sistemler." />
+        <meta name="twitter:image" content="https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg" />
       </Helmet>
 
       <Navbar />
@@ -95,6 +122,39 @@ export default function RobotSatisPage() {
                 Teklif Al <ArrowRight size={16} />
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Ürün Fotoğrafları ── */}
+      <section style={{ background: 'var(--bg-alt)', padding: '80px 0' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+              Ürün Galerisi
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 34px)' }}>
+              Ürünlerimizin Fotoğrafları
+            </h2>
+            <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+          </div>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
+            {productPhotos.map((photo, i) => (
+              <div
+                key={i}
+                style={{ borderRadius: '10px', overflow: 'hidden', width: 'calc(25% - 9px)', minWidth: '160px', aspectRatio: '1/1', background: 'var(--bg-card)', flexShrink: 0 }}
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}${photo.src}`}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-300"
+                  onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

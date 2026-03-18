@@ -18,9 +18,20 @@ export default function PanelBakimPage() {
   return (
     <>
       <Helmet>
-        <title>Panel Bakım & Onarım İzleme | New Temizlik</title>
-        <meta name="description" content="GES santrallerinde proaktif bakım, termal analiz ve performans izleme hizmetleri. Verim kayıplarını erkenden tespit ediyoruz." />
+        <title>GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik</title>
+        <meta name="description" content="GES santrallerinde proaktif bakım, termal kamera analizi ve performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" />
+        <meta property="og:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
+        <meta property="og:description" content="GES santrallerinde proaktif bakım, termal kamera analizi ve performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta property="og:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
+        <meta property="og:locale" content="tr_TR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
+        <meta name="twitter:description" content="GES santrallerinde proaktif bakım, termal kamera analizi ve performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta name="twitter:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
       </Helmet>
 
       <Navbar />

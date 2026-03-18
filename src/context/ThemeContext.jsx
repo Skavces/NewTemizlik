@@ -2,12 +2,7 @@ import { useState, useEffect } from 'react'
 import ThemeContext from './themeContextValue'
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'light'
-    }
-    return 'light'
-  })
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     const root = document.documentElement
@@ -19,7 +14,6 @@ export function ThemeProvider({ children }) {
       root.classList.remove('dark')
     }
 
-    localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))

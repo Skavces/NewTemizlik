@@ -21,9 +21,20 @@ export default function ReferanslarPage() {
   return (
     <>
       <Helmet>
-        <title>Referanslarımız | New Temizlik</title>
-        <meta name="description" content="New Temizlik olarak hizmet verdiğimiz kurumsal referanslarımız. Sektörün öncü firmaları ile çalışıyoruz." />
+        <title>Referanslarımız | Güvenilir GES Temizlik Hizmeti | New Temizlik</title>
+        <meta name="description" content="New Temizlik olarak hizmet verdiğimiz kurumsal referanslarımız. Halkbank, Albayrak, Gezgin Enerji ve daha birçok sektör lideri firma ile çalışıyoruz." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newtemizlik.com/referanslarimiz" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newtemizlik.com/referanslarimiz" />
+        <meta property="og:title" content="Referanslarımız | Güvenilir GES Temizlik Hizmeti | New Temizlik" />
+        <meta property="og:description" content="New Temizlik olarak hizmet verdiğimiz kurumsal referanslarımız. Halkbank, Albayrak, Gezgin Enerji ve daha birçok sektör lideri firma ile çalışıyoruz." />
+        <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:locale" content="tr_TR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Referanslarımız | Güvenilir GES Temizlik Hizmeti | New Temizlik" />
+        <meta name="twitter:description" content="New Temizlik olarak hizmet verdiğimiz kurumsal referanslarımız. Halkbank, Albayrak, Gezgin Enerji ve daha birçok sektör lideri firma ile çalışıyoruz." />
+        <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
       </Helmet>
 
       <Navbar />

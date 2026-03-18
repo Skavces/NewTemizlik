@@ -38,6 +38,7 @@ const cards = [
       'Uzun süre temizlenmeyen panellerde düzensiz ısınma (hot-spot) ve hücre hasarları oluşabilir.',
     ],
     img: `${base}ges-kir-problemleri.jpg`,
+    altText: 'GES güneş panellerinde kir ve toz birikimi sonucu oluşan verim kaybı',
   },
   {
     icon: Droplets,
@@ -50,6 +51,7 @@ const cards = [
       'Düzenli bakım, ekipman ömrünü uzatarak uzun vadede işletme maliyetlerini azaltır.',
     ],
     img: `${base}ges-neden-yikanmali.jpg`,
+    altText: 'Güneş paneli temizliğinin enerji üretimi ve verime katkısı',
   },
   {
     icon: Wrench,
@@ -62,6 +64,7 @@ const cards = [
       'Temizlik işlemi genellikle sabah erken saatlerde veya akşam serinliğinde yapılır.',
     ],
     img: `${base}ges-temizligi.jpg`,
+    altText: 'Profesyonel GES güneş paneli temizlik uygulaması ve yöntemi',
   },
 ]
 
@@ -151,7 +154,7 @@ export default function KirProblemleri() {
                   <div style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 12px 48px rgba(0,0,0,0.14)' }}>
                     <img
                       src={card.img}
-                      alt={card.title}
+                      alt={card.altText}
                       loading="lazy"
                       decoding="async"
                       className="w-full object-cover"

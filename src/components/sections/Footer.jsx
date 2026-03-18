@@ -1,21 +1,22 @@
 import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const footerLinks = [
   {
     title: 'Hizmetler',
     links: [
-      { label: 'Panel Temizlik', href: '#hizmetler' },
-      { label: 'Bakım & Onarım', href: '#hizmetler' },
-      { label: 'Robot Makina Satış', href: '#hizmetler' },
+      { label: 'Panel Temizlik', path: '/hizmetlerimiz/panel-temizlik' },
+      { label: 'Bakım & Onarım', path: '/hizmetlerimiz/panel-bakim' },
+      { label: 'Robot & Makina Satışı', path: '/hizmetlerimiz/robot-satisi' },
     ],
   },
   {
     title: 'Kurumsal',
     links: [
-      { label: 'Hakkımızda', href: '#hakkimizda' },
-      { label: 'Panel Kirliliği', href: '#kir-problemleri' },
-      { label: 'Çalışma Sürecimiz', href: '#surec' },
-      { label: 'Referanslar', href: '#referanslar' },
+      { label: 'Hakkımızda', path: '/kurumsal' },
+      { label: 'Referanslarımız', path: '/referanslarimiz' },
+      { label: 'S.S.S', path: '/sss' },
+      { label: 'İletişim', path: '/iletisim' },
     ],
   },
 ]
@@ -34,6 +35,13 @@ const socials = [
 ]
 
 export default function Footer() {
+  const navigate = useNavigate()
+
+  function go(path) {
+    navigate(path)
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
+
   return (
     <footer style={{ background: '#12141a' }}>
 
@@ -80,14 +88,14 @@ export default function Footer() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
+                    <button
+                      onClick={() => go(link.path)}
+                      style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'inherit' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
                     >
                       {link.label}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Target, Eye, Leaf, Users, ShieldCheck, Award } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/sections/Navbar'
 import Footer from '../components/sections/Footer'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
@@ -31,7 +32,7 @@ const values = [
   {
     icon: Users,
     title: 'Uzman Kadro',
-    desc: 'Elektrik mühendisleri ve sertifikalı saha teknisyenlerinden oluşan deneyimli ekibimiz.',
+    desc: 'Sertifikalı saha teknisyenleri ve deneyimli uzmanlardan oluşan ekibimiz.',
   },
   {
     icon: Award,
@@ -52,13 +53,53 @@ const collageImages = [
   { src: 'soma-gunes-enerjisi-santrali-uzman-bakim.webp', alt: 'Uzman GES bakımı' },
 ]
 
+function CtaButton() {
+  const navigate = useNavigate()
+  return (
+    <button
+      onClick={() => { navigate('/iletisim'); window.scrollTo({ top: 0, behavior: 'instant' }) }}
+      style={{
+        padding: '14px 36px',
+        background: '#7FBF3A',
+        color: '#fff',
+        fontSize: '15px',
+        fontWeight: 600,
+        borderRadius: '9999px',
+        border: 'none',
+        cursor: 'pointer',
+        letterSpacing: '0.04em',
+        boxShadow: '0 4px 15px rgba(127,191,58,0.3)',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        transition: 'background 0.2s',
+      }}
+      onMouseEnter={e => (e.currentTarget.style.background = '#6aaa2e')}
+      onMouseLeave={e => (e.currentTarget.style.background = '#7FBF3A')}
+    >
+      İletişime Geç <ArrowRight size={16} />
+    </button>
+  )
+}
+
 export default function KurumsalPage() {
   return (
     <>
       <Helmet>
-        <title>Kurumsal | New Temizlik — GES Temizlik ve Bakım Çözümleri</title>
+        <title>Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri</title>
         <meta name="description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli endüstriyel GES temizlik ve bakım hizmetleri." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newtemizlik.com/kurumsal" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newtemizlik.com/kurumsal" />
+        <meta property="og:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
+        <meta property="og:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli endüstriyel GES temizlik ve bakım hizmetleri." />
+        <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:locale" content="tr_TR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
+        <meta name="twitter:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli endüstriyel GES temizlik ve bakım hizmetleri." />
+        <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
       </Helmet>
 
       <Navbar />
@@ -87,7 +128,7 @@ export default function KurumsalPage() {
               </h2>
               <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: '16px' }}>
                 Güneş enerjisi; doğru bakımla yapıldığında en kârlı yatırımlardan biridir. New Temizlik olarak
-                yalnızca panel yüzeyini temizlemiyoruz — sahayı bir mühendislik gözüyle inceliyor,
+                yalnızca panel yüzeyini temizlemiyoruz; sahayı deneyimli bir bakış açısıyla inceliyor,
                 verim kaynaklarını tespit ediyor ve çözüm üretiyoruz.
               </p>
               <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: '32px' }}>
@@ -174,74 +215,6 @@ export default function KurumsalPage() {
         </div>
       </section>
 
-      {/* ── Misyon & Vizyon ── */}
-      <section style={{ background: 'var(--bg-alt)', padding: '80px 0' }}>
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {/* Misyon */}
-            <div
-              style={{
-                background: 'var(--bg-card)',
-                borderRadius: '14px',
-                padding: '40px 36px',
-                boxShadow: 'var(--shadow-sm)',
-                borderTop: '4px solid #7FBF3A',
-              }}
-            >
-              <div
-                style={{
-                  width: '52px', height: '52px', borderRadius: '12px',
-                  background: 'rgba(127,191,58,0.1)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '20px',
-                }}
-              >
-                <Target size={24} style={{ color: '#7FBF3A' }} />
-              </div>
-              <h2 className="section-heading" style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: '14px' }}>
-                Misyonumuz
-              </h2>
-              <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)' }}>
-                Güneş enerjisi santrallerini maksimum kapasitede çalıştırmak için
-                bilim temelli, teknolojiyle desteklenmiş temizlik ve bakım çözümleri sunmak;
-                müşterilerimizin yatırım getirisini artırırken çevresel sürdürülebilirliğe katkı sağlamak.
-              </p>
-            </div>
-
-            {/* Vizyon */}
-            <div
-              style={{
-                background: '#1a2332',
-                borderRadius: '14px',
-                padding: '40px 36px',
-                borderTop: '4px solid #7FBF3A',
-              }}
-            >
-              <div
-                style={{
-                  width: '52px', height: '52px', borderRadius: '12px',
-                  background: 'rgba(127,191,58,0.15)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '20px',
-                }}
-              >
-                <Eye size={24} style={{ color: '#7FBF3A' }} />
-              </div>
-              <h2 className="section-heading" style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: '14px', color: '#f0ede6' }}>
-                Vizyonumuz
-              </h2>
-              <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'rgba(240,237,230,0.7)' }}>
-                Türkiye'nin yenilenebilir enerji dönüşümünde güvenilir mühendislik ortağı olmak;
-                otonom teknolojiler ve veri analitiğiyle GES bakım sektörünü yeniden tanımlamak
-                ve 81 ilde erişilebilir bir hizmet ağı kurmak.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
       {/* ── Değerlerimiz ── */}
       <section style={{ background: 'var(--bg-body)', padding: '80px 0' }}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -302,54 +275,9 @@ export default function KurumsalPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: 'var(--bg-alt)', padding: '80px 0' }}>
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 38px)', marginBottom: '16px' }}>
-            Projenizi Birlikte Değerlendirelim
-          </h2>
-          <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '36px' }}>
-            GES sahanız için ücretsiz keşif ve detaylı teklif almak üzere uzman ekibimizle iletişime geçin.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="tel:+905304738793"
-              style={{
-                padding: '13px 30px',
-                background: '#7FBF3A',
-                color: '#fff',
-                fontSize: '14px',
-                fontWeight: 600,
-                borderRadius: '9999px',
-                textDecoration: 'none',
-                letterSpacing: '0.04em',
-                boxShadow: '0 4px 15px rgba(127,191,58,0.3)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              Hemen Ara
-            </a>
-            <a
-              href="mailto:info@newgruptemizlik.com.tr"
-              style={{
-                padding: '13px 30px',
-                background: 'transparent',
-                color: 'var(--text-primary)',
-                fontSize: '14px',
-                fontWeight: 600,
-                borderRadius: '9999px',
-                textDecoration: 'none',
-                letterSpacing: '0.04em',
-                border: '1.5px solid var(--border-subtle)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              E-posta Gönder <ArrowRight size={15} />
-            </a>
-          </div>
+      <section style={{ padding: '20px 0 60px' }}>
+        <div className="flex justify-center">
+          <CtaButton />
         </div>
       </section>
 

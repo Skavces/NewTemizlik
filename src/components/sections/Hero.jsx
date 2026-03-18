@@ -5,7 +5,7 @@ const infoStats = [
   { icon: FolderCheck,  num: '195+', label: 'Tamamlanan Proje',    desc: 'Türkiye genelinde başarıyla teslim edilen GES projeleri.' },
   { icon: CalendarDays, num: '5+',   label: 'Yıllık Saha Deneyimi', desc: 'Güneş enerji santrallerinde kesintisiz saha tecrübesi.' },
   { icon: ThumbsUp,     num: '%95',  label: 'Müşteri Memnuniyeti',  desc: 'Hizmet sonrası müşteri memnuniyet oranımız.' },
-  { icon: Users,        num: '17+',  label: 'Uzman Personel',       desc: 'Sertifikalı mühendis ve teknik uzmanlardan oluşan kadro.' },
+  { icon: Users,        num: '17+',  label: 'Uzman Personel',       desc: 'Sertifikalı saha uzmanları ve teknik ekipten oluşan kadro.' },
 ]
 
 const base = import.meta.env.BASE_URL

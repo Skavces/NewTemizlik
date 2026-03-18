@@ -90,7 +90,7 @@ export default function Navbar() {
             <img
               src={`${import.meta.env.BASE_URL}logo.png`}
               alt="New Temizlik Hizmetleri"
-              className="h-12 md:h-20 w-auto object-contain"
+              className="h-20 md:h-28 w-auto object-contain"
             />
           </button>
 

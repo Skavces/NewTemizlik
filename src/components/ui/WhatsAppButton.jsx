@@ -63,7 +63,7 @@ export default function WhatsAppButton() {
           }}
         >
           {/* Header */}
-          <div style={{ background: '#25D366', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ background: '#1aad50', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{ width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <WaIcon size={20} />
@@ -113,7 +113,7 @@ export default function WhatsAppButton() {
                 lineHeight: 1.5,
                 fontFamily: 'inherit',
               }}
-              onFocus={(e) => (e.currentTarget.style.borderColor = '#25D366')}
+              onFocus={(e) => (e.currentTarget.style.borderColor = '#1aad50')}
               onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--border-subtle)')}
             />
             <button
@@ -121,7 +121,7 @@ export default function WhatsAppButton() {
               disabled={!message.trim()}
               style={{
                 width: '40px', height: '40px', borderRadius: '50%', border: 'none',
-                background: message.trim() ? '#25D366' : 'var(--border-subtle)',
+                background: message.trim() ? '#1aad50' : 'var(--border-subtle)',
                 color: '#fff', cursor: message.trim() ? 'pointer' : 'default',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexShrink: 0,
@@ -139,16 +139,16 @@ export default function WhatsAppButton() {
         onClick={() => open ? closePopup() : setOpen(true)}
         className="flex items-center gap-3 cursor-pointer"
         style={{
-          background: '#25D366',
+          background: '#1aad50',
           border: 'none',
           borderRadius: '9999px',
           padding: '12px 20px 12px 14px',
           color: '#fff',
-          boxShadow: '0 4px 20px rgba(37,211,102,0.4)',
+          boxShadow: '0 4px 20px rgba(26,173,80,0.25)',
           transition: 'background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease',
         }}
         onMouseEnter={(e) => { e.currentTarget.style.background = '#128C7E'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = '#25D366'; e.currentTarget.style.transform = 'translateY(0)' }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = '#1aad50'; e.currentTarget.style.transform = 'translateY(0)' }}
         aria-label="WhatsApp ile iletişim"
       >
         <WaIcon size={24} />

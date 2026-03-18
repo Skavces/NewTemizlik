@@ -18,9 +18,20 @@ export default function PanelTemizlikPage() {
   return (
     <>
       <Helmet>
-        <title>Panel Temizlik Hizmeti | New Temizlik</title>
-        <meta name="description" content="Profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyoruz." />
+        <title>Güneş Paneli Temizlik Hizmeti | Soma GES Temizliği | New Temizlik</title>
+        <meta name="description" content="Soma ve çevresinde profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
+        <meta property="og:title" content="Güneş Paneli Temizlik Hizmeti | Soma GES Temizliği | New Temizlik" />
+        <meta property="og:description" content="Soma ve çevresinde profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta property="og:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
+        <meta property="og:locale" content="tr_TR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Güneş Paneli Temizlik Hizmeti | Soma GES Temizliği | New Temizlik" />
+        <meta name="twitter:description" content="Soma ve çevresinde profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta name="twitter:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
       </Helmet>
 
       <Navbar />

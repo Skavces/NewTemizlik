@@ -5,7 +5,7 @@ const features = [
   { icon: ShieldCheck,     title: 'ISG & Otonom Teknoloji',       desc: 'Sahada riskleri sıfıra indiren otonom temizlik robotlarımızla uluslararası İş Güvenliği standartlarındayız.' },
   { icon: Wrench,          title: 'Su İsrafı Yapmıyoruz',         desc: 'Minimum su tüketimiyle maksimum temizlik sağlayan yöntemlerimizle çevreye duyarlı hizmet veriyoruz.' },
   { icon: CalendarCheck,   title: 'Periyodik Bakım Planı',        desc: 'Mevsimsel tozlanma verilerine göre optimize edilmiş yıllık bakım sözleşmeleri sunuyoruz.' },
-  { icon: Award,           title: 'Sertifikalı Mühendis Kadrosu', desc: 'Sadece temizlik değil, GES performans mühendisliği. Her projede detaylı verim raporu teslim edilir.' },
+  { icon: Award,           title: 'Sertifikalı Uzman Kadrosu',    desc: 'Sadece temizlik değil, GES performans analizi. Her projede detaylı verim raporu teslim edilir.' },
   { icon: HeadphonesIcon,  title: '7/24 Kesintisiz İzleme',       desc: 'Olası arıza veya verim düşüklüğünde anında müdahale için sistemlerinizi sürekli izliyoruz.' },
 ]
 
@@ -85,7 +85,7 @@ export default function WhyUs() {
               Neden Sıradan Bir Temizlik Firması Değiliz?
             </h2>
             <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '0' }}>
-              GES santrallerinde enerji verimliliğini artırmak ve sürdürülebilirliği sağlamak adına profesyonel mühendislik çözümleri üretiyoruz.
+              GES santrallerinde enerji verimliliğini artırmak ve sürdürülebilirliği sağlamak adına profesyonel temizlik ve bakım çözümleri sunuyoruz.
             </p>
           </div>
 
@@ -99,11 +99,9 @@ export default function WhyUs() {
           <ServiceCard f={features[4]} />
           <ServiceCard f={features[5]} />
 
-          {/* Dark CTA cell */}
+          {/* CTA cell */}
           <div
             style={{
-              background: '#1a2332',
-              borderRadius: '10px',
               padding: '32px 28px',
               display: 'flex',
               flexDirection: 'column',
@@ -111,11 +109,11 @@ export default function WhyUs() {
               gap: '20px',
             }}
           >
-            <h3 className="section-heading" style={{ fontSize: 'clamp(20px, 2vw, 28px)', color: '#fff', lineHeight: 1.2 }}>
+            <h3 className="section-heading" style={{ fontSize: 'clamp(20px, 2vw, 28px)', color: 'var(--text-primary)', lineHeight: 1.2 }}>
               Veriminizin Olduğu Her Yerdeyiz
             </h3>
             <a
-              href="#iletisim"
+              href="/hizmetlerimiz"
               className="inline-flex items-center gap-2"
               style={{
                 background: '#7FBF3A',
@@ -146,7 +144,7 @@ export default function WhyUs() {
               Neden Sıradan Bir Temizlik Firması Değiliz?
             </h2>
             <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)' }}>
-              GES santrallerinde enerji verimliliğini artırmak adına profesyonel mühendislik çözümleri üretiyoruz.
+              GES santrallerinde enerji verimliliğini artırmak adına profesyonel temizlik ve bakım çözümleri sunuyoruz.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
