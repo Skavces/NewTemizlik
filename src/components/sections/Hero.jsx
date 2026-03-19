@@ -97,14 +97,6 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-28 md:py-36 w-full">
           <div style={{ maxWidth: '620px' }}>
 
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2" style={{ background: 'rgba(127,191,58,0.15)', border: '1px solid rgba(127,191,58,0.35)', borderRadius: '9999px' }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7FBF3A', display: 'block', flexShrink: 0 }} />
-              <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A' }}>
-                GES Temizlik &amp; Bakım Çözümleri
-              </span>
-            </div>
-
             {/* H1 */}
             <h1
               style={{
@@ -117,8 +109,8 @@ export default function Hero() {
                 margin: '0 0 20px',
               }}
             >
-              Güneş Paneli<br />
-              <span style={{ color: '#7FBF3A' }}>Profesyonel</span><br />
+              Profesyonel<br />
+              <span style={{ color: '#7FBF3A' }}>Güneş Paneli</span><br />
               Temizliği
             </h1>
 
@@ -133,7 +125,7 @@ export default function Hero() {
                 marginBottom: '36px',
               }}
             >
-              Otonom robotlar ve termal analiz destekli profesyonel bakım hizmetleri ile
+              Otonom robotlar ve veri odaklı profesyonel bakım hizmetleri ile
               GES sahalarında maksimum verim. Kirli panel kayıplarını sıfıra indirin.
             </p>
 

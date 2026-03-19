@@ -1,7 +1,7 @@
 import { Zap, ShieldCheck, Wrench, CalendarCheck, Award, HeadphonesIcon, ArrowRight } from 'lucide-react'
 
 const features = [
-  { icon: Zap,             title: 'Veri Odaklı ROI Analizi',     desc: 'GES yıllık temizlik öncesi ve sonrası üretim artışını termal dronlar ve inverter verileriyle raporluyoruz.' },
+  { icon: Zap,             title: 'Veri Odaklı ROI Analizi',     desc: 'GES yıllık temizlik öncesi ve sonrası üretim artışını inverter verileriyle raporluyoruz.' },
   { icon: ShieldCheck,     title: 'ISG & Otonom Teknoloji',       desc: 'Sahada riskleri sıfıra indiren otonom temizlik robotlarımızla uluslararası İş Güvenliği standartlarındayız.' },
   { icon: Wrench,          title: 'Su İsrafı Yapmıyoruz',         desc: 'Minimum su tüketimiyle maksimum temizlik sağlayan yöntemlerimizle çevreye duyarlı hizmet veriyoruz.' },
   { icon: CalendarCheck,   title: 'Periyodik Bakım Planı',        desc: 'Mevsimsel tozlanma verilerine göre optimize edilmiş yıllık bakım sözleşmeleri sunuyoruz.' },

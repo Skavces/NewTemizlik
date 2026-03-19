@@ -6,7 +6,7 @@ import WhatsAppButton from '../components/ui/WhatsAppButton'
 import PageHero from '../components/ui/PageHero'
 
 const features = [
-  'Termal kamera ile sıcak nokta (hotspot) tespiti',
+  'İnvertör verisi ile sıcak nokta (hotspot) tespiti',
   'Invertör ve DC kablo hat kontrolü',
   'Sigorta, montaj ve bağlantı noktası kontrolleri',
   'Dijital raporlama ve periyodik bakım takvimi',
@@ -19,18 +19,18 @@ export default function PanelBakimPage() {
     <>
       <Helmet>
         <title>GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik</title>
-        <meta name="description" content="GES santrallerinde proaktif bakım, termal kamera analizi ve performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta name="description" content="GES santrallerinde proaktif bakım, performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" />
         <meta property="og:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
-        <meta property="og:description" content="GES santrallerinde proaktif bakım, termal kamera analizi ve performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta property="og:description" content="GES santrallerinde proaktif bakım, performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
-        <meta name="twitter:description" content="GES santrallerinde proaktif bakım, termal kamera analizi ve performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta name="twitter:description" content="GES santrallerinde proaktif bakım, performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
       </Helmet>
 
@@ -72,7 +72,7 @@ export default function PanelBakimPage() {
               </p>
               <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: '28px' }}>
                 Santral üretim verilerini sürekli izleyerek performans düşüşlerini anında
-                tespit ediyoruz. Termal kamera taramaları, invertör kontrolleri ve
+                tespit ediyoruz. İnvertör kontrolleri ve
                 elektrik ölçümleriyle sisteminizin tam kapasitede çalışmasını
                 <strong style={{ color: 'var(--text-primary)' }}> proaktif bir yaklaşımla</strong> garanti ediyoruz.
               </p>
