@@ -15,6 +15,7 @@ const references = [
   { name: 'Sun Tekstil', logo: 'suntekstil.png' },
   { name: 'Wolfex', logo: 'wolfex.png' },
   { name: 'Hasan Atak', logo: 'hasanatak.webp' },
+  { name: 'Renel Enerji', logo: 'renel-enerji.png', scale: 1.3 },
 ]
 
 export default function ReferanslarPage() {
@@ -50,7 +51,6 @@ export default function ReferanslarPage() {
 
       <section style={{ background: 'var(--bg-body)', padding: '80px 0' }}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-
           <div className="text-center mb-14">
             <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
               Referanslar
@@ -63,29 +63,33 @@ export default function ReferanslarPage() {
             </p>
             <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
           </div>
+        </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-            {references.map((ref) => (
-              <div
-                key={ref.name}
-                className="section-card flex items-center justify-center p-6"
-                style={{ aspectRatio: '3/2' }}
-                title={ref.name}
-              >
-                <img
-                  src={`${import.meta.env.BASE_URL}${ref.logo}`}
-                  alt={`${ref.name} Logosu`}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-w-full max-h-full object-contain transition-all duration-300"
-                  style={{ width: '95%', height: '95%', filter: 'grayscale(1) opacity(0.55)', transform: ref.scale ? `scale(${ref.scale})` : undefined }}
-                  onMouseEnter={(e) => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)')}
-                />
-              </div>
-            ))}
-          </div>
-
+        <div className="max-w-screen-xl mx-auto px-5 sm:px-8">
+          {[references.slice(0, 5), references.slice(5)].map((row, rowIdx) => (
+            <div
+              key={rowIdx}
+              style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', marginBottom: rowIdx === 0 ? '20px' : 0 }}
+            >
+              {row.map((ref) => (
+                <div
+                  key={ref.name}
+                  className="section-card flex items-center justify-center p-5"
+                  style={{ aspectRatio: '4/3', width: 'calc((100% - 5 * 20px) / 6)', minWidth: '140px' }}
+                  title={ref.name}
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}${ref.logo}`}
+                    alt={`${ref.name} Logosu`}
+                    loading="lazy"
+                    decoding="async"
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
+                    style={{ width: '90%', height: '90%', transform: ref.scale ? `scale(${ref.scale})` : undefined }}
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 

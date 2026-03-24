@@ -11,6 +11,7 @@ const references = [
   { name: 'Sun Tekstil', logo: 'suntekstil.png' },
   { name: 'Wolfex', logo: 'wolfex.png' },
   { name: 'Hasan Atak', logo: 'hasanatak.webp' },
+  { name: 'Renel Enerji', logo: 'renel-enerji.png', scale: 1.3 },
 ]
 
 // Sonsuz döngü için listeyi 3 kez tekrarla
