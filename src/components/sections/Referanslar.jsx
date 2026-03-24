@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
 const references = [
   { name: 'Albayrak', logo: 'albayrak.png' },
@@ -118,11 +118,11 @@ export default function Referanslar() {
 
       {/* Scrolling logo track */}
       <div
-        style={{ overflow: 'hidden', cursor: isDragging.current ? 'grabbing' : 'grab', userSelect: 'none' }}
-        onMouseDown={onMouseDown}
+        style={{ overflow: 'hidden', cursor: 'grab', userSelect: 'none' }}
+        onMouseDown={(e) => { e.currentTarget.style.cursor = 'grabbing'; onMouseDown(e) }}
         onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseUp}
+        onMouseUp={(e) => { e.currentTarget.style.cursor = 'grab'; onMouseUp() }}
+        onMouseLeave={(e) => { e.currentTarget.style.cursor = 'grab'; onMouseUp() }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}

@@ -48,11 +48,14 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
+  const [prevLocation, setPrevLocation] = useState(location.pathname)
+
   // Sayfa değişince dropdown kapat
-  useEffect(() => {
+  if (location.pathname !== prevLocation) {
+    setPrevLocation(location.pathname)
     setDropdown(null)
     setOpen(false)
-  }, [location.pathname])
+  }
 
   const isSolid = !isHome || scrolled || open
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, FolderCheck, CalendarDays, ThumbsUp, Users, Sun } from 'lucide-react'
 
 const infoStats = [
@@ -35,7 +36,6 @@ export default function Hero() {
   )
 
   const next = useCallback(() => goTo((current + 1) % mediaItems.length), [current, goTo])
-  const prev = useCallback(() => goTo((current - 1 + mediaItems.length) % mediaItems.length), [current, goTo])
 
   useEffect(() => {
     if (mediaItems[current].type === 'video') return
@@ -131,8 +131,8 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex items-center gap-4 flex-wrap">
-              <a
-                href="#iletisim"
+              <Link
+                to="/iletisim"
                 className="inline-flex items-center gap-2.5 transition-all duration-200"
                 style={{
                   padding: '13px 28px',
@@ -150,10 +150,10 @@ export default function Hero() {
               >
                 Ücretsiz Keşif Talep Et
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
 
-              <a
-                href="#hizmetler"
+              <Link
+                to="/hizmetlerimiz"
                 className="inline-flex items-center gap-2 transition-all duration-200"
                 style={{
                   padding: '13px 24px',
@@ -171,7 +171,7 @@ export default function Hero() {
               >
                 Hizmetleri Keşfet
                 <ChevronDown className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
