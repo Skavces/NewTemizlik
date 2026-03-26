@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react'
+import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const footerLinks = [
@@ -28,10 +28,8 @@ const contactItems = [
 ]
 
 const socials = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Facebook, href: 'https://www.facebook.com/people/New-Temizlik-Hizmetleri/61564445445368/', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/new_temizlikhizmetleri/', label: 'Instagram' },
 ]
 
 export default function Footer() {
@@ -67,6 +65,8 @@ export default function Footer() {
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   className="w-9 h-9 flex items-center justify-center transition-all duration-200"
                   style={{ borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.04)' }}

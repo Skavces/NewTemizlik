@@ -16,6 +16,8 @@ const references = [
   { name: 'Wolfex', logo: 'wolfex.png' },
   { name: 'Hasan Atak', logo: 'hasanatak.webp' },
   { name: 'Renel Enerji', logo: 'renel-enerji.png', scale: 1.3 },
+  { name: 'Ege Linyitleri İşletmesi Müdürlüğü', logo: 'ege-linyitleri-isletmesi-mudurlugu.png' },
+  { name: 'Kırkağaç Alay Komutanlığı', logo: 'kirkagac-alay-komutanlıgi.png' },
 ]
 
 export default function ReferanslarPage() {
@@ -65,29 +67,31 @@ export default function ReferanslarPage() {
           </div>
         </div>
 
-        <div className="max-w-screen-xl mx-auto px-5 sm:px-8">
-          {[references.slice(0, 5), references.slice(5)].map((row, rowIdx) => (
+        <div
+          className="max-w-screen-xl mx-auto px-5 sm:px-8"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+            gap: '20px',
+          }}
+        >
+          {references.map((ref) => (
             <div
-              key={rowIdx}
-              style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', marginBottom: rowIdx === 0 ? '20px' : 0 }}
+              key={ref.name}
+              className="section-card flex flex-col items-center justify-center p-4 gap-3"
+              style={{ aspectRatio: '4/3' }}
             >
-              {row.map((ref) => (
-                <div
-                  key={ref.name}
-                  className="section-card flex items-center justify-center p-5"
-                  style={{ aspectRatio: '4/3', width: 'calc((100% - 5 * 20px) / 6)', minWidth: '140px' }}
-                  title={ref.name}
-                >
-                  <img
-                    src={`${import.meta.env.BASE_URL}${ref.logo}`}
-                    alt={`${ref.name} Logosu`}
-                    loading="lazy"
-                    decoding="async"
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    style={{ width: '90%', height: '90%', transform: ref.scale ? `scale(${ref.scale})` : undefined }}
-                  />
-                </div>
-              ))}
+              <img
+                src={`${import.meta.env.BASE_URL}${ref.logo}`}
+                alt={`${ref.name} Logosu`}
+                loading="lazy"
+                decoding="async"
+                className="object-contain transition-all duration-300"
+                style={{ width: '80%', height: '65%', transform: ref.scale ? `scale(${ref.scale})` : undefined }}
+              />
+              <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)', textAlign: 'center', lineHeight: 1.3 }}>
+                {ref.name}
+              </span>
             </div>
           ))}
         </div>

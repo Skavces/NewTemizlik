@@ -12,6 +12,8 @@ const references = [
   { name: 'Wolfex', logo: 'wolfex.png' },
   { name: 'Hasan Atak', logo: 'hasanatak.webp' },
   { name: 'Renel Enerji', logo: 'renel-enerji.png', scale: 1.3 },
+  { name: 'Ege Linyitleri İşletmesi Müdürlüğü', logo: 'ege-linyitleri-isletmesi-mudurlugu.png' },
+  { name: 'Kırkağaç Alay Komutanlığı', logo: 'kirkagac-alay-komutanlıgi.png' },
 ]
 
 // Sonsuz döngü için listeyi 3 kez tekrarla
