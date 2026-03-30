@@ -24,7 +24,7 @@ const footerLinks = [
 const contactItems = [
   { icon: MapPin, text: 'Atatürk Mah. İzgin Sk. No:4 Soma/Manisa' },
   { icon: Phone, text: '+90 530 473 87 93', href: 'tel:+905304738793' },
-  { icon: Mail, text: 'info@newgruptemizlik.com.tr', href: 'mailto:info@newgruptemizlik.com.tr' },
+  { icon: Mail, text: 'info@newtemizlik.com.tr', href: 'mailto:info@newtemizlik.com.tr' },
 ]
 
 const socials = [
