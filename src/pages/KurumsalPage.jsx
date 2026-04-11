@@ -87,18 +87,18 @@ export default function KurumsalPage() {
     <>
       <Helmet>
         <title>Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri</title>
-        <meta name="description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli endüstriyel GES temizlik ve bakım hizmetleri." />
+        <meta name="description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli, tüm Türkiye'ye hizmet veren endüstriyel GES temizlik ve bakım firması." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/kurumsal" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/kurumsal" />
         <meta property="og:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
-        <meta property="og:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli endüstriyel GES temizlik ve bakım hizmetleri." />
+        <meta property="og:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli, tüm Türkiye'ye hizmet veren endüstriyel GES temizlik ve bakım firması." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
-        <meta name="twitter:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli endüstriyel GES temizlik ve bakım hizmetleri." />
+        <meta name="twitter:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli, tüm Türkiye'ye hizmet veren endüstriyel GES temizlik ve bakım firması." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
       </Helmet>
 
