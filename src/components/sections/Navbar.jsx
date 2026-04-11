@@ -229,22 +229,6 @@ export default function Navbar() {
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
-            <button
-              onClick={handleCtaClick}
-              className="transition-all duration-200 cursor-pointer"
-              style={{
-                padding: '10px 22px',
-                background: '#7FBF3A', color: '#fff',
-                fontSize: '13px', fontWeight: 600,
-                borderRadius: '9999px', border: 'none',
-                letterSpacing: '0.04em',
-                boxShadow: '0 4px 15px rgba(127,191,58,0.3)',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#6aaa2e')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = '#7FBF3A')}
-            >
-              Ücretsiz Keşif
-            </button>
           </div>
 
           {/* Mobile hamburger */}
@@ -323,13 +307,6 @@ export default function Navbar() {
             )
           })}
 
-          <button
-            onClick={() => { handleCtaClick(); setOpen(false) }}
-            className="mt-4 py-3 text-white font-semibold text-center text-sm cursor-pointer"
-            style={{ background: '#7FBF3A', borderRadius: '9999px', border: 'none', letterSpacing: '0.04em' }}
-          >
-            Ücretsiz Keşif Talep Et
-          </button>
         </div>
       </div>
     </nav>

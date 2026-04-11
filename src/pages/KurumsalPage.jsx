@@ -132,8 +132,8 @@ export default function KurumsalPage() {
                 verim kaynaklarını tespit ediyor ve çözüm üretiyoruz.
               </p>
               <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: '32px' }}>
-                Başta Soma ve Manisa olmak üzere Ege ve İç Anadolu genelindeki yüzlerce GES sahasında
-                edindiğimiz tecrübeyle, güneş paneli temizliğini bir maliyet değil; sürdürülebilir
+                Tüm Türkiye genelindeki yüzlerce GES sahasında edindiğimiz tecrübeyle,
+                güneş paneli temizliğini bir maliyet değil; sürdürülebilir
                 bir yatırım kalemi olarak konumlandırıyoruz.
               </p>
 
