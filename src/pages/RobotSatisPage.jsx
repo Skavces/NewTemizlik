@@ -52,19 +52,45 @@ export default function RobotSatisPage() {
     <>
       <Helmet>
         <title>GES Panel Temizlik Robotu ve Makina Satışı | New Temizlik</title>
-        <meta name="description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları ve makinaları. Su tüketimini minimize eden, IoT destekli, uzaktan yönetilebilen sistemler." />
+        <meta name="description" content="GES solar panel temizlik robotu ve makina satışı. Büyük ölçekli güneş enerji santralleri için otonom, IoT destekli, uzaktan yönetilebilen panel yıkama sistemleri." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/robot-satisi" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/robot-satisi" />
-        <meta property="og:title" content="GES Panel Temizlik Robotu ve Makina Satışı | New Temizlik" />
-        <meta property="og:description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları ve makinaları. Su tüketimini minimize eden, IoT destekli, uzaktan yönetilebilen sistemler." />
+        <meta property="og:title" content="GES Solar Panel Temizlik Robotu Satışı | New Temizlik" />
+        <meta property="og:description" content="GES solar panel temizlik robotu ve makina satışı. Büyük ölçekli güneş enerji santralleri için otonom, IoT destekli, uzaktan yönetilebilen panel yıkama sistemleri." />
         <meta property="og:image" content="https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="GES Panel Temizlik Robotu ve Makina Satışı | New Temizlik" />
-        <meta name="twitter:description" content="Büyük ölçekli GES santralleri için otonom panel temizlik robotları ve makinaları. Su tüketimini minimize eden, IoT destekli, uzaktan yönetilebilen sistemler." />
+        <meta name="twitter:title" content="GES Solar Panel Temizlik Robotu Satışı | New Temizlik" />
+        <meta name="twitter:description" content="GES solar panel temizlik robotu ve makina satışı. Büyük ölçekli güneş enerji santralleri için otonom, IoT destekli, uzaktan yönetilebilen panel yıkama sistemleri." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Solar panel temizlik robotu hangi saha büyüklükleri için uygundur?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Otonom GES temizlik robotlarımız özellikle 500 kWp ve üzeri büyük ölçekli güneş enerji santrallerine yönelik tasarlanmıştır. Saha geometrisine ve panel dizilimine göre ray sistemi özelleştirilebildiğinden farklı topolojilerdeki sahalar için çözüm sunulmaktadır." }
+            },
+            {
+              "@type": "Question",
+              "name": "GES temizlik robotu kurulumu nasıl yapılır?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Kurulum süreci; saha ölçümü ve ray sistemi tasarımı, ekipman montajı ve saha testi, operatör eğitimi ve sisteme bağlantı adımlarından oluşmaktadır. New Temizlik teknik ekibi tüm kurulum sürecini yerinde yürütür ve 2 yıl teknik destek garantisi sağlar." }
+            },
+            {
+              "@type": "Question",
+              "name": "Robot mu yoksa manuel temizlik hizmeti mi tercih etmeliyim?",
+              "acceptedAnswer": { "@type": "Answer", "text": "500 kWp altındaki sahalar için periyodik profesyonel temizlik hizmeti genellikle daha ekonomiktir. Ancak büyük ölçekli sahalar için otonom robot, işgücü maliyetini %60'a kadar azaltır ve daha sık temizlik yapılmasına imkân tanıyarak yıllık üretimi artırır." }
+            },
+            {
+              "@type": "Question",
+              "name": "Temizlik makinaları satın almak için nasıl teklif alabilirim?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Saha büyüklüğünüzü ve panel tipinizi bildirerek 0530 473 87 93 numaralı telefondan ya da WhatsApp üzerinden bizimle iletişime geçebilirsiniz. Santralinize özel ürün ve fiyat teklifi hazırlıyoruz." }
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <Navbar />
@@ -171,6 +197,46 @@ export default function RobotSatisPage() {
                   onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
                   onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                 />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SSS */}
+      <section style={{ background: 'var(--bg-body)', padding: '80px 0' }}>
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+              Merak Edilenler
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 34px)' }}>
+              Solar Panel Temizlik Robotu Hakkında SSS
+            </h2>
+            <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {[
+              {
+                q: 'Solar panel temizlik robotu hangi saha büyüklükleri için uygundur?',
+                a: 'Otonom GES temizlik robotlarımız özellikle 500 kWp ve üzeri büyük ölçekli güneş enerji santrallerine yönelik tasarlanmıştır. Saha geometrisine ve panel dizilimine göre ray sistemi özelleştirilebildiğinden farklı topolojilerdeki sahalar için çözüm sunulmaktadır.',
+              },
+              {
+                q: 'GES temizlik robotu kurulumu nasıl yapılır?',
+                a: 'Kurulum süreci; saha ölçümü ve ray sistemi tasarımı, ekipman montajı ve saha testi, operatör eğitimi ve sisteme bağlantı adımlarından oluşmaktadır. New Temizlik teknik ekibi tüm kurulum sürecini yerinde yürütür ve 2 yıl teknik destek garantisi sağlar.',
+              },
+              {
+                q: 'Robot mu yoksa manuel temizlik hizmeti mi tercih etmeliyim?',
+                a: '500 kWp altındaki sahalar için periyodik profesyonel temizlik hizmeti genellikle daha ekonomiktir. Ancak büyük ölçekli sahalar için otonom robot, işgücü maliyetini %60\'a kadar azaltır ve daha sık temizlik yapılmasına imkân tanıyarak yıllık üretimi artırır.',
+              },
+              {
+                q: 'Temizlik makinaları satın almak için nasıl teklif alabilirim?',
+                a: 'Saha büyüklüğünüzü ve panel tipinizi bildirerek 0530 473 87 93 numaralı telefondan ya da WhatsApp üzerinden bizimle iletişime geçebilirsiniz. Santralinize özel ürün ve fiyat teklifi hazırlıyoruz.',
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '24px 28px', border: '1px solid var(--border)' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '10px' }}>{item.q}</h3>
+                <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', margin: 0 }}>{item.a}</p>
               </div>
             ))}
           </div>

@@ -18,20 +18,46 @@ export default function PanelTemizlikPage() {
   return (
     <>
       <Helmet>
-        <title>Güneş Paneli Temizlik Hizmeti | Soma GES Temizliği | New Temizlik</title>
-        <meta name="description" content="Soma ve çevresinde profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <title>Güneş Paneli Temizliği | GES Solar Panel Yıkama Hizmeti | New Temizlik</title>
+        <meta name="description" content="Profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
-        <meta property="og:title" content="Güneş Paneli Temizlik Hizmeti | Soma GES Temizliği | New Temizlik" />
-        <meta property="og:description" content="Soma ve çevresinde profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta property="og:title" content="Güneş Paneli Temizliği | GES Solar Panel Yıkama Hizmeti | New Temizlik" />
+        <meta property="og:description" content="Profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Güneş Paneli Temizlik Hizmeti | Soma GES Temizliği | New Temizlik" />
-        <meta name="twitter:description" content="Soma ve çevresinde profesyonel güneş paneli temizlik hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta name="twitter:title" content="Güneş Paneli Temizliği | GES Solar Panel Yıkama Hizmeti | New Temizlik" />
+        <meta name="twitter:description" content="Profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Güneş panelleri ne sıklıkla temizlenmeli?",
+              "acceptedAnswer": { "@type": "Answer", "text": "GES santrallerinde panel temizliği, bölgenin iklim koşullarına ve çevresel kirlilik düzeyine göre değişmekle birlikte genellikle yılda 2-4 kez önerilmektedir. Manisa, İzmir ve İç Anadolu gibi toz yoğunluğu yüksek bölgelerde mevsim geçişlerinde yapılan temizlikler verim artışını maksimuma çıkarır." }
+            },
+            {
+              "@type": "Question",
+              "name": "Kirli güneş paneli ne kadar verim kaybına yol açar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Araştırmalar, temizlenmemiş güneş panellerinin toz, kir ve kuş pisliği birikimi nedeniyle %15 ile %30 arasında verim kaybına uğradığını göstermektedir. Endüstriyel bölgelerin yakınındaki GES sahalarında bu kayıp daha da yüksek olabilmektedir." }
+            },
+            {
+              "@type": "Question",
+              "name": "Panel temizliği sırasında sistem kapatılmalı mı?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Güvenli bir GES panel temizliği için sistem DC tarafı itibarıyla devre dışı bırakılmalıdır. New Temizlik ekiplerimiz ISG standartlarına uygun olarak tüm güvenlik protokollerini eksiksiz uygular; sistem kapatma ve açma işlemleri de hizmet kapsamına dahildir." }
+            },
+            {
+              "@type": "Question",
+              "name": "Hangi temizlik yöntemini kullanıyorsunuz?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Panel yüzeyine zarar vermemek için yumuşak fırça sistemleri ve kontrollü saf su kullanıyoruz. Kimyasal kullanmıyor, yüksek basınçlı su ile panel yüzeyini aşındırmıyoruz. Temizlik sonrası leke bırakmayan deiyonize su tercih edilmektedir." }
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <Navbar />
@@ -106,6 +132,46 @@ export default function PanelTemizlikPage() {
                 Teklif Al <ArrowRight size={16} />
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SSS */}
+      <section style={{ background: 'var(--bg-alt)', padding: '80px 0' }}>
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+              Merak Edilenler
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 34px)' }}>
+              Güneş Paneli Temizliği Hakkında SSS
+            </h2>
+            <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {[
+              {
+                q: 'Güneş panelleri ne sıklıkla temizlenmeli?',
+                a: 'GES santrallerinde panel temizliği, bölgenin iklim koşullarına ve çevresel kirlilik düzeyine göre değişmekle birlikte genellikle yılda 2–4 kez önerilmektedir. Manisa, İzmir ve İç Anadolu gibi toz yoğunluğu yüksek bölgelerde mevsim geçişlerinde yapılan temizlikler verim artışını maksimuma çıkarır.',
+              },
+              {
+                q: 'Kirli güneş paneli ne kadar verim kaybına yol açar?',
+                a: 'Araştırmalar, temizlenmemiş güneş panellerinin toz, kir ve kuş pisliği birikimi nedeniyle %15 ile %30 arasında verim kaybına uğradığını göstermektedir. Endüstriyel bölgelerin yakınındaki GES sahalarında bu kayıp daha da yüksek olabilmektedir.',
+              },
+              {
+                q: 'Panel temizliği sırasında sistem kapatılmalı mı?',
+                a: 'Güvenli bir GES panel temizliği için sistem DC tarafı itibarıyla devre dışı bırakılmalıdır. New Temizlik ekiplerimiz ISG standartlarına uygun olarak tüm güvenlik protokollerini eksiksiz uygular; sistem kapatma ve açma işlemleri de hizmet kapsamına dahildir.',
+              },
+              {
+                q: 'Hangi temizlik yöntemini kullanıyorsunuz?',
+                a: 'Panel yüzeyine zarar vermemek için yumuşak fırça sistemleri ve kontrollü saf su kullanıyoruz. Kimyasal kullanmıyor, yüksek basınçlı su ile panel yüzeyini aşındırmıyoruz. Temizlik sonrası leke bırakmayan deiyonize su tercih edilmektedir.',
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '24px 28px', border: '1px solid var(--border)' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '10px' }}>{item.q}</h3>
+                <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', margin: 0 }}>{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

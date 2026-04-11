@@ -19,19 +19,45 @@ export default function PanelBakimPage() {
     <>
       <Helmet>
         <title>GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik</title>
-        <meta name="description" content="GES santrallerinde proaktif bakım, performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta name="description" content="GES santrallerinde proaktif bakım, termal analiz ve performans izleme hizmetleri. Hotspot tespiti ve invertör kontrolüyle verim kayıplarını ve arızaları erkenden önlüyoruz." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" />
         <meta property="og:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
-        <meta property="og:description" content="GES santrallerinde proaktif bakım, performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta property="og:description" content="GES santrallerinde proaktif bakım, termal analiz ve performans izleme hizmetleri. Hotspot tespiti ve invertör kontrolüyle verim kayıplarını ve arızaları erkenden önlüyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
-        <meta name="twitter:description" content="GES santrallerinde proaktif bakım, performans izleme hizmetleri. Verim kayıplarını ve arızaları erkenden tespit ediyoruz." />
+        <meta name="twitter:description" content="GES santrallerinde proaktif bakım, termal analiz ve performans izleme hizmetleri. Hotspot tespiti ve invertör kontrolüyle verim kayıplarını ve arızaları erkenden önlüyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "GES bakımı ne zaman yapılmalı?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Güneş enerji santrallerinde bakım, yılda en az iki kez — ilkbahar ve sonbahar dönemlerinde — yapılmalıdır. Üretim verilerinde ani düşüşler veya invertör alarmları yaşandığında ise beklemeden teknik müdahale talep edilmelidir. New Temizlik olarak yıllık bakım sözleşmesi kapsamında düzenli periyodik kontrol sağlıyoruz." }
+            },
+            {
+              "@type": "Question",
+              "name": "Hotspot nedir ve GES'e zararı nedir?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Hotspot (sıcak nokta), bir güneş panelinde hasarlı veya gölgeli hücrenin aşırı ısınmasıyla oluşan bölgesel sıcaklık yükselmesidir. Tespit edilmezse panel kalıcı olarak hasar görür, yangın riski oluşabilir ve komşu paneller de etkilenebilir. Termal kamera analizi ile hotspot'lar gözle görülmeden erken aşamada belirlenir." }
+            },
+            {
+              "@type": "Question",
+              "name": "Yıllık bakım sözleşmesi neleri kapsar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "New Temizlik'in yıllık GES bakım sözleşmesi; periyodik performans izleme, invertör ve DC kablo hat kontrolleri, sigorta ve montaj noktası denetimleri, termal kamera analizi, dijital raporlama ve arıza durumlarında öncelikli müdahale garantisini kapsamaktadır." }
+            },
+            {
+              "@type": "Question",
+              "name": "GES bakımı yapılmazsa ne olur?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Düzenli bakım yapılmayan GES santrallerinde invertör arızaları, panel degradasyonu, bağlantı noktalarında korozyon ve hotspot kaynaklı yangın riskleri ortaya çıkabilir. Proaktif bakımla bu sorunların büyük çoğunluğu ortaya çıkmadan önlenir, santralin ömrü uzar." }
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <Navbar />
@@ -106,6 +132,46 @@ export default function PanelBakimPage() {
                 Teklif Al <ArrowRight size={16} />
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SSS */}
+      <section style={{ background: 'var(--bg-alt)', padding: '80px 0' }}>
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+              Merak Edilenler
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 34px)' }}>
+              GES Bakım ve İzleme Hakkında SSS
+            </h2>
+            <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {[
+              {
+                q: 'GES bakımı ne zaman yapılmalı?',
+                a: 'Güneş enerji santrallerinde bakım, yılda en az iki kez — ilkbahar ve sonbahar dönemlerinde — yapılmalıdır. Üretim verilerinde ani düşüşler veya invertör alarmları yaşandığında ise beklemeden teknik müdahale talep edilmelidir. New Temizlik olarak yıllık bakım sözleşmesi kapsamında düzenli periyodik kontrol sağlıyoruz.',
+              },
+              {
+                q: 'Hotspot nedir ve GES\'e zararı nedir?',
+                a: 'Hotspot (sıcak nokta), bir güneş panelinde hasarlı veya gölgeli hücrenin aşırı ısınmasıyla oluşan bölgesel sıcaklık yükselmesidir. Tespit edilmezse panel kalıcı olarak hasar görür, yangın riski oluşabilir ve komşu paneller de etkilenebilir. Termal kamera analizi ile hotspot\'lar gözle görülmeden erken aşamada belirlenir.',
+              },
+              {
+                q: 'Yıllık bakım sözleşmesi neleri kapsar?',
+                a: 'New Temizlik\'in yıllık GES bakım sözleşmesi; periyodik performans izleme, invertör ve DC kablo hat kontrolleri, sigorta ve montaj noktası denetimleri, termal kamera analizi, dijital raporlama ve arıza durumlarında öncelikli müdahale garantisini kapsamaktadır.',
+              },
+              {
+                q: 'GES bakımı yapılmazsa ne olur?',
+                a: 'Düzenli bakım yapılmayan GES santrallerinde invertör arızaları, panel degradasyonu, bağlantı noktalarında korozyon ve hotspot kaynaklı yangın riskleri ortaya çıkabilir. Proaktif bakımla bu sorunların büyük çoğunluğu ortaya çıkmadan önlenir, santralin ömrü uzar.',
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '24px 28px', border: '1px solid var(--border)' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '10px' }}>{item.q}</h3>
+                <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', margin: 0 }}>{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
