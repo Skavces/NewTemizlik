@@ -12,19 +12,19 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik</title>
-        <meta name="description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel temizlik çözümleri." />
+        <title>GES ve Güneş Paneli Temizliği | Solar Panel Yıkama | New Temizlik</title>
+        <meta name="description" content="Soma merkezli endüstriyel GES ve güneş paneli temizliği. Solar panel yıkama, bakım izleme ve otonom temizlik robotu ile verim kaybını önlüyoruz." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/" />
-        <meta property="og:title" content="Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik" />
-        <meta property="og:description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel temizlik çözümleri." />
+        <meta property="og:title" content="GES ve Güneş Paneli Temizliği | Solar Panel Yıkama | New Temizlik" />
+        <meta property="og:description" content="Soma merkezli endüstriyel GES ve güneş paneli temizliği. Solar panel yıkama, bakım izleme ve otonom temizlik robotu ile verim kaybını önlüyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Endüstriyel GES Temizliği ve Otonom Robot Teknolojileri | New Temizlik" />
-        <meta name="twitter:description" content="Soma ve çevresinde endüstriyel GES santralleri için minimum verim kaybı, maksimum enerji üretimi sağlayan otonom ve profesyonel temizlik çözümleri." />
+        <meta name="twitter:title" content="GES ve Güneş Paneli Temizliği | Solar Panel Yıkama | New Temizlik" />
+        <meta name="twitter:description" content="Soma merkezli endüstriyel GES ve güneş paneli temizliği. Solar panel yıkama, bakım izleme ve otonom temizlik robotu ile verim kaybını önlüyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
       </Helmet>
       <Navbar />

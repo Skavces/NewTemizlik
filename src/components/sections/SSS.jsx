@@ -4,7 +4,7 @@ import { Plus, Minus } from 'lucide-react'
 const faqs = [
   {
     question: 'Hangi bölgelere hizmet veriyorsunuz?',
-    answer: 'Başta Soma/Manisa olmak üzere çevre illere profesyonel temizlik hizmeti sunmaktayız. Büyük projeler için Türkiye genelinde hizmet sağlamaktayız.',
+    answer: 'Soma/Manisa merkezli olmak üzere tüm Türkiye genelinde GES temizlik ve bakım hizmeti sunmaktayız.',
   },
   {
     question: 'Güneş paneli temizliği ne sıklıkla yapılmalıdır?',

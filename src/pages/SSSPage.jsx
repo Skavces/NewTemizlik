@@ -23,6 +23,37 @@ export default function SSSPage() {
         <meta name="twitter:title" content="Sıkça Sorulan Sorular | GES Panel Temizliği SSS | New Temizlik" />
         <meta name="twitter:description" content="Güneş paneli temizliği, GES bakım hizmetleri ve temizlik robotu hakkında merak edilen soruların cevapları. New Temizlik SSS sayfası." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Hangi bölgelere hizmet veriyorsunuz?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Soma/Manisa merkezli olmak üzere tüm Türkiye genelinde GES temizlik ve bakım hizmeti sunmaktayız." }
+            },
+            {
+              "@type": "Question",
+              "name": "Güneş paneli temizliği ne sıklıkla yapılmalıdır?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Bulunduğunuz bölgenin toz, polen ve çevre kirliliği durumuna göre değişmekle birlikte, panellerin maksimum verimde çalışması için yılda en az 2 kez (tercihen ilkbahar ve sonbahar aylarında) profesyonel temizlik önerilmektedir." }
+            },
+            {
+              "@type": "Question",
+              "name": "Temizlikte kullandığınız ürünler ve ekipmanlar nelerdir?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Tüm temizlik süreçlerimizde yüzeye zarar vermeyen, doğa dostu özel solüsyonlar ve son teknoloji ekipmanlar kullanıyoruz. Su israfı yapmadan, minimum su tüketimiyle maksimum temizlik sağlıyoruz." }
+            },
+            {
+              "@type": "Question",
+              "name": "Hizmetleriniz garantili mi?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Evet, tüm panel temizliği, periyodik bakım ve sunduğumuz diğer endüstriyel çözümler firmamızın garantisi altındadır. Memnuniyetiniz bizim için önceliktir." }
+            },
+            {
+              "@type": "Question",
+              "name": "Fiyatlandırma nasıl yapılıyor?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Fiyatlandırmamız panel sayısı, çatı veya arazinin durumu, kirlilik derecesi ve periyodik anlaşma gibi faktörlere bağlı olarak değişiklik göstermektedir. Detaylı ve adil bir fiyat teklifi için ücretsiz keşif talep edebilirsiniz." }
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <Navbar />
