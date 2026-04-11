@@ -18,19 +18,19 @@ export default function PanelTemizlikPage() {
   return (
     <>
       <Helmet>
-        <title>Güneş Paneli Temizliği | GES Solar Panel Yıkama Hizmeti | New Temizlik</title>
-        <meta name="description" content="Profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <title>Soma GES Temizliği | Güneş Paneli Solar Panel Yıkama Hizmeti | New Temizlik</title>
+        <meta name="description" content="Soma ve çevresinde profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
-        <meta property="og:title" content="Güneş Paneli Temizliği | GES Solar Panel Yıkama Hizmeti | New Temizlik" />
-        <meta property="og:description" content="Profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta property="og:title" content="Soma GES Temizliği | Güneş Paneli Solar Panel Yıkama Hizmeti | New Temizlik" />
+        <meta property="og:description" content="Soma ve çevresinde profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Güneş Paneli Temizliği | GES Solar Panel Yıkama Hizmeti | New Temizlik" />
-        <meta name="twitter:description" content="Profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta name="twitter:title" content="Soma GES Temizliği | Güneş Paneli Solar Panel Yıkama Hizmeti | New Temizlik" />
+        <meta name="twitter:description" content="Soma ve çevresinde profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
