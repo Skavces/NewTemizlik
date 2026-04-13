@@ -125,8 +125,9 @@ export default function Hero() {
                 marginBottom: '36px',
               }}
             >
-              Otonom robotlar ve veri odaklı profesyonel bakım hizmetleri ile
-              GES sahalarında maksimum verim. Kirli panel kayıplarını sıfıra indirin.
+              Soma merkezli, Türkiye geneli GES temizliği. Otonom robotlar ve
+              veri odaklı solar panel yıkama hizmetleri ile güneş enerji santrallerinizde
+              maksimum verim. Kirli panel kayıplarını sıfıra indirin.
             </p>
 
             {/* CTAs */}

@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { CheckCircle, ArrowRight, MapPin } from 'lucide-react'
 import Navbar from '../components/sections/Navbar'
 import Footer from '../components/sections/Footer'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
@@ -14,37 +14,98 @@ const features = [
   'ISG standartlarına uygun güvenli saha operasyonu',
 ]
 
+const serviceAreas = [
+  { il: 'Manisa', ilceler: 'Soma, Akhisar, Kırkağaç, Saruhanlı, Turgutlu, Salihli, Gördes, Demirci' },
+  { il: 'İzmir', ilceler: 'Aliağa, Bergama, Menemen, Torbalı, Kemalpaşa, Selçuk' },
+  { il: 'Balıkesir', ilceler: 'Bandırma, Gönen, Burhaniye, Edremit, Ayvalık' },
+  { il: 'Kütahya', ilceler: 'Gediz, Tavşanlı, Simav, Emet' },
+  { il: 'Uşak & Afyon', ilceler: 'Uşak merkez, Afyonkarahisar merkez ve çevre ilçeler' },
+  { il: 'Diğer İller', ilceler: 'Konya, Ankara, Antalya, Adana başta olmak üzere Türkiye geneli GES sahaları' },
+]
+
 export default function PanelTemizlikPage() {
   return (
     <>
       <Helmet>
-        <title>Soma GES Temizliği | Güneş Paneli Solar Panel Yıkama Hizmeti | New Temizlik</title>
-        <meta name="description" content="Soma ve çevresinde profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <title>Soma GES Temizliği | Türkiye Geneli Güneş Paneli ve Solar Panel Yıkama | New Temizlik</title>
+        <meta name="description" content="Soma'da ve Türkiye genelinde profesyonel GES temizliği, güneş paneli yıkama ve solar panel temizlik hizmeti. Soma'nın endüstriyel toz ortamına özel yöntemlerle %30'a kadar verim artışı sağlıyoruz." />
+        <meta name="keywords" content="soma ges temizliği, güneş paneli temizliği, panel temizliği, ges temizliği, solar panel temizliği, türkiye geneli ges temizliği, güneş enerji santrali temizliği, manisa ges temizliği" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" />
-        <meta property="og:title" content="Soma GES Temizliği | Güneş Paneli Solar Panel Yıkama Hizmeti | New Temizlik" />
-        <meta property="og:description" content="Soma ve çevresinde profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta property="og:title" content="Soma GES Temizliği | Türkiye Geneli Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
+        <meta property="og:description" content="Soma'da ve Türkiye genelinde profesyonel GES temizliği, güneş paneli yıkama ve solar panel temizlik hizmeti. Soma'nın endüstriyel toz ortamına özel yöntemlerle %30'a kadar verim artışı sağlıyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Soma GES Temizliği | Güneş Paneli Solar Panel Yıkama Hizmeti | New Temizlik" />
-        <meta name="twitter:description" content="Soma ve çevresinde profesyonel güneş paneli temizliği ve GES solar panel yıkama hizmeti. Su israfı yapmadan, özel ekipmanlarla verim kaybını önlüyor, üretim raporuyla sonucu belgeliyoruz." />
+        <meta name="twitter:title" content="Soma GES Temizliği | Türkiye Geneli Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
+        <meta name="twitter:description" content="Soma'da ve Türkiye genelinde profesyonel GES temizliği, güneş paneli yıkama ve solar panel temizlik hizmeti. Soma'nın endüstriyel toz ortamına özel yöntemlerle %30'a kadar verim artışı sağlıyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "GES Panel Temizliği",
+          "alternateName": ["Güneş Paneli Temizliği", "Solar Panel Yıkama", "GES Temizliği", "Panel Temizliği", "Soma GES Temizliği"],
+          "description": "Soma ve Türkiye genelinde profesyonel güneş enerji santrali (GES) panel temizliği, solar panel yıkama ve bakım hizmetleri. Yumuşak fırça sistemleri ve kontrollü su kullanımıyla panellerinizde %30'a kadar verim artışı.",
+          "serviceType": "GES Panel Temizliği",
+          "url": "https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "New Temizlik",
+            "url": "https://www.newtemizlik.com",
+            "telephone": "+905304738793",
+            "image": "https://www.newtemizlik.com/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Soma",
+              "addressRegion": "Manisa",
+              "addressCountry": "TR"
+            }
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Soma" },
+            { "@type": "City", "name": "Akhisar" },
+            { "@type": "City", "name": "Kırkağaç" },
+            { "@type": "AdministrativeArea", "name": "Manisa" },
+            { "@type": "AdministrativeArea", "name": "İzmir" },
+            { "@type": "AdministrativeArea", "name": "Balıkesir" },
+            { "@type": "AdministrativeArea", "name": "Kütahya" },
+            { "@type": "Country", "name": "Türkiye" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "GES Temizlik Hizmetleri",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Endüstriyel GES Panel Temizliği" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Otonom Robot ile Panel Yıkama" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Periyodik GES Bakım Sözleşmesi" } }
+            ]
+          }
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
             {
               "@type": "Question",
+              "name": "Soma'da GES temizliği hizmeti veriyor musunuz?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Evet, New Temizlik olarak Soma merkezli faaliyet gösteriyor ve Soma ile çevresindeki tüm GES sahalarına hizmet veriyoruz. Soma'nın termik santral ve sanayi bölgelerine yakınlığı nedeniyle bölgedeki paneller ülke ortalamasının çok üzerinde kirlenme yaşamaktadır. Bu özel koşullar için geliştirdiğimiz ekipman ve yöntemlerle sahada çözüm üretiyoruz." }
+            },
+            {
+              "@type": "Question",
+              "name": "Türkiye genelinde GES temizliği yapıyor musunuz?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Evet, New Temizlik olarak Soma ve Manisa merkez olmak üzere İzmir, Balıkesir, Kütahya, Uşak, Afyon, Konya, Ankara, Antalya ve Adana dahil Türkiye genelindeki GES sahalarına hizmet vermekteyiz. Büyük kapasiteli santraller için saha keşfi yaparak özel hizmet planı oluşturuyoruz." }
+            },
+            {
+              "@type": "Question",
               "name": "Güneş panelleri ne sıklıkla temizlenmeli?",
-              "acceptedAnswer": { "@type": "Answer", "text": "GES santrallerinde panel temizliği, bölgenin iklim koşullarına ve çevresel kirlilik düzeyine göre değişmekle birlikte genellikle yılda 2-4 kez önerilmektedir. Manisa, İzmir ve İç Anadolu gibi toz yoğunluğu yüksek bölgelerde mevsim geçişlerinde yapılan temizlikler verim artışını maksimuma çıkarır." }
+              "acceptedAnswer": { "@type": "Answer", "text": "GES santrallerinde panel temizliği, bölgenin iklim koşullarına ve çevresel kirlilik düzeyine göre değişmekle birlikte genellikle yılda 2-4 kez önerilmektedir. Soma gibi sanayi ve kömür tozu yoğunluğu yüksek bölgelerde mevsim geçişlerinde yapılan temizlikler verim artışını maksimuma çıkarır." }
             },
             {
               "@type": "Question",
               "name": "Kirli güneş paneli ne kadar verim kaybına yol açar?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Araştırmalar, temizlenmemiş güneş panellerinin toz, kir ve kuş pisliği birikimi nedeniyle %15 ile %30 arasında verim kaybına uğradığını göstermektedir. Endüstriyel bölgelerin yakınındaki GES sahalarında bu kayıp daha da yüksek olabilmektedir." }
+              "acceptedAnswer": { "@type": "Answer", "text": "Araştırmalar, temizlenmemiş güneş panellerinin toz, kir ve kuş pisliği birikimi nedeniyle %15 ile %30 arasında verim kaybına uğradığını göstermektedir. Soma gibi endüstriyel bölgelerin yakınındaki GES sahalarında bu kayıp daha da yüksek olabilmektedir." }
             },
             {
               "@type": "Question",
@@ -87,20 +148,22 @@ export default function PanelTemizlikPage() {
 
             <div className="w-full lg:w-1/2">
               <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '12px' }}>
-                Hizmet Detayı
+                Soma &amp; Türkiye Geneli GES Hizmeti
               </span>
               <h2 className="section-heading" style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', marginBottom: '18px' }}>
-                Profesyonel Panel Temizliği
+                Soma ve Türkiye Genelinde Profesyonel GES Panel Temizliği
               </h2>
               <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: '16px' }}>
-                Güneş panelleri zamanla toz, kir, kuş pisliği ve endüstriyel kirleticilerin birikmesiyle
-                ciddi verim kayıplarına uğrar. Yapılan araştırmalar, temizlenmemiş panellerin
-                <strong style={{ color: 'var(--text-primary)' }}> %30'a kadar</strong> daha az enerji ürettiğini göstermektedir.
+                <strong style={{ color: 'var(--text-primary)' }}>Soma GES temizliği</strong> konusunda bölgenin en deneyimli ekibiyiz.
+                Termik santraller ve sanayi tesislerine yakın Soma'da güneş panelleri; kömür tozu, silis tozu ve endüstriyel
+                is birikimi nedeniyle ulusal ortalamadan çok daha hızlı kirlenip <strong style={{ color: 'var(--text-primary)' }}>%30'a kadar</strong> verim
+                kaybeder. Bu özel koşullar için doğru ekipman ve yöntemlerle sahada çözüm üretiyoruz.
               </p>
               <p style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: '28px' }}>
-                New Temizlik olarak su israfı yapmadan, saha koşullarına göre optimize edilmiş
-                özel ekipmanlarla panellerinizin yüzeyini fabrika çıkışı temizliğine
-                kavuşturuyoruz. Leke bırakmadan, panel yüzeyine en ufak zarar vermeden.
+                Soma merkezli olmakla birlikte Manisa, İzmir, Balıkesir, Kütahya, Uşak ve
+                Türkiye genelindeki tüm büyük <strong style={{ color: 'var(--text-primary)' }}>güneş enerji santrali (GES)</strong> sahalarına hizmet veriyoruz.
+                Su israfı yapmadan, saha koşullarına göre optimize edilmiş
+                özel ekipmanlarla panellerinizin yüzeyini fabrika çıkışı temizliğine kavuşturuyoruz.
               </p>
 
               <div
@@ -136,6 +199,76 @@ export default function PanelTemizlikPage() {
         </div>
       </section>
 
+      {/* Soma'ya Özel Bölüm */}
+      <section style={{ background: 'var(--bg-alt)', padding: '72px 0' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+              Neden Soma?
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 34px)' }}>
+              Soma'nın GES Sahalarına Özel Temizlik Zorluğu
+            </h2>
+            <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Kömür & Sanayi Tozu',
+                text: 'Soma termik santrallerinden yayılan kömür tozu ve silis partikülleri güneş panellerine yapışarak ışık geçirgenliğini ciddi ölçüde düşürür. Standart yöntemler bu kalıcı kirliliği temizlemekte yetersiz kalır.',
+              },
+              {
+                title: 'Tarımsal Kirlilik',
+                text: 'Soma çevresindeki geniş tarım arazilerinden yükselen tarımsal toz, ilaç kalıntısı ve ot poleni GES panellerinde birikici bir kirlilik tabakası oluşturur. Panel verimliliğini mevsimsel olarak ciddi şekilde etkiler.',
+              },
+              {
+                title: 'Hızlı Verim Düşüşü',
+                text: 'Ülke ortalamasının üzerinde kirlilik yükü taşıyan Soma GES sahalarında temizliksiz bırakılan paneller, yaz-kış döngülerinde ulusal ortalamaya kıyasla iki kat daha hızlı verim kaybeder.',
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '28px 24px', border: '1px solid var(--border)', borderTop: '3px solid #7FBF3A' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '12px', fontFamily: "'Rajdhani', sans-serif", letterSpacing: '0.03em' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', lineHeight: 1.8, color: 'var(--text-secondary)', margin: 0 }}>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hizmet Bölgelerimiz */}
+      <section style={{ background: 'var(--bg-body)', padding: '72px 0' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#7FBF3A', display: 'block', marginBottom: '10px' }}>
+              Türkiye Geneli Hizmet
+            </span>
+            <h2 className="section-heading" style={{ fontSize: 'clamp(24px, 3.5vw, 34px)' }}>
+              GES Temizliği Hizmet Verilen Bölgeler
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginTop: '12px', maxWidth: '600px', margin: '12px auto 0', lineHeight: 1.7 }}>
+              Soma merkezli saha ekiplerimiz Türkiye genelindeki güneş enerji santrallerine ulaşır. Aşağıdaki il ve ilçelerde aktif GES temizlik hizmeti veriyoruz.
+            </p>
+            <div style={{ width: '50px', height: '3px', background: '#7FBF3A', margin: '16px auto 0' }} />
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {serviceAreas.map((area, i) => (
+              <div key={i} style={{ background: 'var(--bg-card)', borderRadius: '12px', padding: '22px 24px', border: '1px solid var(--border)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <MapPin size={15} style={{ color: '#7FBF3A', flexShrink: 0 }} />
+                  <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', margin: 0, fontFamily: "'Rajdhani', sans-serif", letterSpacing: '0.03em' }}>{area.il}</h3>
+                </div>
+                <p style={{ fontSize: '13.5px', lineHeight: 1.7, color: 'var(--text-secondary)', margin: 0, paddingLeft: '23px' }}>{area.ilceler}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ textAlign: 'center', marginTop: '32px', fontSize: '14px', color: 'var(--text-secondary)' }}>
+            Listede yer almayan bölgeler için{' '}
+            <a href="tel:+905304738793" style={{ color: '#7FBF3A', fontWeight: 600, textDecoration: 'none' }}>bizi arayın</a>
+            {' '}— Türkiye'nin her bölgesindeki GES sahalarına saha keşfi yaparak hizmet sunabiliyoruz.
+          </p>
+        </div>
+      </section>
+
       {/* SSS */}
       <section style={{ background: 'var(--bg-alt)', padding: '80px 0' }}>
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -151,12 +284,20 @@ export default function PanelTemizlikPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {[
               {
+                q: 'Soma\'da GES temizliği hizmeti veriyor musunuz?',
+                a: 'Evet, New Temizlik olarak Soma merkezli faaliyet gösteriyor ve Soma ile çevresindeki tüm GES sahalarına hizmet veriyoruz. Soma\'nın termik santral ve sanayi bölgelerine yakınlığı nedeniyle bölgedeki güneş panelleri ülke ortalamasının çok üzerinde kirlenme yaşamaktadır. Bu özel koşullar için geliştirdiğimiz ekipman ve yöntemlerle sahada çözüm üretiyoruz.',
+              },
+              {
+                q: 'Türkiye genelinde GES panel temizliği yapıyor musunuz?',
+                a: 'Evet, New Temizlik olarak Soma ve Manisa merkez olmak üzere İzmir, Balıkesir, Kütahya, Uşak, Afyon, Konya, Ankara, Antalya ve Adana dahil Türkiye genelindeki GES sahalarına hizmet vermekteyiz. Büyük kapasiteli santraller için saha keşfi yaparak özel hizmet planı oluşturuyoruz.',
+              },
+              {
                 q: 'Güneş panelleri ne sıklıkla temizlenmeli?',
-                a: 'GES santrallerinde panel temizliği, bölgenin iklim koşullarına ve çevresel kirlilik düzeyine göre değişmekle birlikte genellikle yılda 2–4 kez önerilmektedir. Manisa, İzmir ve İç Anadolu gibi toz yoğunluğu yüksek bölgelerde mevsim geçişlerinde yapılan temizlikler verim artışını maksimuma çıkarır.',
+                a: 'GES santrallerinde panel temizliği, bölgenin iklim koşullarına ve çevresel kirlilik düzeyine göre değişmekle birlikte genellikle yılda 2–4 kez önerilmektedir. Soma gibi sanayi ve kömür tozu yoğunluğu yüksek bölgelerde mevsim geçişlerinde yapılan temizlikler verim artışını maksimuma çıkarır.',
               },
               {
                 q: 'Kirli güneş paneli ne kadar verim kaybına yol açar?',
-                a: 'Araştırmalar, temizlenmemiş güneş panellerinin toz, kir ve kuş pisliği birikimi nedeniyle %15 ile %30 arasında verim kaybına uğradığını göstermektedir. Endüstriyel bölgelerin yakınındaki GES sahalarında bu kayıp daha da yüksek olabilmektedir.',
+                a: 'Araştırmalar, temizlenmemiş güneş panellerinin toz, kir ve kuş pisliği birikimi nedeniyle %15 ile %30 arasında verim kaybına uğradığını göstermektedir. Soma gibi endüstriyel bölgelerin yakınındaki GES sahalarında bu kayıp daha da yüksek olabilmektedir.',
               },
               {
                 q: 'Panel temizliği sırasında sistem kapatılmalı mı?',
