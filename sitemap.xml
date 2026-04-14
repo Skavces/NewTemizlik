@@ -2,47 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.newtemizlik.com/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/kurumsal</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/hizmetlerimiz</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/hizmetlerimiz/panel-bakim</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/hizmetlerimiz/robot-satisi</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/referanslarimiz</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/sss</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.newtemizlik.com/iletisim</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.newtemizlik.com/blog</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.newtemizlik.com/blog/gunes-paneli-temizligi-ne-zaman-yapilmali</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.newtemizlik.com/blog/ges-hotspot-nedir</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.newtemizlik.com/blog/kirli-gunes-paneli-verim-kaybi</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.newtemizlik.com/blog/otonom-robot-mu-manuel-temizlik-mi</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 </urlset>
