@@ -37,11 +37,22 @@ export default function PanelTemizlikPage() {
         <meta property="og:title" content="Soma GES Temizliği | Türkiye Geneli Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
         <meta property="og:description" content="Soma'da ve Türkiye genelinde profesyonel GES temizliği, güneş paneli yıkama ve solar panel temizlik hizmeti. Soma'nın endüstriyel toz ortamına özel yöntemlerle %30'a kadar verim artışı sağlıyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Soma GES Temizliği | Türkiye Geneli Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
         <meta name="twitter:description" content="Soma'da ve Türkiye genelinde profesyonel GES temizliği, güneş paneli yıkama ve solar panel temizlik hizmeti. Soma'nın endüstriyel toz ortamına özel yöntemlerle %30'a kadar verim artışı sağlıyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/endustriyel-gunes-paneli-yikama.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Hizmetlerimiz", "item": "https://www.newtemizlik.com/hizmetlerimiz" },
+            { "@type": "ListItem", "position": 3, "name": "Panel Temizlik Hizmeti", "item": "https://www.newtemizlik.com/hizmetlerimiz/panel-temizlik" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",

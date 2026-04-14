@@ -60,11 +60,22 @@ export default function RobotSatisPage() {
         <meta property="og:title" content="GES Solar Panel Temizlik Robotu Satışı | New Temizlik" />
         <meta property="og:description" content="GES solar panel temizlik robotu ve makina satışı. Büyük ölçekli güneş enerji santralleri için otonom, IoT destekli, uzaktan yönetilebilen panel yıkama sistemleri." />
         <meta property="og:image" content="https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES Solar Panel Temizlik Robotu Satışı | New Temizlik" />
         <meta name="twitter:description" content="GES solar panel temizlik robotu ve makina satışı. Büyük ölçekli güneş enerji santralleri için otonom, IoT destekli, uzaktan yönetilebilen panel yıkama sistemleri." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Hizmetlerimiz", "item": "https://www.newtemizlik.com/hizmetlerimiz" },
+            { "@type": "ListItem", "position": 3, "name": "Robot & Makina Satışı", "item": "https://www.newtemizlik.com/hizmetlerimiz/robot-satisi" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

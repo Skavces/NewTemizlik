@@ -27,11 +27,22 @@ export default function PanelBakimPage() {
         <meta property="og:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
         <meta property="og:description" content="GES santrallerinde proaktif bakım, termal analiz ve performans izleme hizmetleri. Hotspot tespiti ve invertör kontrolüyle verim kayıplarını ve arızaları erkenden önlüyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES Panel Bakım ve Onarım İzleme Hizmeti | New Temizlik" />
         <meta name="twitter:description" content="GES santrallerinde proaktif bakım, termal analiz ve performans izleme hizmetleri. Hotspot tespiti ve invertör kontrolüyle verim kayıplarını ve arızaları erkenden önlüyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/ges-bakim-onarim-termal-analiz.jpeg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Hizmetlerimiz", "item": "https://www.newtemizlik.com/hizmetlerimiz" },
+            { "@type": "ListItem", "position": 3, "name": "Panel Bakım & Onarım İzleme", "item": "https://www.newtemizlik.com/hizmetlerimiz/panel-bakim" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

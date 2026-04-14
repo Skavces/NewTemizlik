@@ -18,11 +18,21 @@ export default function SSSPage() {
         <meta property="og:title" content="Sıkça Sorulan Sorular | GES Panel Temizliği SSS | New Temizlik" />
         <meta property="og:description" content="Güneş paneli temizliği, GES bakım hizmetleri ve temizlik robotu hakkında merak edilen soruların cevapları. New Temizlik SSS sayfası." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sıkça Sorulan Sorular | GES Panel Temizliği SSS | New Temizlik" />
         <meta name="twitter:description" content="Güneş paneli temizliği, GES bakım hizmetleri ve temizlik robotu hakkında merak edilen soruların cevapları. New Temizlik SSS sayfası." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Sıkça Sorulan Sorular", "item": "https://www.newtemizlik.com/sss" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

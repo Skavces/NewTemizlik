@@ -95,11 +95,21 @@ export default function KurumsalPage() {
         <meta property="og:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
         <meta property="og:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli, tüm Türkiye'ye hizmet veren endüstriyel GES temizlik ve bakım firması." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
         <meta name="twitter:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli, tüm Türkiye'ye hizmet veren endüstriyel GES temizlik ve bakım firması." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Kurumsal", "item": "https://www.newtemizlik.com/kurumsal" }
+          ]
+        })}</script>
       </Helmet>
 
       <Navbar />

@@ -17,6 +17,11 @@ const routes = [
   '/referanslarimiz',
   '/sss',
   '/iletisim',
+  '/blog',
+  '/blog/gunes-paneli-temizligi-ne-zaman-yapilmali',
+  '/blog/ges-hotspot-nedir',
+  '/blog/kirli-gunes-paneli-verim-kaybi',
+  '/blog/otonom-robot-mu-manuel-temizlik-mi',
 ]
 
 // SSR bundle oluştur

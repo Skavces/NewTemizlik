@@ -12,6 +12,11 @@ import RobotSatisPage from './pages/RobotSatisPage'
 import ReferanslarPage from './pages/ReferanslarPage'
 import SSSPage from './pages/SSSPage'
 import IletisimPage from './pages/IletisimPage'
+import BlogPage from './pages/BlogPage'
+import PanelTemizligiNeSiklikla from './pages/blog/PanelTemizligiNeSiklikla'
+import GESHotspotNedir from './pages/blog/GESHotspotNedir'
+import KirliPanelVerimKaybi from './pages/blog/KirliPanelVerimKaybi'
+import OtonomRobotVsManuel from './pages/blog/OtonomRobotVsManuel'
 
 export function render(url) {
   const helmetContext = {}
@@ -29,6 +34,11 @@ export function render(url) {
             <Route path="/referanslarimiz" element={<ReferanslarPage />} />
             <Route path="/sss" element={<SSSPage />} />
             <Route path="/iletisim" element={<IletisimPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/gunes-paneli-temizligi-ne-zaman-yapilmali" element={<PanelTemizligiNeSiklikla />} />
+            <Route path="/blog/ges-hotspot-nedir" element={<GESHotspotNedir />} />
+            <Route path="/blog/kirli-gunes-paneli-verim-kaybi" element={<KirliPanelVerimKaybi />} />
+            <Route path="/blog/otonom-robot-mu-manuel-temizlik-mi" element={<OtonomRobotVsManuel />} />
           </Routes>
         </StaticRouter>
       </ThemeProvider>

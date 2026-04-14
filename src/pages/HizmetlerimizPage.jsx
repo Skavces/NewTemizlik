@@ -47,11 +47,21 @@ export default function HizmetlerimizPage() {
         <meta property="og:title" content="Hizmetlerimiz | GES Temizlik ve Bakım | New Temizlik" />
         <meta property="og:description" content="Panel temizlik hizmeti, bakım & onarım izleme ve temizlik robot satışı. Güneş enerji santralleriniz için profesyonel çözümler." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hizmetlerimiz | GES Temizlik ve Bakım | New Temizlik" />
         <meta name="twitter:description" content="Panel temizlik hizmeti, bakım & onarım izleme ve temizlik robot satışı. Güneş enerji santralleriniz için profesyonel çözümler." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Hizmetlerimiz", "item": "https://www.newtemizlik.com/hizmetlerimiz" }
+          ]
+        })}</script>
       </Helmet>
 
       <Navbar />

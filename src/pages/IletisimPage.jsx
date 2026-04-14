@@ -23,6 +23,49 @@ export default function IletisimPage() {
         <meta name="twitter:title" content="İletişim | Ücretsiz GES Temizlik Keşfi | New Temizlik" />
         <meta name="twitter:description" content="New Temizlik ile iletişime geçin. Soma ve çevresindeki GES santralleriniz için ücretsiz keşif ve teklif almak üzere bizi arayın veya formu doldurun." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.newtemizlik.com/" },
+            { "@type": "ListItem", "position": 2, "name": "İletişim", "item": "https://www.newtemizlik.com/iletisim" }
+          ]
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "New Temizlik İletişim",
+          "url": "https://www.newtemizlik.com/iletisim",
+          "description": "New Temizlik GES temizlik ve bakım hizmetleri için iletişim sayfası. Ücretsiz saha keşfi ve teklif.",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "New Temizlik",
+            "telephone": "+905304738793",
+            "url": "https://www.newtemizlik.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Soma",
+              "addressRegion": "Manisa",
+              "postalCode": "45500",
+              "addressCountry": "TR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 39.185,
+              "longitude": 27.607
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              }
+            ]
+          }
+        })}</script>
       </Helmet>
 
       <Navbar />

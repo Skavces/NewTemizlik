@@ -22,11 +22,27 @@ export default function HomePage() {
         <meta property="og:title" content="Soma GES Temizliği | Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
         <meta property="og:description" content="Soma ve Türkiye genelinde endüstriyel GES ve güneş paneli temizliği. Solar panel yıkama, bakım izleme ve otonom temizlik robotu ile verim kaybını önlüyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Soma GES Temizliği | Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
         <meta name="twitter:description" content="Soma ve Türkiye genelinde endüstriyel GES ve güneş paneli temizliği. Solar panel yıkama, bakım izleme ve otonom temizlik robotu ile verim kaybını önlüyoruz." />
         <meta name="twitter:image" content="https://www.newtemizlik.com/logo.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Soma GES Otonom Panel Yıkama Robotu Saha Testi",
+          "description": "Soma güneş enerji santralinde otonom panel yıkama robotunun sahada performans testi ve çalışma görüntüleri. New Temizlik GES temizlik robotu uygulaması.",
+          "thumbnailUrl": "https://www.newtemizlik.com/soma-ges-otonom-temizlik-robotu.jpeg",
+          "uploadDate": "2026-01-01",
+          "contentUrl": "https://www.newtemizlik.com/otonom-panel-yikama-robotu-test.mp4",
+          "publisher": {
+            "@type": "Organization",
+            "name": "New Temizlik",
+            "logo": { "@type": "ImageObject", "url": "https://www.newtemizlik.com/logo.png" }
+          }
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",

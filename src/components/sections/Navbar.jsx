@@ -16,6 +16,7 @@ const navLinks = [
     ],
   },
   { label: 'Referanslarımız', path: '/referanslarimiz' },
+  { label: 'Blog', path: '/blog' },
   { label: 'S.S.S', path: '/sss' },
   { label: 'İletişim', path: '/iletisim' },
 ]
