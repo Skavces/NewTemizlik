@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react'
 import Navbar from '../sections/Navbar'
 import Footer from '../sections/Footer'
 import WhatsAppButton from '../ui/WhatsAppButton'
+import { trackEvent } from '../../utils/analytics'
 
 export default function BlogArticleLayout({ title, date, readTime, children, relatedPosts = [] }) {
   return (
@@ -70,6 +71,7 @@ export default function BlogArticleLayout({ title, date, readTime, children, rel
             </p>
             <a
               href="tel:+905304738793"
+              onClick={() => trackEvent('phone_click', { location: 'blog_article_cta' })}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '12px 28px', background: '#7FBF3A', color: '#fff',

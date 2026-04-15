@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { CheckCircle, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { trackEvent } from '../utils/analytics'
 import Navbar from '../components/sections/Navbar'
 import Footer from '../components/sections/Footer'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
@@ -167,6 +168,7 @@ export default function RobotSatisPage() {
 
               <a
                 href="tel:+905304738793"
+                onClick={() => trackEvent('phone_click', { location: 'robot_satis' })}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '8px',
                   padding: '13px 28px', background: '#7FBF3A', color: '#fff',

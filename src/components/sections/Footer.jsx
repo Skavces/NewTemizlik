@@ -1,5 +1,6 @@
 import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import { trackEvent } from '../../utils/analytics'
 
 const footerLinks = [
   {
@@ -24,7 +25,7 @@ const footerLinks = [
 
 const contactItems = [
   { icon: MapPin, text: 'Atatürk Mah. İzgin Sk. No:4 Soma/Manisa' },
-  { icon: Phone, text: '+90 530 473 87 93', href: 'tel:+905304738793' },
+  { icon: Phone, text: '+90 530 473 87 93', href: 'tel:+905304738793', track: () => trackEvent('phone_click', { location: 'footer' }) },
   { icon: Mail, text: 'info@newtemizlik.com.tr', href: 'mailto:info@newtemizlik.com.tr' },
 ]
 
@@ -115,6 +116,7 @@ export default function Footer() {
                   {item.href ? (
                     <a
                       href={item.href}
+                      onClick={item.track}
                       style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { CheckCircle, ArrowRight, MapPin } from 'lucide-react'
+import { trackEvent } from '../utils/analytics'
 import Navbar from '../components/sections/Navbar'
 import Footer from '../components/sections/Footer'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
@@ -197,6 +198,7 @@ export default function PanelTemizlikPage() {
 
               <a
                 href="tel:+905304738793"
+                onClick={() => trackEvent('phone_click', { location: 'panel_temizlik' })}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '8px',
                   padding: '13px 28px', background: '#7FBF3A', color: '#fff',
@@ -276,7 +278,7 @@ export default function PanelTemizlikPage() {
           </div>
           <p style={{ textAlign: 'center', marginTop: '32px', fontSize: '14px', color: 'var(--text-secondary)' }}>
             Listede yer almayan bölgeler için{' '}
-            <a href="tel:+905304738793" style={{ color: '#7FBF3A', fontWeight: 600, textDecoration: 'none' }}>bizi arayın</a>
+            <a href="tel:+905304738793" onClick={() => trackEvent('phone_click', { location: 'panel_temizlik_bolge' })} style={{ color: '#7FBF3A', fontWeight: 600, textDecoration: 'none' }}>bizi arayın</a>
             {' '}— Türkiye'nin her bölgesindeki GES sahalarına saha keşfi yaparak hizmet sunabiliyoruz.
           </p>
         </div>

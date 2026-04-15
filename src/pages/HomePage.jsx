@@ -75,6 +75,10 @@ export default function HomePage() {
             { "@type": "AdministrativeArea", "name": "Kütahya" },
             { "@type": "Country", "name": "Türkiye" }
           ],
+          "sameAs": [
+            "https://www.facebook.com/people/New-Temizlik-Hizmetleri/61564445445368/",
+            "https://www.instagram.com/new_temizlikhizmetleri/"
+          ],
           "knowsAbout": [
             "GES Temizliği",
             "Güneş Paneli Temizliği",

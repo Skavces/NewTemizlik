@@ -1,8 +1,9 @@
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react'
+import { trackEvent } from '../../utils/analytics'
 
 const contactInfo = [
   { icon: MapPin, label: 'Adres', value: 'Atatürk Mah. İzgin Sk. No:4 Soma/Manisa', color: '#7FBF3A' },
-  { icon: Phone, label: 'Telefon', value: '+90 530 473 87 93', href: 'tel:+905304738793', color: '#1F6EC7' },
+  { icon: Phone, label: 'Telefon', value: '+90 530 473 87 93', href: 'tel:+905304738793', onClick: () => trackEvent('phone_click', { location: 'contact_section' }), color: '#1F6EC7' },
   { icon: Mail, label: 'E-posta', value: 'info@newgruptemizlik.com.tr', href: 'mailto:info@newgruptemizlik.com.tr', color: '#7FBF3A' },
   { icon: Clock, label: 'Çalışma Saatleri', value: 'Pzt – Cmt: 09:00 – 18:00', color: '#1F6EC7' },
 ]
@@ -54,6 +55,7 @@ export default function Contact() {
                   {item.href ? (
                     <a
                       href={item.href}
+                      onClick={item.onClick}
                       style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', textDecoration: 'none', lineHeight: 1.4 }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#7FBF3A')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
@@ -77,6 +79,7 @@ export default function Contact() {
             <form
               action="https://formsubmit.co/bariskurnazoglu1@gmail.com"
               method="POST"
+              onSubmit={() => trackEvent('generate_lead', { method: 'contact_form' })}
               style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
             >
               <input type="hidden" name="_subject" value="Web Sitesinden Yeni İletişim Formu!" />

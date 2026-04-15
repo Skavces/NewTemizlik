@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, FolderCheck, CalendarDays, ThumbsUp, Users, Sun } from 'lucide-react'
+import { trackEvent } from '../../utils/analytics'
 
 const infoStats = [
   { icon: FolderCheck,  num: '195+', label: 'Tamamlanan Proje',    desc: 'Türkiye genelinde başarıyla teslim edilen GES projeleri.' },
@@ -134,6 +135,7 @@ export default function Hero() {
             <div className="flex items-center gap-4 flex-wrap">
               <Link
                 to="/iletisim"
+                onClick={() => trackEvent('cta_click', { location: 'hero', text: 'Ücretsiz Keşif Talep Et' })}
                 className="inline-flex items-center gap-2.5 transition-all duration-200"
                 style={{
                   padding: '13px 28px',

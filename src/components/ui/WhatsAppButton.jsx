@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { X, Send } from 'lucide-react'
+import { trackEvent } from '../../utils/analytics'
 
 const PHONE = '905304738793'
 
@@ -26,6 +27,7 @@ export default function WhatsAppButton() {
 
   function handleSend() {
     if (!message.trim()) return
+    trackEvent('generate_lead', { method: 'whatsapp' })
     window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(message.trim())}`, '_blank')
     closePopup()
     setMessage('')
@@ -136,7 +138,9 @@ export default function WhatsAppButton() {
 
       {/* Trigger button */}
       <button
-        onClick={() => open ? closePopup() : setOpen(true)}
+        onClick={() => {
+          if (open) { closePopup() } else { setOpen(true); trackEvent('whatsapp_open') }
+        }}
         className="flex items-center gap-3 cursor-pointer"
         style={{
           background: '#1aad50',
