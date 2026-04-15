@@ -34,6 +34,8 @@ export default function ReferanslarPage() {
         <meta property="og:description" content="New Temizlik olarak hizmet verdiğimiz kurumsal referanslarımız. Halkbank, Albayrak, Gezgin Enerji ve daha birçok sektör lideri firma ile çalışıyoruz." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik GES temizlik hizmetleri kurumsal logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Referanslarımız | Güvenilir GES Temizlik Hizmeti | New Temizlik" />
         <meta name="twitter:description" content="New Temizlik olarak hizmet verdiğimiz kurumsal referanslarımız. Halkbank, Albayrak, Gezgin Enerji ve daha birçok sektör lideri firma ile çalışıyoruz." />

@@ -40,6 +40,8 @@ export default function PanelTemizlikPage() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="GES sahasında profesyonel endüstriyel güneş paneli temizlik çalışması" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Soma GES Temizliği | Türkiye Geneli Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
         <meta name="twitter:description" content="Soma'da ve Türkiye genelinde profesyonel GES temizliği, güneş paneli yıkama ve solar panel temizlik hizmeti. Soma'nın endüstriyel toz ortamına özel yöntemlerle %30'a kadar verim artışı sağlıyoruz." />

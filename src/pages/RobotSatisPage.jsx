@@ -63,6 +63,8 @@ export default function RobotSatisPage() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="GES sahasında otonom solar panel temizlik robotu çalışma görüntüsü" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES Solar Panel Temizlik Robotu Satışı | New Temizlik" />
         <meta name="twitter:description" content="GES solar panel temizlik robotu ve makina satışı. Büyük ölçekli güneş enerji santralleri için otonom, IoT destekli, uzaktan yönetilebilen panel yıkama sistemleri." />

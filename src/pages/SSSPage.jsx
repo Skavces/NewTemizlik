@@ -21,6 +21,8 @@ export default function SSSPage() {
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik GES panel temizliği sıkça sorulan sorular logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sıkça Sorulan Sorular | GES Panel Temizliği SSS | New Temizlik" />
         <meta name="twitter:description" content="Güneş paneli temizliği, GES bakım hizmetleri ve temizlik robotu hakkında merak edilen soruların cevapları. New Temizlik SSS sayfası." />

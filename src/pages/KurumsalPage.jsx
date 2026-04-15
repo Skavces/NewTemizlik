@@ -98,6 +98,8 @@ export default function KurumsalPage() {
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik - GES temizlik ve bakım çözümleri kurumsal logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kurumsal | New Temizlik - GES Temizlik ve Bakım Çözümleri" />
         <meta name="twitter:description" content="New Temizlik hakkında: misyon, vizyon, değerlerimiz ve kurumsal kimliğimiz. Soma merkezli, tüm Türkiye'ye hizmet veren endüstriyel GES temizlik ve bakım firması." />

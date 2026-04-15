@@ -23,6 +23,16 @@ export default function PanelTemizligiNeSiklikla() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="GES sahasında profesyonel güneş paneli temizlik çalışması" />
+        <meta property="article:published_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:modified_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:author" content="New Temizlik" />
+        <meta property="article:section" content="GES Temizliği" />
+        <meta property="article:tag" content="güneş paneli temizliği" />
+        <meta property="article:tag" content="GES temizlik takvimi" />
+        <meta property="article:tag" content="panel temizliği ne zaman" />
+        <meta name="keywords" content="güneş paneli temizliği ne zaman, panel temizliği sıklık, ges temizlik takvimi, mevsimlik panel temizliği, yılda kaç kez panel temizliği" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Güneş Paneli Temizliği Ne Zaman Yapılmalı? Mevsimlik Rehber" />
         <meta name="twitter:description" content="Güneş paneli temizliğinin ne zaman ve ne sıklıkla yapılması gerektiğini öğrenin. İlkbahar, yaz, sonbahar ve kış için mevsimlik temizlik takvimi rehberi." />

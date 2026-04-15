@@ -50,6 +50,8 @@ export default function HizmetlerimizPage() {
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik GES temizlik ve bakım hizmetleri logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hizmetlerimiz | GES Temizlik ve Bakım | New Temizlik" />
         <meta name="twitter:description" content="Panel temizlik hizmeti, bakım & onarım izleme ve temizlik robot satışı. Güneş enerji santralleriniz için profesyonel çözümler." />

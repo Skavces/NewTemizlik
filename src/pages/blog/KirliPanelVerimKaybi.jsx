@@ -23,6 +23,16 @@ export default function KirliPanelVerimKaybi() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="Kirli güneş panellerinde kir ve toz birikiminin verime etkisi" />
+        <meta property="article:published_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:modified_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:author" content="New Temizlik" />
+        <meta property="article:section" content="GES Verimliliği" />
+        <meta property="article:tag" content="güneş paneli verim kaybı" />
+        <meta property="article:tag" content="kirli panel" />
+        <meta property="article:tag" content="GES verimliliği" />
+        <meta name="keywords" content="kirli güneş paneli verim kaybı, panel temizliği verim artışı, ges verim düşüşü, güneş paneli toz etkisi, panel temizliği karlılık" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kirli Güneş Paneli Ne Kadar Verim Kaybettirir?" />
         <meta name="twitter:description" content="Kirli güneş paneli verim kayıpları, araştırma verileri ve gerçek hesaplama örnekleri. 1 MW GES'te kirlilik yüzünden kaybedilen TL'yi hesaplayın." />

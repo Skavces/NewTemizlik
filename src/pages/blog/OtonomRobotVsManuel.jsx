@@ -23,6 +23,16 @@ export default function OtonomRobotVsManuel() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="GES sahasında otonom panel temizlik robotu saha testi" />
+        <meta property="article:published_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:modified_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:author" content="New Temizlik" />
+        <meta property="article:section" content="GES Teknolojisi" />
+        <meta property="article:tag" content="otonom temizlik robotu" />
+        <meta property="article:tag" content="manuel panel temizliği" />
+        <meta property="article:tag" content="GES temizlik karşılaştırma" />
+        <meta name="keywords" content="otonom robot panel temizliği, manuel ges temizliği, panel temizlik robotu maliyet, ges temizlik yöntemi karşılaştırma, panel yıkama robotu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES Temizliğinde Otonom Robot mu, Manuel Temizlik mi?" />
         <meta name="twitter:description" content="GES panel temizliğinde otonom temizlik robotu ile manuel temizlik arasındaki farklar, maliyet analizi ve hangi saha büyüklüğü için hangisinin doğru seçim olduğu." />

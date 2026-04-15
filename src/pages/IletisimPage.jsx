@@ -19,6 +19,8 @@ export default function IletisimPage() {
         <meta property="og:description" content="New Temizlik ile iletişime geçin. Soma ve çevresindeki GES santralleriniz için ücretsiz keşif ve teklif almak üzere bizi arayın veya formu doldurun." />
         <meta property="og:image" content="https://www.newtemizlik.com/logo.png" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik - GES temizlik hizmetleri iletişim logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="İletişim | Ücretsiz GES Temizlik Keşfi | New Temizlik" />
         <meta name="twitter:description" content="New Temizlik ile iletişime geçin. Soma ve çevresindeki GES santralleriniz için ücretsiz keşif ve teklif almak üzere bizi arayın veya formu doldurun." />

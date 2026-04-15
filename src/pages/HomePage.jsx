@@ -25,6 +25,8 @@ export default function HomePage() {
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik - GES ve güneş paneli temizlik hizmetleri logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Soma GES Temizliği | Güneş Paneli ve Solar Panel Yıkama | New Temizlik" />
         <meta name="twitter:description" content="Soma ve Türkiye genelinde endüstriyel GES ve güneş paneli temizliği. Solar panel yıkama, bakım izleme ve otonom temizlik robotu ile verim kaybını önlüyoruz." />

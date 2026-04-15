@@ -61,6 +61,8 @@ export default function BlogPage() {
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="New Temizlik GES temizlik ve bakım blog logosu" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Blog | GES Temizlik ve Bakım Rehberleri | New Temizlik" />
         <meta name="twitter:description" content="Güneş paneli temizliği, GES bakımı, hotspot tespiti ve otonom temizlik teknolojileri hakkında uzman rehberler ve teknik makaleler." />
@@ -90,6 +92,20 @@ export default function BlogPage() {
             "url": `https://www.newtemizlik.com${p.href}`,
             "datePublished": "2026-04-14",
             "image": `https://www.newtemizlik.com/${p.image}`,
+          }))
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "GES Temizlik ve Bakım Blog Yazıları",
+          "description": "Güneş paneli temizliği, GES bakımı ve otonom temizlik teknolojileri hakkında uzman rehberler",
+          "url": "https://www.newtemizlik.com/blog",
+          "numberOfItems": posts.length,
+          "itemListElement": posts.map((p, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": `https://www.newtemizlik.com${p.href}`,
+            "name": p.title,
           }))
         })}</script>
       </Helmet>

@@ -23,6 +23,16 @@ export default function GESHotspotNedir() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="800" />
         <meta property="og:locale" content="tr_TR" />
+        <meta property="og:site_name" content="New Temizlik" />
+        <meta property="og:image:alt" content="GES panelinde termal analiz ile hotspot sıcak nokta tespiti" />
+        <meta property="article:published_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:modified_time" content="2026-04-14T00:00:00+03:00" />
+        <meta property="article:author" content="New Temizlik" />
+        <meta property="article:section" content="GES Bakımı" />
+        <meta property="article:tag" content="hotspot nedir" />
+        <meta property="article:tag" content="GES bakım" />
+        <meta property="article:tag" content="termal analiz" />
+        <meta name="keywords" content="ges hotspot nedir, sıcak nokta güneş paneli, termal kamera panel kontrolü, hotspot tespiti, güneş paneli bakımı, ges bakim" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GES'te Hotspot (Sıcak Nokta) Nedir ve Nasıl Tespit Edilir?" />
         <meta name="twitter:description" content="GES panellerinde hotspot (sıcak nokta) nedir, neden oluşur, ne gibi zararlara yol açar ve termal kamera ile nasıl tespit edilir? Kapsamlı teknik rehber." />
