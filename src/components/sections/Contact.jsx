@@ -4,7 +4,7 @@ import { trackEvent } from '../../utils/analytics'
 const contactInfo = [
   { icon: MapPin, label: 'Adres', value: 'Atatürk Mah. İzgin Sk. No:4 Soma/Manisa', color: '#7FBF3A' },
   { icon: Phone, label: 'Telefon', value: '+90 530 473 87 93', href: 'tel:+905304738793', onClick: () => trackEvent('phone_click', { location: 'contact_section' }), color: '#1F6EC7' },
-  { icon: Mail, label: 'E-posta', value: 'info@newgruptemizlik.com.tr', href: 'mailto:info@newgruptemizlik.com.tr', color: '#7FBF3A' },
+  { icon: Mail, label: 'E-posta', value: 'info@newtemizlik.com.tr', href: 'mailto:info@newtemizlik.com.tr', color: '#7FBF3A' },
   { icon: Clock, label: 'Çalışma Saatleri', value: 'Pzt – Cmt: 09:00 – 18:00', color: '#1F6EC7' },
 ]
 
