@@ -193,13 +193,7 @@ export default function KirProblemleri() {
 
                   {/* Icon + title */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '12px' }}>
-                    <div style={{
-                      width: '48px', height: '48px', borderRadius: '12px',
-                      background: `${card.color}15`, border: `1.5px solid ${card.color}30`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                    }}>
-                      <card.icon style={{ width: '22px', height: '22px', color: card.color }} />
-                    </div>
+                    <card.icon style={{ width: '36px', height: '36px', color: card.color, flexShrink: 0 }} />
                     <h3 className="section-heading" style={{ fontSize: 'clamp(22px, 3vw, 32px)', color: 'var(--text-primary)', margin: 0 }}>
                       {card.title}
                     </h3>

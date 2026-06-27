@@ -264,16 +264,7 @@ export default function KurumsalPage() {
                   e.currentTarget.style.borderBottomColor = 'transparent'
                 }}
               >
-                <div
-                  style={{
-                    width: '52px', height: '52px', borderRadius: '10px',
-                    background: '#edf7db',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: '16px',
-                  }}
-                >
-                  <v.icon size={22} style={{ color: '#7FBF3A' }} />
-                </div>
+                <v.icon size={36} style={{ color: '#7FBF3A', marginBottom: '16px' }} />
                 <h3 style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '19px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px', letterSpacing: '0.02em' }}>
                   {v.title}
                 </h3>

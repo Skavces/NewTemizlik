@@ -10,7 +10,7 @@ export default function BlogArticleLayout({ title, date, readTime, children, rel
     <>
       <Navbar />
 
-      <section style={{ background: 'var(--bg-alt)', padding: '48px 0 32px' }}>
+      <section style={{ background: 'var(--bg-alt)', padding: '48px 0 32px', marginTop: '80px' }}>
         <div className="max-w-3xl mx-auto px-5 sm:px-8">
           <Link
             to="/blog"

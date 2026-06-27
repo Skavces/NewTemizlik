@@ -37,14 +37,7 @@ function ServiceCard({ f }) {
       }}
     >
       {/* Icon */}
-      <div style={{
-        width: '60px', height: '60px', borderRadius: '8px',
-        background: '#edf7db',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        marginBottom: '16px', flexShrink: 0,
-      }}>
-        <f.icon style={{ width: '28px', height: '28px', color: '#7FBF3A' }} />
-      </div>
+      <f.icon style={{ width: '36px', height: '36px', color: '#7FBF3A', marginBottom: '16px', flexShrink: 0 }} />
 
       <h3 style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '19px', fontWeight: 700, letterSpacing: '0.03em', color: 'var(--text-primary)', marginBottom: '8px' }}>
         {f.title}
