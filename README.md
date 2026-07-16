@@ -1,1 +1,1 @@
-www.newtemizlik.com
+site link: www.newtemizlik.com
